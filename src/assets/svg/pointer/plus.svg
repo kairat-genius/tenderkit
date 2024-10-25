@@ -1,0 +1,19 @@
+ <svg
+                                                version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                x="0px"
+                                                y="0px"
+                                                viewBox="0 0 512 512"
+                                              >
+                                                <path
+                                                  d="M255.191 21a31.755 31.755 0 0 1 31.756 31.757v406.486a31.757 31.757 0 1 1-63.513 0V52.757A31.757 31.757 0 0 1 255.191 21Z"
+                                                  transform="translate(-20.191 -21)"
+                                                  class="cls-1"
+                                                ></path>
+                                                <path
+                                                  d="M20.191 256a31.756 31.756 0 0 1 31.756-31.757h406.487a31.757 31.757 0 0 1 0 63.514H51.947A31.755 31.755 0 0 1 20.191 256Z"
+                                                  transform="translate(-20.191 -21)"
+                                                  class="cls-1"
+                                                ></path>
+                                              </svg>

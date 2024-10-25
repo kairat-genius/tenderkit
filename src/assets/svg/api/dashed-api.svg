@@ -1,0 +1,68 @@
+ <svg
+                            _ngcontent-serverApp-c217=""
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 306 226"
+                            width="306"
+                            height="226"
+                            fill="none"
+                          >
+                            <g
+                              _ngcontent-serverApp-c217=""
+                              stroke="#ffffff"
+                              stroke-width="6"
+                            >
+                              <path
+                                _ngcontent-serverApp-c217=""
+                                d="M133 3H23C11.954 3 3 11.954 3 23v70c0 11.046 8.954 20 20 20h110c11.046 0 20-8.954 20-20V23c0-11.046-8.954-20-20-20Z"
+                                stroke-dasharray="9"
+                                opacity=".4"
+                              ></path>
+                              <path
+                                _ngcontent-serverApp-c217=""
+                                d="M133 3H23C11.954 3 3 11.954 3 23v70c0 11.046 8.954 20 20 20h110c11.046 0 20-8.954 20-20V23c0-11.046-8.954-20-20-20Z"
+                                stroke-dasharray="14 96"
+                                stroke-dashoffset="34"
+                                pathLength="110"
+                                mask="url(#mask-top)"
+                                class="api__dashed-line api__dashed-line--top"
+                              ></path>
+                              <mask _ngcontent-serverApp-c217="" id="mask-top">
+                                <path
+                                  _ngcontent-serverApp-c217=""
+                                  d="M133 3H23C11.954 3 3 11.954 3 23v70c0 11.046 8.954 20 20 20h110c11.046 0 20-8.954 20-20V23c0-11.046-8.954-20-20-20Z"
+                                  stroke-dasharray="9"
+                                ></path>
+                              </mask>
+                            </g>
+                            <g
+                              _ngcontent-serverApp-c217=""
+                              stroke="#ffffff"
+                              stroke-width="6"
+                            >
+                              <path
+                                _ngcontent-serverApp-c217=""
+                                d="M283 113H173c-11.046 0-20 8.954-20 20v70c0 11.046 8.954 20 20 20h110c11.046 0 20-8.954 20-20v-70c0-11.046-8.954-20-20-20Z"
+                                stroke-dasharray="9"
+                                opacity=".4"
+                              ></path>
+                              <path
+                                _ngcontent-serverApp-c217=""
+                                d="M283 113H173c-11.046 0-20 8.954-20 20v70c0 11.046 8.954 20 20 20h110c11.046 0 20-8.954 20-20v-70c0-11.046-8.954-20-20-20Z"
+                                stroke-dasharray="14 96"
+                                stroke-dashoffset="88"
+                                pathLength="110"
+                                mask="url(#mask-bottom)"
+                                class="api__dashed-line api__dashed-line--bottom"
+                              ></path>
+                              <mask
+                                _ngcontent-serverApp-c217=""
+                                id="mask-bottom"
+                              >
+                                <path
+                                  _ngcontent-serverApp-c217=""
+                                  d="M283 113H173c-11.046 0-20 8.954-20 20v70c0 11.046 8.954 20 20 20h110c11.046 0 20-8.954 20-20v-70c0-11.046-8.954-20-20-20Z"
+                                  stroke-dasharray="9"
+                                ></path>
+                              </mask>
+                            </g>
+                          </svg>
