@@ -39,7 +39,6 @@ const OnTrend = () => {
                     <li className="article-card__meta-item">
                       <time> {formatDateMonth(popular.created_at)} </time>
                     </li>
-                    <li className="article-card__meta-item"> {formatMinutes(popular.created_at)} Минут </li>
                     <li className="article-card__meta-item article-card__meta-item--tag ng-star-inserted">
                       <button  type="button" className="article-card__tag tag tag--hover">
                         <span className="tag__label" title={popular.tags}>

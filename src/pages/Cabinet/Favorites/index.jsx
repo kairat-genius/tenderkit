@@ -20,6 +20,7 @@ const handlePageChange = (page) => {
     setCurrentPage(page);
   }
 };
+
   return (
     <favorites class="body__iner-content body__iner-content--overflow ng-star-inserted">
       <h2 class="body__title title title--h3"> Избранное</h2>
@@ -32,7 +33,7 @@ const handlePageChange = (page) => {
            ))}
         </ul>
       </div>
-      {data.length > 20 && (
+      {totalPages > 1 && (
       <div class="body__layout">
         <div class="panel panel--footer">
         <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />

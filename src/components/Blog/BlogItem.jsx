@@ -54,7 +54,6 @@ const BlogItem = ({ data }) => {
                       <li className="article-card__meta-item">
                         <time> {formatDateMonth(blog.created_at)} </time>
                       </li>
-                      <li className="article-card__meta-item"> {formatMinutes(blog.created_at)} Минут </li>
                     </ul>
                     <ul className="article-card__meta">
                       {blog.tags &&

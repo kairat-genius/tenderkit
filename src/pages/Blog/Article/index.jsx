@@ -59,7 +59,7 @@ const Article = () => {
                 <h1 class="article__title">
                   {data.title}
                 </h1>
-                <div class="panel">
+                <div class="panel row_panel_social">
                   <div class="panel__layout">
                     <time class="article__date"> {formatDateMonth(data.created_at)} </time>
                   </div>
@@ -84,7 +84,7 @@ const Article = () => {
                           <span class="button__icon button__icon--before icon">
                             <IconLink class="icon__svg"/>
                           </span>
-                          <span class="ng-star-inserted">
+                          <span class="ng-star-inserted copy_link">
                             Копировать ссылку
                           </span>
                         </button>
@@ -136,20 +136,20 @@ const Article = () => {
                 Об авторе
               </h3>
               <div class="profile">
-                <Link class="profile__avatar avatar" to={`/blog/${author.slug}`}>
-                  <img width="60" height="60" class="avatar__image" src={author.img} alt={author.fullname} title={`${author.fullname}  - image`}/>
+                <Link className="profile__avatar avatar" to={`/blog/${author.slug}`}>
+                  <img width="60" height="60" className="avatar__image" src={author.img} alt={author.fullname} title={`${author.fullname}  - image`}/>
                 </Link>
                 <div class="profile__details">
                   <h3 class="profile__name">
-                    <Link class="profile__name-link" to={`/blog/${author.slug}`}>
+                    <Link className="profile__name-link" to={`/blog/${author.slug}`}>
                       {author.fullname}
                     </Link>
                   </h3>
                   <p class="profile__desc">
                     {author.description}
                   </p>
-                  <Link class="tag tag--md tag--hover" to={`/blog/${author.slug}`}>
-                    <span class="tag__label"> {author.articles_count} статей </span>
+                  <Link className="tag tag--md tag--hover" to={`/blog/${author.slug}`}>
+                    <span className="tag__label"> {author.articles_count} статей </span>
                   </Link>
                 </div>
               </div>
@@ -161,9 +161,9 @@ const Article = () => {
               <ul class="list list--other-articles">
               {author.author_articles.map((article, index) => (
                 <li class="list__layout ng-star-inserted" key={index}>
-                  <article class="article article--other">
+                  <article class="article article--other not_article">
                     <h3 class="article__title article__title--h3">
-                      <a class="article__title-link" href={`/blog/${author.slug}/${article.slug}`}>
+                      <a class="article__title-link article_a" href={`/blog/${author.slug}/${article.slug}`}>
                       {article.title}
                       </a>
                     </h3>
@@ -181,7 +181,7 @@ const Article = () => {
           <BlogComment/>
           <div class="content__layout content__layout--md">
             <div class="b-card b-card--shadow">
-              <h2 class="content__title"> Может показаться интересным </h2>
+              <h2 class="content__title interesting_title"> Может показаться интересным </h2>
               <BlogItem data={interes} />
             </div>
           </div>

@@ -1,10 +1,8 @@
  <svg
-                            _ngcontent-serverApp-c226=""
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 28 28"
                           >
                             <linearGradient
-                              _ngcontent-serverApp-c226=""
                               x1="0"
                               y1="0"
                               x2="100%"
@@ -12,22 +10,18 @@
                               id="excel"
                             >
                               <stop
-                                _ngcontent-serverApp-c226=""
                                 stop-color="#23BF90"
                                 offset="0"
                               ></stop>
                               <stop
-                                _ngcontent-serverApp-c226=""
                                 stop-color="#2CC58E"
                                 offset="100%"
                               ></stop>
                             </linearGradient>
                             <path
-                              _ngcontent-serverApp-c226=""
                               d="M19.85 3.49h4.671c.651 0 1.179.525 1.179 1.173v18.639c0 .648-.528 1.173-1.179 1.173H19.85V3.49Z"
                             ></path>
                             <path
-                              _ngcontent-serverApp-c226=""
                               d="M3.553 3.33C2.536 3.49 2.3 3.863 2.3 4.823v18.66c0 .533.343 1.066 1.2 1.173l14.196 2.005c.643.127.975-.033.975-.726V1.944c0-.48-.332-.725-.921-.619L3.553 3.33Zm11.625 6.025H12.34l-1.821 2.665-1.875-2.665h-2.84l3.268 4.638-3.268 4.638h2.84l1.848-2.644 1.848 2.644h2.84l-3.268-4.638 3.267-4.638Z"
                               fill-rule="evenodd"
                             ></path>

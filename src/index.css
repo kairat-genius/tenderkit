@@ -1,5 +1,72 @@
 .flag-dropdown {
-  border-radius: 12px !important ;
+  border-radius: 12px !important;
   background-color: rgb(237, 246, 247) !important;
   border: none !important;
+}
+
+@media (max-width: 560px) {
+  .interesting_title {
+    font-size: 28px !important;
+  }
+
+  .comment-button {
+    font-size: 16px !important;
+    padding: 2px 8px !important;
+    height: 40px !important;
+  }
+
+  .copy_link {
+    font-size: 10px;
+  }
+
+  .row_panel_social {
+    display: block!important;
+  }
+}
+
+@media (max-width: 480px) {
+
+.button_login {
+  font-size: 12px!important;
+  height: 28px!important;
+  padding: 2px 16px!important;
+}
+
+.title_login_ad {
+  font-size: 18px!important;
+}
+}
+
+
+
+@media (min-width: 300px) {
+  .article--other {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .article--other:not(.article--mobile) .article__title {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+
+  .article--other:not(.article--mobile) .article__title-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .not_article {
+    background-color: initial!important;
+    border-radius: initial!important;
+    overflow: visible!important;
+    box-shadow: none!important;
+  }
+
+  .article_a:hover {
+    color: var(--color-primary-5)!important;
+  }
+
 }

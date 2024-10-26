@@ -3178,7 +3178,7 @@ strong {
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url(manrope-medium.af23cbe5be55ee44.woff2) format("woff2")
+    src: url(/src/fonts/manrope-medium.woff2) format("woff2")
 }
 
 @font-face {
@@ -3186,7 +3186,7 @@ strong {
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(inter-regular-currency.d08eb56e1d6fb407.woff2) format("woff2");
+    src: url(/src/fonts/inter-regular-currency.woff2) format("woff2");
     unicode-range: U+20B8
 }
 
@@ -3195,7 +3195,7 @@ strong {
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url(inter-bold-currency.7b0b3b9e18c0fcf3.woff2) format("woff2");
+    src: url(/src/fonts/inter-bold-currency.woff2) format("woff2");
     unicode-range: U+20B8
 }
 
@@ -10131,13 +10131,13 @@ strong {
     margin-top: auto
 }
 
-.tile--contact-primary {
+/* .tile--contact-primary {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
     height: 472px;
     background: url(contact.4aa10916b504bb7a.png) 50% 50%
-}
+} */
 
 .tile--contact-primary .tile__container {
     width: 266px
@@ -11725,9 +11725,7 @@ strong {
 }
 
 .tracking {
-
     width: 100%;
-    height: 638px
 }
 
 .tracking__sidebar {
@@ -14294,7 +14292,7 @@ strong {
         height: 100%
     }
 
-    .tile--contact-primary {
+    /* .tile--contact-primary {
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
@@ -14302,7 +14300,7 @@ strong {
         height: 100%;
         padding: 22px 24px;
         background: url(contact.4aa10916b504bb7a.png) 50% 50%
-    }
+    } */
 
     .tile--contact-primary .tile__container {
         display: flex;
@@ -24733,13 +24731,13 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
 }
 
 .slick-loading .slick-list {
-    background: #fff url(ajax-loader.0b80f665935ef7de.gif) center center no-repeat
+    background: #fff url(/src/assets/gif/ajax-loader.gif) center center no-repeat
 }
 
 @font-face {
     font-family: slick;
-    src: url(slick.25572f22d77029da.eot);
-    src: url(slick.25572f22d77029da.eot?#iefix) format("embedded-opentype"),url(/src/fonts/slick.woff) format("woff"),url(slick.6aa1ee46202fac6e.ttf) format("truetype"),url(slick.f895cfdf693e6229.svg#slick) format("svg");
+    src: url(/src/fonts/slick.eot);
+    src: url(/src/fonts/slick.eot?#iefix) format("embedded-opentype"),url(/src/fonts/slick.woff) format("woff"),url(/src/fonts/slick.ttf) format("truetype"),url(/src/assets/slick.svg#slick) format("svg");
     font-weight: 400;
     font-style: normal
 }
@@ -24893,7 +24891,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
     font-family: summernote;
     font-style: normal;
     font-weight: 400;
-    src: url(summernote.0542c0728aedc4d0.eot?#iefix) format("embedded-opentype"),url(summernote.a838752e64c7ba6a.woff2) format("woff2"),url(summernote.68c69f478bacf45b.woff) format("woff"),url(summernote.f82ec6dfa884d980.ttf) format("truetype")
+    src: url(/src/fonts/summernote.eot?#iefix) format("embedded-opentype"),url(/src/fonts/summernote.woff2) format("woff2"),url(/src/fonts/summernote.woff) format("woff"),url(/src/fonts/summernote.ttf) format("truetype")
 }
 
 [class*=" note-icon"]:before,[class^=note-icon]:before {

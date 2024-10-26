@@ -17,8 +17,10 @@ const CabinetLayout = () => {
     ); 
   }
 
-  // Проверяем, является ли текущий маршрут маршрутом Profile
-  const isProfileRoute = location.pathname === '/cabinet/profile'; // При необходимости скорректируйте путь
+  // Проверяем, является ли текущий маршрут
+  const isProfileRoute = location.pathname === '/cabinet/profile'; 
+  const isTrackingRoute = location.pathname === '/cabinet/tracking'; 
+  const isFavoriteRoute = location.pathname === '/cabinet/favorites';
 
   return (
     <div id="elToResetScroll" className="layout__body">
@@ -32,10 +34,14 @@ const CabinetLayout = () => {
                   <CabinetNav />
                 </div>
 
-                {isProfileRoute || data.subscription ? (
-                  <Outlet /> 
+                {isTrackingRoute && data.subscription && data.subscription.tariff.tracking_tenders_access === false ? (
+                  <NoTariff />
+                ) : isFavoriteRoute && data.subscription && data.subscription.tariff.favorite_access === false ? (
+                  <NoTariff />
+                ) : (isProfileRoute || data.subscription) ? (
+                  <Outlet />
                 ) : (
-                  <NoTariff /> 
+                  <NoTariff />
                 )}
               </div>
             </div>

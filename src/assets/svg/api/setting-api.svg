@@ -1,5 +1,5 @@
   <svg
-                            _ngcontent-serverApp-c218=""
+
                             xmlns="http://www.w3.org/2000/svg"
                             width="80"
                             height="80"
@@ -7,12 +7,12 @@
                             class="api__setting"
                           >
                             <path
-                              _ngcontent-serverApp-c218=""
+
                               d="M30.138 5.59a20 20 0 0 1 19.724 0L57.4 9.862l7.47 4.392a20 20 0 0 1 9.861 17.082L74.8 40l-.069 8.664a20 20 0 0 1-9.862 17.082L57.4 70.138l-7.538 4.272a20 20 0 0 1-19.724 0L22.6 70.138l-7.47-4.392A20 20 0 0 1 5.27 48.664L5.2 40l.069-8.664a20 20 0 0 1 9.862-17.082L22.6 9.862l7.538-4.272Z"
                               class="api__setting-back"
                             ></path>
                             <path
-                              _ngcontent-serverApp-c218=""
+
                               stroke="#343A40"
                               stroke-linecap="round"
                               stroke-linejoin="round"
@@ -22,7 +22,7 @@
                               class="api__setting-circle"
                             ></path>
                             <path
-                              _ngcontent-serverApp-c218=""
+
                               stroke="#343A40"
                               stroke-linecap="round"
                               stroke-linejoin="round"

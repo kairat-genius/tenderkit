@@ -90,6 +90,7 @@ const Author = () => {
                 <div class="searchresults searchresults--articles">
                   <FilterBlog setFilterType={setFilterType} setSearchText={setSearchText} handleSearch={handleSearch}/>
                   <BlogItem data={data}/>
+                  {totalPages > 1 && (
                   <div class="searchresults__layout">
                   <Pagination 
                     currentPage={currentPage}
@@ -97,6 +98,7 @@ const Author = () => {
                     onPageChange={handlePageChange}
                   />
                   </div>
+                )}
                 </div>
               </div>
             </div>

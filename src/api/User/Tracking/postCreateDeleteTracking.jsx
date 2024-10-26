@@ -14,7 +14,13 @@ export const postCreateDeleteTracking = async ({ lotSlug }) => {
     });
 
     if (response.status === 200) {
-      toast.success('Лот добавлен');
+      const message = response.data.message || 'Успешно обновлено'; 
+      toast.success(message);
+    }
+
+    if (response.status === 201) {
+      const message = response.data.message || 'Успешно добавлен'; 
+      toast.success(message);
     }
   } catch (error) {
     toast.error('Ошибка при обновлении отслеживаний');

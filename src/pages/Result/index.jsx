@@ -36,7 +36,7 @@ const Result = () => {
     if (selectAll) {
       setSelectedLots([]); // Снимаем выделение со всех лотов
     } else {
-      setSelectedLots(data.map((lot) => lot.lotNumber)); // Выбираем все лоты
+      setSelectedLots(data.map((lot) => lot.slug)); // Выбираем все лоты
     }
     setSelectAll(!selectAll); // Переключаем состояние "выбрать все"
   };
@@ -146,18 +146,18 @@ const Result = () => {
               <div className="container">
                 <ul className="searchresults__list">
                   {data.map((lot) => (
-                    <li className="searchresults__item ng-star-inserted" key={lot.lotNumber}>
+                    <li className="searchresults__item ng-star-inserted" key={lot.slug}>
                       <LotList 
                         lot={lot}
-                        checked={selectedLots.includes(lot.lotNumber)} 
-                        onChange={() => handleSelectLot(lot.lotNumber)} 
+                        checked={selectedLots.includes(lot.slug)} 
+                        onChange={() => handleSelectLot(lot.slug)} 
                       />
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            {data.length > 19 && (
+            {totalPages > 1 && (
               <div className="searchresults__layout searchresults__layout--sm">
                 <div className="container">
                   <Pagination 

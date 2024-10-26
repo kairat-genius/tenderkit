@@ -13,16 +13,6 @@ const Tracking = () => {
   // Флаг, определяющий, какие данные запрашивать
   const history = activeTab === 'history';
 
-  const fetchTrackingData = () => {
-    getListTracking({
-      setData: (fetchedData) => setData((prev) => ({ ...prev, [activeTab]: fetchedData })),
-      setCount: (fetchedCount) => setCount((prev) => ({ ...prev, [activeTab]: fetchedCount })),
-      currentPage,
-      history
-    });
-    setCacheLoaded((prev) => ({ ...prev, [activeTab]: true }));
-  };
-
   useEffect(() => {
     if (!cacheLoaded[activeTab]) {
       getListTracking({
@@ -98,7 +88,7 @@ const Tracking = () => {
           </div>
          
         </div>
-        {data.length > 20 && (
+        {totalPages > 1 && (
         <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
       )}
       </div>

@@ -31,6 +31,9 @@ export {default as Phone} from './Phone'
 // sort
 export { default as SortLots} from './SortLots'
 
+// заказать тариф
+export {default as OrderTariff} from './OrderTariff'
+
 // нет тарифа
 
 export {default as NoTariff} from './NoTariff'

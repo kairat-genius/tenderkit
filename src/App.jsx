@@ -18,9 +18,10 @@ const Regions = lazy(() => import("../src/pages/Regions"));
 const Areas = lazy(() => import("../src/pages/Areas"));
 const Result = lazy(() => import("../src/pages/Result"));
 const Tariffs = lazy(() => import("../src/pages/Tariffs"));
-
 const Detail = lazy(() => import("../src/pages/Detail"));
 
+const UserAgreement = lazy(() => import("../src/pages/LegalAspect/UserAgreement"));
+const PrivacyPolicy = lazy(() => import("../src/pages/LegalAspect/PrivacyPolicy"));
 // blog
 const BlogLayout = lazy(() => import("../src/pages/Blog"));
 const BlogList = lazy(() => import("../src/pages/Blog/BlogList"));
@@ -64,6 +65,8 @@ const Root = () => {
           <Route path={url.Result.path} element={<Result />} />
           <Route path={url.Tariffs.path} element={<Tariffs />} />
           <Route path={url.Detail.path} element={<Detail/>}/>
+          <Route path={url.PrivacyPolicy.path} element={<PrivacyPolicy/>}/>
+          <Route path={url.UserAgreement.path} element={<UserAgreement/>}/>
           </Route>
 
           <Route path="/blog" element={<BlogLayout/>}>

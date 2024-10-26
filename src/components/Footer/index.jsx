@@ -138,8 +138,7 @@ const Footer = () => {
                     class="footer__link"
                     href="/popular-tender-categories"
                   >
-                    {" "}
-                    Самые популярные категории тендеров{" "}
+                    Самые популярные категории тендеров
                   </a>
                 </li>
                 <li class="footer__item">
@@ -148,14 +147,12 @@ const Footer = () => {
                     class="footer__link"
                     href="/about-us"
                   >
-                    {" "}
-                    О нас{" "}
+                    О нас
                   </a>
                 </li>
                 <li class="footer__item">
                   <a routerlink="/sitemap" class="footer__link" href="/sitemap">
-                    {" "}
-                    Карта сайта{" "}
+                    Карта сайта
                   </a>
                 </li>
                 <li class="footer__item">
@@ -164,36 +161,30 @@ const Footer = () => {
                     class="footer__link"
                     href="/instruction"
                   >
-                    {" "}
-                    Инструкция{" "}
+                    Инструкция
                   </a>
                 </li>
                 <li class="footer__item">
                   <a routerlink="/faq" class="footer__link" href="/faq">
-                    {" "}
-                    FAQ{" "}
+                    FAQ
                   </a>
                 </li>
               </ul>
               <ul class="footer__list">
                 <li class="footer__item">
                   <a
-                    routerlink="/agreement"
                     class="footer__link"
-                    href="/agreement"
+                    href="/user-agreement"
                   >
-                    {" "}
-                    Пользовательское соглашение{" "}
+                    Пользовательское соглашение
                   </a>
                 </li>
                 <li class="footer__item">
                   <a
-                    routerlink="/privacy-policy"
                     class="footer__link"
                     href="/privacy-policy"
                   >
-                    {" "}
-                    Политика конфиденциальности{" "}
+                    Политика конфиденциальности
                   </a>
                 </li>
                 <li class="footer__item">
@@ -201,8 +192,7 @@ const Footer = () => {
                     href="/Публичная%20оферта%20тариф%20Стандарт.pdf"
                     class="footer__link"
                   >
-                    {" "}
-                    Публичная оферта{" "}
+                    Публичная оферта
                   </a>
                 </li>
               </ul>

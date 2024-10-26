@@ -22,17 +22,23 @@ const TrackingItem = ({ history, lot, onMoveToHistory, onMoveToActive }) => {
   return (
     <div class="tracking-sidebar__layout ng-star-inserted">
       <a href={`/lot/${lot.slug}`} className="sr-item__name ng-star-inserted">
+      {lot.title && (
         <h3 class="tracking-sidebar__title"> {lot.title} </h3>
+      )}
         <div class="tracking-sidebar__body">
           <dd class="description-list description-list--inline">
+          {lot.lotNumber && (
             <div class="description-list__layout">
               <dt class="description-list__key"> № Лота: </dt>
               <dd class="description-list__value"> {lot.lotNumber} </dd>
             </div>
+          )}
+           {lot.status && (
             <div class="description-list__layout">
               <dt class="description-list__key"> Статус: </dt>
               <dd class="description-list__value"> {lot.status} </dd>
             </div>
+           )}
           </dd>
         </div>
       </a>

@@ -38,25 +38,16 @@ export const BLOG_LIST_TAG = CONCATE + 'blog/article/list/tag/';
 export const BLOG_AUTHOR = (slug) => CONCATE + `blog/author/${slug}/`;
 
 export const BLOG_AUTHOR_ABOUT = (slug, author_slug) => CONCATE + `blog/about/author/${author_slug}/article/${slug}/`;
-// // настройки рассылки
-// export const SETTINGS_GET = USER_PROFILE  + 'settings/';
-// export const SETTINGS_POST = USER_PROFILE  + 'settings/add/keywords/';
-// export const SETTINGS_DELETE = USER_PROFILE  + 'settings/delete/keywords/';
-// export const SETTINGS_ENABLE_DISABLE = USER_PROFILE  + 'settings/distribution/';
+
 
 // тариф
 export const TARIFFS_GET = CONCATE + 'tariff/list/';
-// export const TARIFFS_POST = CONCATE + 'tariff/add/application/';
+export const TARIFFS_POST = CONCATE + 'create/application/';
 
-// export const LOT_LIST_GET = CONCATE + 'GetLots';
-// export const LOT_DETAIL = (slug) => 
-//     CONCATE + `GetDetailLot/${slug}/`;
+
 
 export const LOT_LIST = CONCATE + 'list/lots/';
-// export const LOT_FAVORITES_DELETE_ADD = CONCATE + 'lot/favorite/add-delete/';
 
-// export const LOT_COMMENTS = (slug) => 
-//    CONCATE + `lot/${slug}/comments/`;
 
 
 

@@ -53,13 +53,15 @@ const BlogList = () => {
                 <div class="searchresults searchresults--articles">
                   <FilterBlog setFilterType={setFilterType} setSearchText={setSearchText} handleSearch={handleSearch}/>
                   <BlogItem data={data} />
-                  <div class="searchresults__layout">
+                  {totalPages > 1 && (
+                  <div class="searchresults__layout">   
                     <Pagination
                       currentPage={currentPage}
                       totalPages={totalPages}
                       onPageChange={handlePageChange}
                     />
                   </div>
+                   )}
                 </div>
               </div>
             </div>
