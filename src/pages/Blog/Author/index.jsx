@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef } from "react";
 import {Aside, Pagination, FilterBlog, BlogItem} from "../../../components"
 import { getBlogAuthor } from "../../../api/Blog/getBlogAuthor";
 import { useParams } from "react-router-dom";
@@ -15,7 +15,7 @@ const Author = () => {
   const [filterType, setFilterType] = useState("title");
   const [searchText, setSearchText] = useState("");
   const [selectedTag, setSelectedTag] = useState(null);
-
+  const blogListRef = useRef(null);
 
   useEffect(() => {
     if (author_slug) {
@@ -46,13 +46,17 @@ const Author = () => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
     }
+
+    if (blogListRef.current) {
+      blogListRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
 
   return (
     <div class="container">
     <Breadcrumb urls={author.fullname}/>
-      <div class="content__layout content__layout--md">
+      <div class="content__layout content__layout--md" ref={blogListRef}>
         <div class="b-card b-card--shadow">
           <div class="profile profile--index">
             <div class="profile__avatar avatar">

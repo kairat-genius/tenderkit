@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Aside,
   OnTrend,
@@ -19,6 +19,7 @@ const BlogList = () => {
   const [filterType, setFilterType] = useState("title");
   const [searchText, setSearchText] = useState("");
   const [selectedTag, setSelectedTag] = useState(null);
+  const blogListRef = useRef(null);
   useEffect(() => {
     getBlogListTag({ setTags });
   }, []);
@@ -37,20 +38,24 @@ const BlogList = () => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
     }
+
+    if (blogListRef.current) {
+      blogListRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
     <div class="container">
     <Breadcrumb />
       <OnTrend />
-      <section id="articles-layout" className="content__layout">
+      <section id="articles-layout" className="content__layout" ref={blogListRef}>
         <h2 class="content__title"> Все статьи </h2>
         <div class="columns">
           <Aside tags={tags} setSelectedTag={setSelectedTag}/>
           <div class="columns__content">
             <div class="content__layout content__layout--md">
               <div class="b-card b-card--shadow">
-                <div class="searchresults searchresults--articles">
+                <div class="searchresults searchresults--articles" >
                   <FilterBlog setFilterType={setFilterType} setSearchText={setSearchText} handleSearch={handleSearch}/>
                   <BlogItem data={data} />
                   {totalPages > 1 && (

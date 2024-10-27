@@ -17,7 +17,7 @@ const Article = () => {
   const [data, setData] = useState([]);
   const [author, setAuthor] = useState({ author_articles: [] });
   const [interes, setInteres] = useState([])
-
+  const [isCopied, setIsCopied] = useState(false);
   useEffect(() => {
     if (slug) {
       getBlogArticle(setData, slug); 
@@ -39,6 +39,11 @@ const Article = () => {
   }
 
   const content = data?.content?.replace(/\r?\n|\r/g, '') || '';
+
+  const handleCopyLink = () => {
+      navigator.clipboard.writeText(`https://tenderkit.kz/blog/${author_slug}/${slug}`);
+      setIsCopied(true);
+  };
 
   return (
     <div class="container">
@@ -66,26 +71,26 @@ const Article = () => {
                   <div class="panel__layout panel__layout--rtl">
                     <ul class="list-row">
                       <li class="list-row__layout">
-                        <a target="_blank" title="Поделиться в Twitter"  class="button button--share" href={`https://twitter.com/intent/tweet?text=${data.title} - Блог Tenderkit.kz&amp;url=https://tenderkit.kz/blog/article/${slug}`}>
+                        <a target="_blank" title="Поделиться в Twitter"  class="button button--share" href={`https://twitter.com/intent/tweet?text=${data.title} - Блог Tenderkit.kz&amp;url=https://tenderkit.kz/blog/${author_slug}/${slug}`}>
                           <span class="button__icon icon">
                             <Twitter class="icon__svg"/>
                           </span>
                         </a>
                       </li>
                       <li class="list-row__layout">
-                        <a target="_blank" title="Поделиться ВКонтакте" class="button button--share" href={`http://vk.com/share.php?url=https://tenderkit.kz/blog/article/${slug}&amp;title=${data.title} - Блог Tenderkit.kz`}>
+                        <a target="_blank" title="Поделиться ВКонтакте" class="button button--share" href={`http://vk.com/share.php?url=https://tenderkit.kz/blog/${author_slug}/${slug}&amp;title=${data.title} - Блог Tenderkit.kz`}>
                           <span class="button__icon icon">
                             <Vk class="icon__svg"/>
                           </span>
                         </a>
                       </li>
                       <li class="list-row__layout">
-                        <button type="button" class="button button--share">
+                        <button type="button" class="button button--share" onClick={handleCopyLink}>
                           <span class="button__icon button__icon--before icon">
                             <IconLink class="icon__svg"/>
                           </span>
                           <span class="ng-star-inserted copy_link">
-                            Копировать ссылку
+                          {isCopied ? "Скопировано" : "Копировать ссылку"}
                           </span>
                         </button>
                       </li>
@@ -110,14 +115,14 @@ const Article = () => {
                   <span class="article__share"> Поделиться в соцсетях: </span>
                   <ul class="list-row">
                   <li class="list-row__layout">
-                        <a target="_blank" title="Поделиться в Twitter"  class="button button--share" href={`https://twitter.com/intent/tweet?text=${data.title} - Блог Tenderkit.kz&amp;url=https://tenderkit.kz/blog/article/${slug}`}>
+                        <a target="_blank" title="Поделиться в Twitter"  class="button button--share" href={`https://twitter.com/intent/tweet?text=${data.title} - Блог Tenderkit.kz&amp;url=https://tenderkit.kz/blog/${author_slug}/${slug}`}>
                           <span class="button__icon icon">
                             <Twitter class="icon__svg"/>
                           </span>
                         </a>
                       </li>
                       <li class="list-row__layout">
-                        <a target="_blank" title="Поделиться ВКонтакте" class="button button--share" href={`http://vk.com/share.php?url=https://tenderkit.kz/blog/article/${slug}&amp;title=${data.title} - Блог Tenderkit.kz`}>
+                        <a target="_blank" title="Поделиться ВКонтакте" class="button button--share" href={`http://vk.com/share.php?url=https://tenderkit.kz/blog/${author_slug}/${slug}&amp;title=${data.title} - Блог Tenderkit.kz`}>
                           <span class="button__icon icon">
                             <Vk class="icon__svg"/>
                           </span>

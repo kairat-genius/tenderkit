@@ -56,7 +56,7 @@ const closeModal = () => {
                 </section>
               </div>
        
-              {isMobile &&<TariffsModile tariffs={datatariffs}/>}
+              {isMobile &&<TariffsModile tariffs={datatariffs} openModal={openModal}/>}
             </div>
           </div>
         </main>

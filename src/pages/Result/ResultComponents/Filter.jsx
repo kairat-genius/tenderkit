@@ -9,12 +9,12 @@ import { ReactComponent as IconFilter } from "../../../assets/svg/pointer/filter
 import {
   SearchBox,
   Calendar,
-  MultiSelect,
   FilterFooter,
   PriceFilter,
   MultiSelectClean
 } from "../../../components/Filter";
 import Breadcrumb from "../../../components/Breadcrumb";
+import MultiSelectResult from "./MultiSelectResult"
 
 const tenderSubjectTypesOptions = [
   { id: "GOODS", label: "Товар" },
@@ -56,38 +56,7 @@ const Filter = () => {
             <SearchBox />
             {isFilterVisible && (
             <search-filter class="filter__body ng-star-inserted">
-              <div class="filter__layout">
-                <div class="field-group">
-                  <div class="field-group__section">
-                    <MultiSelect
-                      filterName="tenderTypes"
-                      label="Вид закупок"
-                      options={tenderTypesOptions}
-                      selectedCount={1}
-                    />
-                    <MultiSelect
-                      filterName="tenderSubjectTypes"
-                      label="Предмет закупок"
-                      options={tenderSubjectTypesOptions}
-                      selectedCount={0}
-                    />
-                  </div>
-                  <div class="field-group__section">
-                    <MultiSelect
-                      filterName="tenderTypes"
-                      label="Вид закупок"
-                      options={tenderTypesOptions}
-                      selectedCount={1}
-                    />
-                    <MultiSelect
-                      filterName="tenderSubjectTypes"
-                      label="Предмет закупок"
-                      options={tenderSubjectTypesOptions}
-                      selectedCount={0}
-                    />
-                  </div>
-                </div>
-              </div>
+              <MultiSelectResult />
               <div class="filter__layout">
                 <div class="field-group">
                   <div class="field-group__section">

@@ -4,7 +4,7 @@ import textData from "./tariffs.json";
 import { ReactComponent as Chevronright } from "../../../assets/svg/pointer/chevronright.svg";
 import { ReactComponent as Check } from "../../../assets/svg/icon/check.svg";
 
-const TariffsModile = ({ tariffs }) => {
+const TariffsModile = ({ tariffs, openModal }) => {
   const [openTariffId, setOpenTariffId] = useState(null); 
 
   const handleToggle = (id) => {
@@ -66,7 +66,7 @@ const TariffsModile = ({ tariffs }) => {
                       </div>
                       <div class="button-group button-group--tariff-buy" style={{ width: "100px", margin: "0 auto" }}>
                         <div class="button-group__layout">
-                          <button type="button" class="button button--primary tariff-abtest__m-buy">
+                          <button type="button" class="button button--primary tariff-abtest__m-buy" onClick={() => openModal(tariff.id, tariff.name)}>
                             Купить
                           </button>
                         </div>

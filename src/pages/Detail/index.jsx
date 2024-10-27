@@ -178,7 +178,7 @@ const Detail = () => {
                     </h3>
                     <div class="page-lot__list ng-star-inserted">
                       <div class="page-lot__list-item ng-star-inserted">
-                          <LotList />
+                          {/* <LotList /> */}
                       </div>
                     </div>
                   </div>

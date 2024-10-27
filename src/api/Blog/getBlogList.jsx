@@ -3,7 +3,7 @@ import {BLOG_LIST, accessToken} from "../../Fetch/settings"
 
 
 
-export const getBlogList = ({ setData, setCount, currentPage, slug, filterType, searchText, tag }) => {
+export const getBlogList = ({ setData, setCount, currentPage, author_slug, filterType, searchText, tag }) => {
     const headers = accessToken ? { 'Authorization': `JWT ${accessToken}` } : {};
 
     // Создаем объект URLSearchParams
@@ -13,7 +13,7 @@ export const getBlogList = ({ setData, setCount, currentPage, slug, filterType, 
     if (searchText) params.append('search', searchText);
     if (filterType) params.append('search_by', filterType);
     if (tag) params.append('tag', typeof tag === 'string' ? tag : tag?.name);
-    if (slug) params.append('author', slug);
+    if (author_slug) params.append('author', author_slug);
 
     // Формируем URL с параметрами
     const url = `${BLOG_LIST}?${params.toString()}`;

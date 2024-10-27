@@ -2,8 +2,7 @@ import React from "react";
 import { ReactComponent as Eye } from "../../assets/svg/pointer/eye.svg";
 import { ReactComponent as Message } from "../../assets/svg/icon/message.svg";
 import { Link } from "react-router-dom";
-import { formatDateMonth, formatMinutes } from "../../hooks/LotUtils";
-import parse from "html-react-parser";
+import { formatDateMonth } from "../../hooks/LotUtils";
 
 const BlogItem = ({ data }) => {
   return (
@@ -47,7 +46,7 @@ const BlogItem = ({ data }) => {
                     </a>
                   </h3>
                   <p className="article-card__desc highlight">
-                    {parse(blog.content)}...
+                  {blog.content}...
                   </p>
                   <div className="article-card__footer">
                     <ul className="article-card__meta">

@@ -44,8 +44,9 @@ export const BLOG_AUTHOR_ABOUT = (slug, author_slug) => CONCATE + `blog/about/au
 export const TARIFFS_GET = CONCATE + 'tariff/list/';
 export const TARIFFS_POST = CONCATE + 'create/application/';
 
-
-
+// фильтр
+export const DELIVERY_REGION = CONCATE + 'list/deliveryRegion/';
+export const SOURCE = CONCATE + 'list/source/';
 export const LOT_LIST = CONCATE + 'list/lots/';
 
 
