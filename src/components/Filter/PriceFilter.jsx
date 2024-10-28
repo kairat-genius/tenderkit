@@ -1,6 +1,6 @@
 import React from "react";
 
-const PriceFilter = ({ name, placeholder, label }) => {
+const PriceFilter = ({ name, placeholder, label, value, onChange }) => {
   return (
     <div class="field-group__layout">
       <form
@@ -17,6 +17,8 @@ const PriceFilter = ({ name, placeholder, label }) => {
           name={name}
           class="inputfield__input input ng-untouched ng-pristine ng-valid"
           placeholder={placeholder}
+          value={value}
+      onChange={(e) => onChange(e.target.value)}
         />
         <label class="inputfield__label">{label}</label>
       </form>

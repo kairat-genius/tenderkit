@@ -4,28 +4,36 @@ import "react-day-picker/dist/style.css";
 import OutsideClickHandler from "react-outside-click-handler";
 import { ru } from "date-fns/locale";
 import "./Calendar.css";
-
+import { format } from "date-fns";
 // svg
 import { ReactComponent as IconCalendar } from "../../assets/svg/icon/calendar.svg";
 
-const Calendar = ({ label }) => {
-  const [selected, setSelected] = useState(null);
+const Calendar = ({ label, value, onChange }) => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [displayValue, setDisplayValue] = useState(value ? format(new Date(value), "dd.MM.yyyy") : ""); // Отображаемая дата
 
   const toggleCalendar = () => {
-    setIsCalendarOpen(!isCalendarOpen); 
+    setIsCalendarOpen((prev) => !prev); // Переключаем состояние календаря
   };
 
   const handleDaySelect = (day) => {
-    setSelected(day); 
-    setIsCalendarOpen(false); 
+    if (day) {
+      const formattedDateForDisplay = format(day, "dd.MM.yyyy"); // Формат для отображения
+      const formattedDateForRequest = format(day, "yyyy-MM-dd"); // Формат для отправки
+      setDisplayValue(formattedDateForDisplay); // Устанавливаем дату для отображения
+      onChange(formattedDateForRequest); // Отправляем дату в нужном формате
+      setIsCalendarOpen(false); // Закрываем календарь после выбора даты
+    } else {
+      setDisplayValue(""); // Очищаем дату для отображения
+      onChange(null); // Очищаем значение для отправки
+    }
   };
 
   const handleClear = () => {
-    setSelected(null);
+    setDisplayValue("");
+    onChange(null);
     setIsCalendarOpen(false); 
   };
-
 
   return (
     <div
@@ -33,22 +41,16 @@ const Calendar = ({ label }) => {
       hours="00:01:00"
       className="field-group__layout parent_position"
     >
-      <form noValidate
-        autoComplete="off"
-        className="classNumber983 inputfield inputfield--suffix ng-untouched ng-pristine ng-valid"
-        onClick={toggleCalendar}
-      >
+      <form noValidate autoComplete="off" className="classNumber983 inputfield inputfield--suffix ng-untouched ng-pristine ng-valid">
         <input
           className="calendar-no-class inputfield__input input classNumber983"
           placeholder={label}
-          onClick={toggleCalendar}
-          value={selected ? selected.toLocaleDateString('ru-RU') : ""}
+          value={displayValue}
+          readOnly // Делаем поле только для чтения
+          onClick={toggleCalendar} // Открываем календарь при клике
         />
-        <label className="inputfield__label classNumber983">{label}</label>
-        <div
-          className="inputfield__suffix className983"
-          onClick={toggleCalendar}
-        >
+        <label className="inputfield__label className983">{label}</label>
+        <div className="inputfield__suffix className983" onClick={toggleCalendar}>
           <span className="inputfield__icon icon className983">
             <IconCalendar className="icon__svg className983" />
           </span>
@@ -58,14 +60,14 @@ const Calendar = ({ label }) => {
             <div className="calendar-filter">
               <DayPicker
                 mode="single"
-                selected={selected}
-                onSelect={handleDaySelect}
+                selected={value ? new Date(value) : undefined}
+                onSelect={handleDaySelect} // Обработчик выбора дня
                 locale={ru}
                 className="DayPicker"
               />
-              <div class="modal__header classNumber658">
-                <div class="modal__title classNumber658"></div>
-                <div class="modal__close classNumber658" onClick={handleClear}></div>
+              <div className="modal__header classNumber658">
+                <div className="modal__title classNumber658"></div>
+                <div className="modal__close classNumber658" onClick={handleClear}></div>
               </div>
             </div>
           </OutsideClickHandler>

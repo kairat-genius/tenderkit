@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { ReactComponent as Angleup } from "../../../assets/svg/pointer/arrows/angleup.svg";
 
-const Documents = () => {
+const Documents = ({allDocuments}) => {
     const [isDocsVisible, setDocsVisible] = useState(false);
 
     const toggleDocsVisibility = () => {
@@ -18,10 +18,14 @@ const Documents = () => {
       </div>
     </div>
     {isDocsVisible && (
-      <div class="lot__sidebar-layout ng-star-inserted">
-        <a target="_blank" class="lot__link link link--default ng-star-inserted" href="https://v3bl.goszakup.gov.kz/files/download_file/202079016/" type="pdf">
-         techspec_9992557_25988844.pdf </a>
+      <>
+       {allDocuments.map((doc, index) => (
+      <div class="lot__sidebar-layout ng-star-inserted" key={index}>
+        <a target="_blank" class="lot__link link link--default ng-star-inserted" href={doc.url} type="pdf">
+         {doc.fileName} </a>
         </div>
+      ))}
+        </>
       )}
   </div>
   );

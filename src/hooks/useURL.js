@@ -1,7 +1,7 @@
 export const useURL = () => {
     return {
 
-      Detail: { name: 'Detail', path: '/lot/:slug'},
+      Detail: { name: 'Detail', path: '/result/:slug'},
       PrivacyPolicy: { name: 'PrivacyPolicy', path: '/privacy-policy'},
       UserAgreement: { name: 'UserAgreement', path: '/user-agreement'},
       AboutService: { name: 'AboutService', path: '/about-service'},

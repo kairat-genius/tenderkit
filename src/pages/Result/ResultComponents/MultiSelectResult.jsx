@@ -1,25 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {getPurchaseType, getSubjectType, getStatus, getSource} from "../../../api/Lots/Filter"
 
 // components Result MultiSelectResult
-import {
-  MultiSelect,
-} from "../../../components/Filter";
+import { MultiSelect,} from "../../../components/Filter";
 
-
-const tenderSubjectTypesOptions = [
-  { id: "GOODS", label: "Товар" },
-  { id: "WORKS", label: "Работа" },
-  { id: "SERVICES", label: "Услуга" },
-];
-
-const tenderTypesOptions = [
-  { id: "OT", label: "Тендеры и конкурсы" },
-  { id: "CP", label: "Запрос ценовых предложений" },
-  { id: "IO", label: "Из одного источника" },
-  { id: "SP", label: "Особый порядок" },
-];
-
-const MultiSelectResult = () => {
+const MultiSelectResult = ({filters, handleFilterChange}) => {
+  const [PurchaseType, setPurchaseType] = useState([])
+  const [SubjectType, setSubjectType] = useState([])
+  const [Status, setStatus] = useState([])
+  const [Source, setSource] = useState([])
+  useEffect(() => {
+    getPurchaseType(setPurchaseType);
+    getSubjectType(setSubjectType);
+    getStatus(setStatus);
+    getSource(setSource)
+  }, []);
   return (
               <div class="filter__layout">
                 <div class="field-group">
@@ -27,29 +22,33 @@ const MultiSelectResult = () => {
                     <MultiSelect
                       filterName="tenderTypes"
                       label="Вид закупок"
-                      options={tenderTypesOptions}
-                      selectedCount={1}
+                      options={PurchaseType}
+                      value={filters.purchaseType || []}
+                     onChange={(value) => handleFilterChange("purchaseType", value)}
                     />
                     <MultiSelect
                       filterName="tenderSubjectTypes"
                       label="Предмет закупок"
-                      options={tenderSubjectTypesOptions}
-                      selectedCount={0}
+                      options={SubjectType}
+                      value={filters.tenderSubjectType || []}
+                     onChange={(value) => handleFilterChange("tenderSubjectType", value)}
                     />
                   </div>
                   <div class="field-group__section">
                     <MultiSelect
                       filterName="tenderTypes"
-                      label="Вид закупок"
-                      options={tenderTypesOptions}
-                      selectedCount={1}
+                      label="Статус"
+                      options={Status}
+                      value={filters.status || []}
+                      onChange={(value) => handleFilterChange("status", value)}
                     />
                     <MultiSelect
                       filterName="tenderSubjectTypes"
-                      label="Предмет закупок"
-                      options={tenderSubjectTypesOptions}
-                      selectedCount={0}
-                    />
+                      label="Вид заказчика"
+                      options={Source}
+                      value={filters.source || []}
+                     onChange={(value) => handleFilterChange("source", value)}
+                  />
                   </div>
                 </div>
               </div>

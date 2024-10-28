@@ -14,9 +14,12 @@ export { default as FilterBlog} from './Blog/FilterBlog';
 export { default as BlogItem} from './Blog/BlogItem';
 export { default as BlogComment} from './Blog/BlogComment';
 export { default as TrackingItem} from './Tracking/TrackingItem';
+export { default as OrganizerModal} from './OrganizerModal';
+
 
 export { default as LotInfo} from './Detail/LotInfo'
 export { default as Documents} from './Detail/Documents'
+export {default as LotActionsDetail} from './Detail/LotActionsDetail'
 
 export { default as LotList} from './LotList'
 export { default as Share} from './Share'

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import * as XLSX from "xlsx"; // Import xlsx
 // svg
 import { ReactComponent as Xls } from "../../assets/svg/document/xls.svg";
@@ -17,17 +17,69 @@ const Result = () => {
   const [selectAll, setSelectAll] = useState(false); 
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 20;
+  const [fetchTrigger, setFetchTrigger] = useState(false);
+  const ListRef = useRef(null);
+  const [filters, setFilters] = useState({
+    // дате завершения
+    endDate_from: "",
+    endDate_to: "",
+    // дате начала
+    startDate_from: "",
+    startDate_to: "",
+
+    lotNumber: "",
+    organizer: [],
+    purchaseType: [],
+    deliveryRegion: [],
+    // Поиск по заголовку или коду.
+    search: "",
+    source: [],
+    status: [],
+    tenderSubjectType: [],
+
+    // цена
+    totalPrice_from: "",
+    totalPrice_to: "",
+
+  });
 
   useEffect(() => {
-    getListLots({ setData, setCount, currentPage });
-  }, [currentPage]);
+    // Load default filter data from localStorage
+    const filterData = JSON.parse(localStorage.getItem("Filter")) || {};
+    const defaultRegionIds = filterData.regionIds || [];
+    const defaultSourceIds = filterData.sourceIds || [];
+
+    // Set the initial state for filters with regionIds and sourceIds
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      deliveryRegion: defaultRegionIds,
+      source: defaultSourceIds,
+    }));
+  }, []);
+
+  console.log(filters.deliveryRegion)
+
+
+  const itemsPerPage = 20;
+  const offset = itemsPerPage * (currentPage -1)
+
+  useEffect(() => {
+      getListLots({ setData, setCount, offset, filters });
+  }, [currentPage, fetchTrigger]);
+
+  const handleButtonClick = () => {
+    setFetchTrigger((prev) => !prev); 
+  };
 
   const totalPages = Math.ceil(count / itemsPerPage); // общее количество страниц
 
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
+    }
+
+    if (ListRef.current) {
+      ListRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -45,10 +97,8 @@ const Result = () => {
   const handleSelectLot = (id) => {
     setSelectedLots((prevSelectedLots) => {
       if (prevSelectedLots.includes(id)) {
-        // Убираем лот из выбранных
         return prevSelectedLots.filter((lotId) => lotId !== id);
       } else {
-        // Добавляем лот в выбранные
         return [...prevSelectedLots, id];
       }
     });
@@ -56,7 +106,7 @@ const Result = () => {
 
    // Функция для генерации XML файла
    const downloadSelectedLots = () => {
-    const selectedData = data.filter((lot) => selectedLots.includes(lot.lotNumber));
+    const selectedData = data.filter((lot) => selectedLots.includes(lot.slug));
 
     const worksheet = XLSX.utils.json_to_sheet(selectedData.map(lot => ({
       LotNumber: lot.lotNumber,
@@ -77,8 +127,8 @@ const Result = () => {
   return (
     <main className="ng-star-inserted">
       <div className="content">
-        <Filter />
-        <div id="top_layout" className="content__block content__block--search content__block--theme-secondary">
+        <Filter setFilters={setFilters} filters={filters} handleButtonClick={handleButtonClick}/>
+        <div id="top_layout" className="content__block content__block--search content__block--theme-secondary" ref={ListRef}>
           <div className="searchresults">
             <div className="searchresults__layout searchresults__layout--sm">
               <div className="container">
@@ -151,6 +201,7 @@ const Result = () => {
                         lot={lot}
                         checked={selectedLots.includes(lot.slug)} 
                         onChange={() => handleSelectLot(lot.slug)} 
+                        chekbox={true}
                       />
                     </li>
                   ))}

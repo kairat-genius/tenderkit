@@ -17,8 +17,7 @@ const Home = () => {
               в&nbsp;одном месте
             </h1>
             <a href="" class="hero__onboarding">
-              {" "}
-              Нужна помощь с поиском?{" "}
+              Нужна помощь с поиском?
             </a>
             <area-panel hidden="">
               <div class="hero__search-options ng-star-inserted">
@@ -42,8 +41,7 @@ const Home = () => {
                     />
                     <div class="checkbox__check"></div>
                     <label class="checkbox__label">
-                      {" "}
-                      Государственные закупки{" "}
+                      Государственные закупки
                     </label>
                   </div>
                 </div>
@@ -102,14 +100,12 @@ const Home = () => {
               <div class="hero__searchbar-layout hero__searchbar-layout--input">
                <MultiSearch />
                </div>
-
-                <DeliveryLocation />
                 <button
                   class="hero__searchbar-button button button--primary ng-star-inserted"
                   id="poisk"
+                  style={{width: "200px"}}
                 >
-                  {" "}
-                  Поиск{" "}
+                  Поиск
                 </button>
               </div>
             </search-box>
@@ -117,20 +113,17 @@ const Home = () => {
               <dt class="hero__dt"> Поиск по: </dt>
               <dd class="hero__dd">
                 <a routerlink="plans" class="hero__link" href="/plans">
-                  {" "}
-                  планам,{" "}
+                  планам,
                 </a>
               </dd>
               <dd class="hero__dd">
                 <a routerlink="result" class="hero__link" href="/result">
-                  {" "}
-                  закупкам,{" "}
+                  закупкам,
                 </a>
               </dd>
               <dd class="hero__dd">
                 <a routerlink="contracts" class="hero__link" href="/contracts">
-                  {" "}
-                  договорам{" "}
+                  договорам
                 </a>
               </dd>
             </dl>

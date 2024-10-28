@@ -1,45 +1,45 @@
 import React from "react";
 import { formatPurchaseType } from "../../hooks/LotUtils";
-import { Link } from "react-router-dom";
 
 import DateTime from "./DateTime";
 import LotActions from "./LotActions";
 
-const LotList = ({ lot, checked, onChange }) => {
+const LotList = ({ lot, checked, onChange, chekbox }) => {
   return (
     <div className={`sr-item ${checked ? "sr-item--selected" : ""}`}>
       <div class="sr-item__container">
-        <div class="sr-item__before ng-star-inserted">
-          <label class="checkbox checkbox--default">
-            <input
-              type="checkbox"
-              class="checkbox__control"
-              checked={checked}
-              onChange={onChange}
-            />
-            <span class="checkbox__check"></span>
-          </label>
-        </div>
+        {chekbox && (
+          <div class="sr-item__before ng-star-inserted">
+            <label class="checkbox checkbox--default">
+              <input
+                type="checkbox"
+                class="checkbox__control"
+                checked={checked}
+                onChange={onChange}
+              />
+              <span class="checkbox__check"></span>
+            </label>
+          </div>
+        )}
         <div class="sr-item__info">
           {lot.title && (
-            <Link
+            <a
               class="sr-item__name ng-star-inserted"
-              to={`/lot/${lot.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`/result/${lot.slug}`}
             >
               <h3 class="sr-item__title sr-item__title--before title highlight">
                 {lot.title}
               </h3>
-            </Link>
+            </a>
           )}
           <div class="sr-item__layout">
             <dl class="description-list description-list--inline">
               {lot.deliveryAddress && (
                 <div class="description-list__layout ng-star-inserted">
                   <dt class="description-list__key"> Место поставки: </dt>
-                  <dd class="description-list__value">
-                    {" "}
-                    {lot.deliveryAddress}{" "}
-                  </dd>
+                  <dd class="description-list__value">{lot.deliveryAddress}</dd>
                 </div>
               )}
               {lot.organizer && (
@@ -76,27 +76,27 @@ const LotList = ({ lot, checked, onChange }) => {
           <DateTime lot={lot} />
         </div>
         <div class="sr-item__details">
-        {lot.totalPrice && (
-          <div class="sr-item__price ng-star-inserted">
-            {lot.totalPrice} <span class="currency">₸</span>
-          </div>
-        )}
+          {lot.totalPrice && (
+            <div class="sr-item__price ng-star-inserted">
+              {lot.totalPrice} <span class="currency">₸</span>
+            </div>
+          )}
           {lot.status && (
-          <div class="sr-item__status ng-star-inserted">
-            <span class="sr-item__label">Статус</span>: {lot.status}
-          </div>
+            <div class="sr-item__status ng-star-inserted">
+              <span class="sr-item__label">Статус</span>: {lot.status}
+            </div>
           )}
           <div class="sr-item__attributes">
-          {lot.purchaseType && (
-            <span class="sr-item__badge sr-item__badge--secondary sr-item__badge--sm">
-              {formatPurchaseType(lot.purchaseType)}
-            </span>
-          )}
-          {lot.tenderSubjectType && (
-            <span class="sr-item__badge sr-item__badge--secondary-outline sr-item__badge--sm">
-              {lot.tenderSubjectType}
-            </span>
-          )}
+            {lot.purchaseType && (
+              <span class="sr-item__badge sr-item__badge--secondary sr-item__badge--sm">
+                {formatPurchaseType(lot.purchaseType)}
+              </span>
+            )}
+            {lot.tenderSubjectType && (
+              <span class="sr-item__badge sr-item__badge--secondary-outline sr-item__badge--sm">
+                {lot.tenderSubjectType}
+              </span>
+            )}
           </div>
           <LotActions lot={lot} />
         </div>

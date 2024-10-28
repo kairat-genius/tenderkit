@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 // svg
 import { ReactComponent as IconLink } from "../../assets/svg/pointer/link/link.svg";
@@ -6,14 +6,16 @@ import { ReactComponent as IconShare } from "../../assets/svg/pointer/link/share
 import { ReactComponent as WhatsappLogo } from "../../assets/svg/social/whatsapp-logo.svg";
 import { ReactComponent as TelegramLogo } from "../../assets/svg/social/telegram-logo.svg";
 
-const Share = () => {
+const Share = ({url}) => {
     const [isSharerOpen, setIsShareOpen] = useState(false);
 
     const toggleShare = (e) => {
         setIsShareOpen(prevState => !prevState);
       };
   
-
+      const copyLinkToClipboard = () => {
+          navigator.clipboard.writeText(`https://tenderkit.kz/result/${url}`);
+      };
   return (
     <div class="button-group__layout">
         <OutsideClickHandler onOutsideClick={() => setIsShareOpen(false)} >
@@ -34,7 +36,7 @@ const Share = () => {
                   <a
                     target="_blank"
                     class="option__button"
-                    href="https://api.whatsapp.com/send?text=https://zakupki.kz/lot/dc051224-c619-4673-8548-1388dfdd3154/lot-info"
+                    href={`https://api.whatsapp.com/send?text=https://tenderkit.kz/result/${url}`}
                   >
                     <span class="button__icon button__icon--before icon">
                       <WhatsappLogo class="icon__svg" />
@@ -46,7 +48,7 @@ const Share = () => {
                   <a
                     target="_blank"
                     class="option__button"
-                    href="https://t.me/share/url?url=https://zakupki.kz/lot/dc051224-c619-4673-8548-1388dfdd3154/lot-info"
+                    href={`https://t.me/share/url?url=https://tenderkit.kz/result/${url}`}
                   >
                     <span class="button__icon button__icon--before icon">
                       <TelegramLogo class="icon__svg" />
@@ -55,7 +57,10 @@ const Share = () => {
                   </a>
                 </li>
                 <li class="option__layout">
-                  <button class="option__button" onClick={toggleShare}>
+                  <button class="option__button" onClick={() => {
+                      copyLinkToClipboard();
+                      toggleShare();
+                    }}>
                     <span class="button__icon button__icon--before icon">
                       <IconLink class="icon__svg" />
                     </span>

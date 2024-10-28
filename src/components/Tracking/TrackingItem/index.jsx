@@ -21,7 +21,7 @@ const TrackingItem = ({ history, lot, onMoveToHistory, onMoveToActive }) => {
 
   return (
     <div class="tracking-sidebar__layout ng-star-inserted">
-      <a href={`/lot/${lot.slug}`} className="sr-item__name ng-star-inserted">
+      <a href={`/result/${lot.slug}`} className="sr-item__name ng-star-inserted">
       {lot.title && (
         <h3 class="tracking-sidebar__title"> {lot.title} </h3>
       )}

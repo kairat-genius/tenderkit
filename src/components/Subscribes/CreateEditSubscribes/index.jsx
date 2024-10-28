@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchBox, PriceFilter, MultiSelectClean, MultiSelect } from "../../Filter";
+import { SearchBox, PriceFilter, MultiSelect } from "../../Filter";
 
 
 const tenderSubjectTypesOptions = [
@@ -93,9 +93,6 @@ const CreateEditSubscribes = ({closeModal, isEditing }) => {
                             </label>
                           </div>
                         </div>
-                      </div>
-                      <div class="field-group__section">
-                      <MultiSelectClean />
                       </div>
                     </div>
                   </div>

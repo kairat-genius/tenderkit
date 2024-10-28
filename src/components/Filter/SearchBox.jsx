@@ -6,11 +6,15 @@ import { ReactComponent as Exclamation } from "../../assets/svg/icon/exclamation
 // components
 import { DeliveryLocation, MultiSearch } from "./index";
 
-const SearchBox = () => {
+const SearchBox = ({filters, handleFilterChange}) => {
+  
   return (
     <div class="hero__searchbar">
       <div class="hero__searchbar-layout hero__searchbar-layout--input">
-        <MultiSearch />
+        <MultiSearch 
+        value={filters.search || []}
+        onChange={(value) => handleFilterChange("search", value)}
+        />
         <div class="filter__layout filter__layout--options ng-star-inserted">
           <div class="filter__option ng-star-inserted">
             <div class="checkbox checkbox--primary">
@@ -70,7 +74,9 @@ const SearchBox = () => {
           </div>
         </div>
       </div>
-      <DeliveryLocation />
+      <DeliveryLocation 
+      value={filters.deliveryRegion || []}
+      onChange={(value) => handleFilterChange("deliveryRegion", value)}/>
     </div>
   );
 };

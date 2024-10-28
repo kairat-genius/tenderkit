@@ -4,16 +4,38 @@ import React, { useState } from "react";
 import { ReactComponent as ChevrondownAlt } from "../../assets/svg/pointer/chevrondown-alt.svg";
 import { ReactComponent as Mail } from "../../assets/svg/social/mail.svg";
 
-const FilterFooter = ({ onClick, isFilterVisible }) => {
+const FilterFooter = ({ onClick, isFilterVisible, handleButtonClick, setFilters }) => {
+  const handleResetFilters = () => {
+    setFilters({
+      endDate_from: "",
+      endDate_to: "",
+      startDate_from: "",
+      startDate_to: "",
+      lotNumber: "",
+      organizer: [],
+      purchaseType: [],
+      deliveryRegion: [],
+      search: "",
+      source: [],
+      status: [],
+      tenderSubjectType: [],
+      totalPrice_from: "",
+      totalPrice_to: "",
+    });
+
+    localStorage.removeItem("Filter");
+    localStorage.removeItem("selectedOrganizers");
+  };
+
   return (
-    <div class="filter__footer">
-      <div class="panel">
-        <div class="panel__layout">
-          <div class="button-group">
-            <div class="button-group__layout desktop">
+    <div className="filter__footer">
+      <div className="panel">
+        <div className="panel__layout">
+          <div className="button-group">
+            <div className="button-group__layout desktop">
               <button
                 type="button"
-                class="button button--secondary-transparent ng-star-inserted"
+                className="button button--secondary-transparent ng-star-inserted"
                 onClick={onClick}
               >
                 {isFilterVisible ? (
@@ -36,28 +58,28 @@ const FilterFooter = ({ onClick, isFilterVisible }) => {
             <subscribe-btn class="button-group__layout">
               <button
                 type="button"
-                class="button button--secondary-outline"
+                className="button button--secondary-outline"
                 id="poisk_zakupok_podpisatsya"
               >
-                <span class="button__icon button__icon--before icon">
-                  <Mail class="icon__svg" />
+                <span className="button__icon button__icon--before icon">
+                  <Mail className="icon__svg" />
                 </span>
-                <span class="button__title">
+                <span className="button__title">
                   Подписаться на результаты поиска
                 </span>
               </button>
             </subscribe-btn>
           </div>
         </div>
-        <div class="panel__layout panel__layout--rtl">
-          <div class="button-group">
-            <div class="button-group__layout desktop">
-              <button type="button" class="button button--primary-outline">
+        <div className="panel__layout panel__layout--rtl">
+          <div className="button-group">
+            <div className="button-group__layout desktop">
+              <button type="button" className="button button--primary-outline" onClick={handleResetFilters}>
                 Сбросить фильтр
               </button>
             </div>
-            <div class="button-group__layout" id="poisk_zakupok_poisk">
-              <button type="button" class="button button--primary">
+            <div className="button-group__layout" id="poisk_zakupok_poisk">
+              <button type="button" className="button button--primary" onClick={handleButtonClick}>
                 Поиск
               </button>
             </div>

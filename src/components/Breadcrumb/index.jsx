@@ -5,13 +5,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ReactComponent as Arrowleft } from "../../assets/svg/pointer/arrows/arrowleft.svg";
 import { ReactComponent as ChevronRight } from "../../assets/svg/pointer/chevronright.svg";
 
-const Breadcrumb = ({ urls, title }) => {
+const Breadcrumb = ({ urls, title, lot }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const breadcrumbNames = {
     '': 'Главная',
     'result': 'Поиск закупок',
-    'lot': 'Расширенный поиск',
     'regions': 'Тендеры по областям',
     'tarrifs': 'Тарифы и услуги',
     'blog': 'Блог',
@@ -84,6 +83,18 @@ const Breadcrumb = ({ urls, title }) => {
                 <li className="breadcrumb__item" key={index}>
                   <span className="breadcrumb__link" aria-current="page">
                     {title}
+                  </span>
+                </li>
+              );
+            } 
+          }
+
+          if (pathSegments[index - 1] === 'result') {
+            if (isLast) {
+              return (
+                <li className="breadcrumb__item" key={index}>
+                  <span className="breadcrumb__link" aria-current="page">
+                    {lot}
                   </span>
                 </li>
               );
