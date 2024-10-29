@@ -49,13 +49,11 @@ const Result = () => {
 }, [currentPage, fetchTrigger, sortOption]);
 
   useEffect(() => {
-    // Load default filter data from localStorage
     const filterData = JSON.parse(localStorage.getItem("Filter")) || {};
   
-    // Set the initial state for filters with all filter data
     setFilters((prevFilters) => ({
-      ...prevFilters, // Используем текущее состояние фильтров
-      ...filterData,  // Добавляем загруженные фильтры
+      ...prevFilters,
+      ...filterData,  
     }));
     
     // Выполнить запрос к API с загруженными фильтрами
@@ -124,11 +122,6 @@ const Result = () => {
     XLSX.writeFile(workbook, fileName);
   };
 
-
-  const handleSortChange = (selectedSort) => {
-    setSortOption(selectedSort);
-    setFetchTrigger((prev) => !prev); 
-  };
 
   return (
     <main className="ng-star-inserted">

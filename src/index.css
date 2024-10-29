@@ -69,9 +69,23 @@
     color: var(--color-primary-5)!important;
   }
 
+
 }
 
 
+
+
+.ckeditor-container ul,
+.ckeditor-container ol {
+  padding-left: 1em;     
+  list-style-position: inside;
+  margin: 0;             
+}
+
+.ckeditor-container li {
+  margin-bottom: 0.5em;  
+  overflow-wrap: break-word; 
+}
 
 
 @media (max-width: 990px) {

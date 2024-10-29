@@ -81,8 +81,7 @@ const Article = () => {
                 <div class="panel row_panel_social">
                   <div class="panel__layout">
                     <time class="article__date">
-                      {" "}
-                      {formatDateMonth(data.created_at)}{" "}
+                      {formatDateMonth(data.created_at)}
                     </time>
                   </div>
                   <div class="panel__layout panel__layout--rtl">
@@ -211,8 +210,7 @@ const Article = () => {
                     to={`/blog/${author.slug}`}
                   >
                     <span className="tag__label">
-                      {" "}
-                      {author.articles_count} статей{" "}
+                      {author.articles_count} статей
                     </span>
                   </Link>
                 </div>
@@ -236,8 +234,7 @@ const Article = () => {
                           </a>
                         </h3>
                         <time class="article__date">
-                          {" "}
-                          {formatDateMonth(article.created_at)}{" "}
+                          {formatDateMonth(article.created_at)}
                         </time>
                       </article>
                     </li>
@@ -248,22 +245,22 @@ const Article = () => {
           </div>
         </aside>
       </div>
-      {interes.length > 0 && (
+   
         <div class="content__layout columns">
           <div class="columns__content">
             <BlogComment />
+            {interes.length > 0 && (
             <div class="content__layout content__layout--md">
               <div class="b-card b-card--shadow">
                 <h2 class="content__title interesting_title">
-                  {" "}
-                  Может показаться интересным{" "}
+                  Может показаться интересным
                 </h2>
                 <BlogItem data={interes} />
               </div>
             </div>
+            )}
           </div>
         </div>
-      )}
     </div>
   );
 };

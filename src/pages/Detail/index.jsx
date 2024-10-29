@@ -63,7 +63,7 @@ const Detail = () => {
       <div class="layout__container">
         <div class="body">
           <div class="body__content">
-            <Breadcrumb lot={detail.title}/>
+            <Breadcrumb lot={detail.title} />
             <lot-info class="ng-star-inserted">
               <div class="body__container">
                 <h1 class="visually-hidden">
@@ -207,15 +207,27 @@ const Detail = () => {
                               <div class="sr-item__field-label ng-star-inserted">
                                 Краткая характеристика:
                               </div>
-                              <div class="sr-item__field-data ng-star-inserted">
-                                {detail.shortDesc}
-                              </div>
+                              {hasTenderAccess ? (
+                                <div class="sr-item__field-data ng-star-inserted">
+                                  {detail.shortDesc}
+                                </div>
+                              ) : (
+                                <a href="/tariffs" className="lot__link link">
+                                  {detail.shortDesc}
+                                </a>
+                              )}
                               <div class="sr-item__field-label ng-star-inserted">
                                 Доп. характеристика:
                               </div>
-                              <div class="sr-item__field-data ng-star-inserted">
-                                {detail.additionalDesc}
-                              </div>
+                              {hasTenderAccess ? (
+                                <div class="sr-item__field-data ng-star-inserted">
+                                  {detail.additionalDesc}
+                                </div>
+                              ) : (
+                                <a href="/tariffs" className="lot__link link">
+                                  {detail.additionalDesc}
+                                </a>
+                              )}
                               <div class="sr-item__layout">
                                 <div class="sr-item__price ng-star-inserted">
                                   {detail.totalPrice}

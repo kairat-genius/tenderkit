@@ -1,10 +1,15 @@
 import React from "react";
-
+import { useParams, useLocation } from "react-router-dom";
+import queryString from "query-string";
 
 // components home
-import {ContentHome, SearchBox} from "./HomeComponents";
+import {ContentHome, SearchBox, AccountResetPassword} from "./HomeComponents";
 
 const Home = () => {
+  const { uuid, token } = useParams();
+  const location = useLocation();
+  const queryParams = queryString.parse(location.search);
+  const email = queryParams.email;
 
   return (
       <main class="ng-star-inserted">
@@ -80,10 +85,9 @@ const Home = () => {
                         <div class="primary-hint">
                           <div class="primary-hint__description">
                             <div class="primary-hint__description-text">
-                              {" "}
                               Портал закупок ERG, MP.kz, Nadloc, ЕТS-Тендер,
                               Национальный банк, BI-Group, Bazis-A и другие
-                              коммерческие площадки{" "}
+                              коммерческие площадки
                             </div>
                           </div>
                         </div>
@@ -116,6 +120,9 @@ const Home = () => {
           </div>
         </section>
           <ContentHome />
+          {uuid && token && (
+        <AccountResetPassword uuid={uuid} token={token} email={email} />
+      )}
       </main>
   );
 };

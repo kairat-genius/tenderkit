@@ -60,6 +60,7 @@ const Root = () => {
       <Routes>
         <Route path="/" element={<IndexLayout/>}>
           <Route index element={<Home />} />
+          <Route path="account/reset-password/:uuid/:token" element={<Home />} />
           <Route path={url.Regions.path} element={<Regions />} />
           <Route path={url.Areas.path} element={<Areas />} />
           <Route path={url.Result.path} element={<Result />} />
@@ -85,6 +86,8 @@ const Root = () => {
             <Route path={url.Tracking.path} element={<Tracking/>} />
           </Route>
           <Route path="*" element={<NotFound404 />} />
+
+
 
       </Routes>
     </Suspense>

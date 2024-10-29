@@ -15,7 +15,8 @@ const FilterFooter = ({ onClick, isFilterVisible, handleButtonClick, setFilters 
       organizer: [],
       purchaseType: [],
       deliveryRegion: [],
-      search: "",
+      search: [],
+      exclude: [],
       source: [],
       status: [],
       tenderSubjectType: [],
@@ -73,7 +74,7 @@ const FilterFooter = ({ onClick, isFilterVisible, handleButtonClick, setFilters 
         </div>
         <div className="panel__layout panel__layout--rtl">
           <div className="button-group">
-            <div className="button-group__layout desktop">
+            <div className="button-group__layout">
               <button type="button" className="button button--primary-outline" onClick={handleResetFilters}>
                 Сбросить фильтр
               </button>
