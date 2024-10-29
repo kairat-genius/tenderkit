@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useState} from "react";
 
 // svg
 import { ReactComponent as CallAlt } from "../../../../assets/svg/icon/call-alt.svg";
@@ -12,13 +12,18 @@ import { ReactComponent as Arrowright } from "../../../../assets/svg/mobile/arro
 import { OptionLayoutMobile, OptionLayout} from "../index";
 
 
-const Navbar = ({data, openModal }) => {
+const Navbar = ({data, openModal, closeMenu}) => {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const handleDropdownToggle = (dropdown) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
   return ( 
       <div className="m-nav m-nav--active">
         <div class="m-nav__container">
           <ul class="m-nav__list">
-            <li class="m-nav__item dropdown dropdown--header">
-              <a class="m-nav__link">
+          <li className={`m-nav__item dropdown dropdown--header ${activeDropdown === "tenders" ? 'dropdown--active' : ''}`}>
+              <a class="m-nav__link" onClick={() => handleDropdownToggle("tenders")}>
                 Тендеры
                 <span class="dropdown__arrow-icon icon">
                   <ChevrondownAlt class="icon__svg" />
@@ -26,16 +31,16 @@ const Navbar = ({data, openModal }) => {
               </a>
               <div class="dropdown__body">
                 <ul class="option">
-                  <OptionLayoutMobile href="/result" title="По&nbsp;ключевым словам" IconComponent={Arrowright}/>
-                  <OptionLayoutMobile href="/regions" title="По&nbsp;областям/регионам" IconComponent={Arrowright}/>
-                  <OptionLayoutMobile href="/areas" title="По&nbsp;площадкам" IconComponent={Arrowright}/>
-                  <OptionLayoutMobile href="/plans" title="Планы закупок" IconComponent={Arrowright}/>
-                  <OptionLayoutMobile href="/contracts" title="Договоры закупок" IconComponent={Arrowright}/>
+                  <OptionLayoutMobile href="/result" title="По&nbsp;ключевым словам" IconComponent={Arrowright} closeMenu={closeMenu}/>
+                  <OptionLayoutMobile href="/regions" title="По&nbsp;областям/регионам" IconComponent={Arrowright} closeMenu={closeMenu}/>
+                  <OptionLayoutMobile href="/areas" title="По&nbsp;площадкам" IconComponent={Arrowright} closeMenu={closeMenu}/>
+                  <OptionLayoutMobile href="/plans" title="Планы закупок" IconComponent={Arrowright} closeMenu={closeMenu}/>
+                  <OptionLayoutMobile href="/contracts" title="Договоры закупок" IconComponent={Arrowright} closeMenu={closeMenu}/>
                 </ul>
               </div>
             </li>
-            <li class="m-nav__item dropdown dropdown--header">
-              <a class="m-nav__link">
+            <li className={`m-nav__item dropdown dropdown--header ${activeDropdown === "services" ? 'dropdown--active' : ''}`}>
+            <a className="m-nav__link" onClick={() => handleDropdownToggle("services")}>
                 Сервисы
                 <span class="dropdown__arrow-icon icon">
                   <ChevrondownAlt class="icon__svg" />
@@ -43,8 +48,8 @@ const Navbar = ({data, openModal }) => {
               </a>
               <div class="dropdown__body">
                 <ul class="option">
-                  <OptionLayoutMobile href="/kompra" title="Проверка контрагентов" IconComponent={Arrowright}/>
-                  <OptionLayoutMobile href="/kompra-monitoring" title="Мониторинг конкурентов" IconComponent={Arrowright}/>
+                  <OptionLayoutMobile href="/kompra" title="Проверка контрагентов" IconComponent={Arrowright} closeMenu={closeMenu}/>
+                  <OptionLayoutMobile href="/kompra-monitoring" title="Мониторинг конкурентов" IconComponent={Arrowright} closeMenu={closeMenu}/>
                 </ul>
               </div>
             </li>
@@ -61,9 +66,9 @@ const Navbar = ({data, openModal }) => {
                 </span>
               </a>
             </li>
-            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/analytics" label="Аналитика"/>
-            <li class="m-nav__item dropdown dropdown--header">
-              <a class="m-nav__link">
+            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/analytics" label="Аналитика" closeMenu={closeMenu}/>
+            <li className={`m-nav__item dropdown dropdown--header ${activeDropdown === "registries" ? 'dropdown--active' : ''}`}>
+              <a className="m-nav__link" onClick={() => handleDropdownToggle("registries")} >
                 Реестры
                 <span class="dropdown__arrow-icon icon">
                   <ChevrondownAlt class="icon__svg" />
@@ -71,16 +76,16 @@ const Navbar = ({data, openModal }) => {
               </a>
               <div class="dropdown__body">
                 <ul class="option">
-                  <OptionLayoutMobile href="/register-suppliers-manufacturers" title="Реестр поставщиков и производителей" IconComponent={Arrowright}/>
-                  <OptionLayoutMobile href="/register-qualified-employees" title="Реестр квалифицированных сотрудников" IconComponent={Arrowright}/>
+                  <OptionLayoutMobile href="/register-suppliers-manufacturers" title="Реестр поставщиков и производителей" IconComponent={Arrowright} closeMenu={closeMenu}/>
+                  <OptionLayoutMobile href="/register-qualified-employees" title="Реестр квалифицированных сотрудников" IconComponent={Arrowright} closeMenu={closeMenu}/>
                 </ul>
               </div>
             </li>
-            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/blog" label="Блог"/>
-            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/popular-tender-categories" label="Самые популярные категории тендеров"/>
-            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/about-us" label="О нас"/>
-            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/instruction" label="Инструкция"/>
-            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/faq" label="FAQ"/>
+            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/blog" label="Блог" closeMenu={closeMenu}/>
+            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/popular-tender-categories" label="Самые популярные категории тендеров" closeMenu={closeMenu}/>
+            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/about-us" label="О нас" closeMenu={closeMenu}/>
+            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/instruction" label="Инструкция" closeMenu={closeMenu}/>
+            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/faq" label="FAQ" closeMenu={closeMenu}/>
           </ul>
           <div class="m-nav__layout">
             <dl class="m-menu__dl">
@@ -132,12 +137,12 @@ const Navbar = ({data, openModal }) => {
           <div class="m-nav__layout ng-star-inserted">
             <div class="button-group button-group--vertical">
               <div class="button-group__layout" id="registracia">
-                <button type="button" class="button button--primary button--md button--expand" onClick={() => openModal('register')}>
+                <button type="button" class="button button--primary button--md button--expand" onClick={() => { openModal("register"); closeMenu();}}>
                   Регистрация
                 </button>
               </div>
               <div class="button-group__layout" id="voiti">
-                <button type="button" class="button button--secondary-transparent button--md button--expand" onClick={() => openModal('login')}>
+                <button type="button" class="button button--secondary-transparent button--md button--expand"  onClick={() => { openModal("login"); closeMenu(); }}>
                   Войти
                 </button>
               </div>

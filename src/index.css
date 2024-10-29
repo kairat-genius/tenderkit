@@ -70,3 +70,43 @@
   }
 
 }
+
+
+
+
+@media (max-width: 990px) {
+  .ckeditor-container{
+    max-width: 700px;
+  }
+}
+
+
+@media (max-width: 870px) {
+  .ckeditor-container{
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 660px) {
+  .ckeditor-container{
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ckeditor-container{
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 460px) {
+  .ckeditor-container{
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 360px) {
+  .ckeditor-container{
+    max-width: 260px;
+  }
+}

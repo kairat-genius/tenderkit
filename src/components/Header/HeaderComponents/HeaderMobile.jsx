@@ -30,6 +30,10 @@ const HeaderMobile = ({data, openModal}) => {
     }
   };
 
+  const closeMenu = () => {
+    setIsBurgerMenu(false);
+    setActiveComponent(null); 
+  };
 
   const handleBackgroundClick = (e) => {
     if (e.target.className === 'm-menu__overlay') {
@@ -101,10 +105,10 @@ const HeaderMobile = ({data, openModal}) => {
         </div>
       </div>
     
-        {isBurgerMenu && <Navbar isActive={isBurgerMenu} openModal={openModal} data={data}/>}
+        {isBurgerMenu && <Navbar isActive={isBurgerMenu} openModal={openModal} closeMenu={closeMenu} data={data}/>}
         {activeComponent === "blog" && <Blog isActive={activeComponent === "blog"}  onClick={handleBackgroundClick} />} 
         {activeComponent === "phone" && <Phone isActive={activeComponent === "phone"}  onClick={handleBackgroundClick}/>} 
-        {activeComponent === "user" && <User isActive={activeComponent === "user"} openModal={openModal} onClick={handleBackgroundClick} data={data}/>} 
+        {activeComponent === "user" && <User isActive={activeComponent === "user"} openModal={openModal} onClick={handleBackgroundClick} data={data} closeMenu={closeMenu}/>} 
 
 
     </div>
