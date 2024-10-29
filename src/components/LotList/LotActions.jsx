@@ -34,12 +34,12 @@ const LotActions = ({ lot }) => {
         data.subscription.tariff.tracking_tenders_access !== false && (
       <div class="sr-item__action ng-star-inserted">
         <button
-          class={`button button--secondary-transparent button--action button--sm ${
-            isTracking ? "button--warning-transparent" : ""
+          class={`button button--action button--sm ${
+            isTracking ? "button--primary-transparent" : "button--secondary-transparent"
           }`}
           onClick={handleTrackingToggle}
         >
-          <span class="sr-item__action-title"> Отслеживать </span>
+          <span class="sr-item__action-title"> {isTracking ? "Перестать отслеживать" : "Отслеживать"}</span>
           <span class="button__icon button__icon--after icon">
             <Tracking class="icon__svg" />
           </span>
@@ -50,8 +50,8 @@ const LotActions = ({ lot }) => {
         data.subscription.tariff.favorite_access !== false && (
           <div class="sr-item__action ng-star-inserted">
             <button
-              class={`button button--secondary-transparent button--action button--sm ${
-                isFavorite ? "button--warning-transparent" : ""
+              class={`button button--action button--sm ${
+                isFavorite ? "button--warning-transparent" : "button--secondary-transparent"
               }`}
               onClick={handleFavoriteToggle}
             >

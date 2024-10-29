@@ -35,10 +35,10 @@ const LotActionsDetail = ({lot}) => {
       {data.subscription &&
         data.subscription.tariff.tracking_tenders_access !== false && (
         <div className="button-group__layout ng-star-inserted">
-          <button className={`button button--action button--sm button--secondary-transparent ${
-            isTracking ? "button--warning-transparent" : ""
+          <button className={`button button--action button--sm ${
+            isTracking ? "button--primary-transparent" : "button--secondary-transparent"
           }`} onClick={handleTrackingToggle}>
-            <span className="ng-star-inserted"> Отслеживать</span>
+            <span className="ng-star-inserted"> {isTracking ? "Перестать отслеживать" : "Отслеживать"} </span>
             <span className="button__icon button__icon--after icon">
               <Tracking className="icon__svg" />
             </span>

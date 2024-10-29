@@ -11,6 +11,7 @@ import {
   Calendar,
   FilterFooter,
   PriceFilter,
+  Exclude,
 } from "../../../components/Filter";
 import { Breadcrumb, OrganizerModal } from "../../../components";
 import MultiSelectResult from "./MultiSelectResult";
@@ -19,6 +20,7 @@ import MultiSelectResult from "./MultiSelectResult";
 const Filter = ({ filters, setFilters, handleButtonClick }) => {
   const [isFilterVisible, setFilterVisible] = useState(true);
   const [isOrganizerModalOpen, setOrganizerModalOpen] = useState(false); 
+  const [ isExcludeOpen , setExcludeOpen ] = useState(false); 
   
   // Обработчик для переключения видимости фильтра
   const toggleFilterVisibility = () => {
@@ -34,6 +36,10 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
 
   const toggleOrganizerModal = () => {
     setOrganizerModalOpen(!isOrganizerModalOpen);
+  };
+
+  const toggExcludeModal = () => {
+    setExcludeOpen(!isExcludeOpen);
   };
 
   return (
@@ -72,13 +78,14 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                 <div class="filter__layout">
                   <div class="field-group">
                     <div class="field-group__section">
-                      <div class="field-group__layout">
+                      <div class="field-group__layout" onClick={toggExcludeModal}>
                         <div class="inputfield inputfield--suffix">
                           <input
                             type="text"
                             class="inputfield__input input"
                             readOnly=""
                             placeholder="Исключить слова"
+                            value={filters.exclude.length > 0 ? `Исключено слов: ${filters.exclude.length}` : ""}
                           />
                           <label class="inputfield__label">
                             Исключить слова
@@ -159,6 +166,7 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                             class="inputfield__input input"
                             readOnly=""
                             placeholder="Организаторы"
+                            value={filters.organizer.length > 0 ? `Организаторов: ${filters.organizer.length}` : ""}
                           />
                           <label class="inputfield__label">
                             Организаторы
@@ -233,6 +241,11 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
           </div>
         </div>
       </div>
+      <Exclude onClose={toggExcludeModal}
+      isExcludeOpen={isExcludeOpen}
+      value={filters.exclude || []}
+      onChange={(value) => handleFilterChange("exclude", value)}
+        />
      
         <OrganizerModal onClose={toggleOrganizerModal} 
         filters={filters} // Передаем filters

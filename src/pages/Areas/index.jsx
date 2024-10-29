@@ -43,7 +43,7 @@ const Areas = () => {
     
     const filterData = {
       ...currentFilter, 
-      sourceIds: selectedIds,
+      source: selectedIds,
     };
 
     localStorage.setItem("Filter", JSON.stringify(filterData)); 
@@ -55,7 +55,7 @@ const Areas = () => {
     setSelectAll(false);
 
     const currentFilter = JSON.parse(localStorage.getItem("Filter")) || {};
-    delete currentFilter.sourceIds;
+    delete currentFilter.source;
     localStorage.setItem("Filter", JSON.stringify(currentFilter));
   };
 

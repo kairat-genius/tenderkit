@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {LOT_LIST, accessToken} from "../../Fetch/settings"
 
-export const getListLots = ({setData, setCount, offset, filters }) => {
+export const getListLots = ({setData, setCount, offset, filters, sortOption}) => {
     const headers = accessToken
     ? { 'Authorization': `JWT ${accessToken}` }
     : {};
@@ -21,8 +21,12 @@ export const getListLots = ({setData, setCount, offset, filters }) => {
         ...(filters.tenderSubjectType && filters.tenderSubjectType.length > 0 && { tenderSubjectType: `[${filters.tenderSubjectType.map(item => `'${item}'`).join(",")}]` }),
         ...(filters.organizer && filters.organizer.length > 0 && { organizer: `[${filters.organizer.map(item => `'${item}'`).join(",")}]` }),
         ...(filters.deliveryRegion && filters.deliveryRegion.length > 0 && { deliveryRegion: `[${filters.deliveryRegion.map(item => `'${item}'`).join(",")}]` }),
-    
 
+        ...(filters.search && filters.search.length > 0 && { search: `[${filters.search.map(item => `'${item}'`).join(",")}]` }),
+        ...(filters.exclude && filters.exclude.length > 0 && { exclude: `[${filters.exclude.map(item => `'${item}'`).join(",")}]` }),
+
+        ...(sortOption && { order_by: sortOption }),
+       
       };
       
     axios.get(LOT_LIST, { headers, params })

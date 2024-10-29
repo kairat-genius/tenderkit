@@ -2,8 +2,7 @@ import React from "react";
 
 
 // components home
-import {ContentHome} from "./HomeComponents";
-import {DeliveryLocation, MultiSearch} from "../../components/Filter"
+import {ContentHome, SearchBox} from "./HomeComponents";
 
 const Home = () => {
 
@@ -95,20 +94,7 @@ const Home = () => {
               </div>
               
             </area-panel>
-            <search-box class="hero__search">
-              <div class="hero__searchbar">
-              <div class="hero__searchbar-layout hero__searchbar-layout--input">
-               <MultiSearch />
-               </div>
-                <button
-                  class="hero__searchbar-button button button--primary ng-star-inserted"
-                  id="poisk"
-                  style={{width: "200px"}}
-                >
-                  Поиск
-                </button>
-              </div>
-            </search-box>
+            <SearchBox />
             <dl class="hero__dl">
               <dt class="hero__dt"> Поиск по: </dt>
               <dd class="hero__dd">

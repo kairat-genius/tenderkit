@@ -124,20 +124,20 @@ const Detail = () => {
                               <LotInfo
                                 LotLabel="Вид закупки:"
                                 LotData={detail.advertisement.purchaseType}
-                                href={hasTenderAccess ? "/tariffs" : ""}
+                                href={!hasTenderAccess ? "/tariffs" : ""}
                                 isLink={!hasTenderAccess}
                               />
                               <LotInfo
                                 LotLabel="Организатор:"
                                 LotData={detail.advertisement.organizer}
-                                href={hasTenderAccess ? "/tariffs" : ""}
+                                href={!hasTenderAccess ? "/tariffs" : ""}
                                 isLink={!hasTenderAccess}
                               />
                               <LotInfo
                                 LotLabel="Электронная почта:"
                                 LotData={detail.advertisement.email}
                                 href={
-                                  hasTenderAccess
+                                  !hasTenderAccess
                                     ? "/tariffs"
                                     : `mailto:${detail.advertisement.email}`
                                 }
@@ -146,7 +146,7 @@ const Detail = () => {
                               <LotInfo
                                 LotLabel="Телефон:"
                                 LotData={detail.advertisement.phone}
-                                href={hasTenderAccess ? "/tariffs" : ""}
+                                href={!hasTenderAccess ? "/tariffs" : ""}
                                 isLink={!hasTenderAccess}
                               />
                             </>
@@ -255,25 +255,25 @@ const Detail = () => {
                           <LotInfo
                             LotLabel="Заказчик:"
                             LotData={detail.customer}
-                            href={hasTenderAccess ? "/tariffs" : ""}
+                            href={!hasTenderAccess ? "/tariffs" : ""}
                             isLink={!hasTenderAccess}
                           />
                           <LotInfo
                             LotLabel="Сроки поставки:"
                             LotData={detail.schedule}
-                            href={hasTenderAccess ? "/tariffs" : ""}
+                            href={!hasTenderAccess ? "/tariffs" : ""}
                             isLink={!hasTenderAccess}
                           />
                           <LotInfo
                             LotLabel="Предмет закупок:"
                             LotData={detail.tenderSubjectType}
-                            href={hasTenderAccess ? "/tariffs" : ""}
+                            href={!hasTenderAccess ? "/tariffs" : ""}
                             isLink={!hasTenderAccess}
                           />
                           <LotInfo
                             LotLabel="Номер пункта плана:"
                             LotData={detail.rowNumber}
-                            href={hasTenderAccess ? "/tariffs" : ""}
+                            href={!hasTenderAccess ? "/tariffs" : ""}
                             isLink={!hasTenderAccess}
                           />
                         </div>
@@ -290,7 +290,7 @@ const Detail = () => {
                               target="_blank"
                               href={detail.url}
                             >
-                              Ссылка на лот
+                              {detail.url}
                             </a>
                           </div>
                         ) : (

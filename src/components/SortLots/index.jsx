@@ -1,40 +1,44 @@
 import React from "react";
 
-// svg
+const SortLots = ({ sortOption, setSortOption }) => {
+  const handleChange = (event) => {
+    setSortOption(event.target.value); 
+  };
 
-// components home
-
-const SortLots = () => {
   return (
     <aside
-      default="publicationDateTime.desc"
+      default="published_newest"
       filtername="sort"
-      class="filter__section"
+      className="filter__section"
     >
-      <div class="toolbar__layout">
-        <select class="toolbar__item toolbar__select select ng-untouched ng-pristine ng-valid">
-          <option value="publicationDateTime.asc" class="ng-star-inserted">
+      <div className="toolbar__layout">
+        <select
+          className="toolbar__item toolbar__select select"
+          value={sortOption} 
+          onChange={handleChange} 
+        >
+          <option value="published_oldest">
             По дате публикации: сначала старые
           </option>
-          <option value="publicationDateTime.desc" class="ng-star-inserted">
+          <option value="published_newest">
             По дате публикации: сначала новые
           </option>
-          <option value="sumNoNds.asc" class="ng-star-inserted">
+          <option value="price_asc">
             По сумме: по возрастанию
           </option>
-          <option value="sumNoNds.desc" class="ng-star-inserted">
+          <option value="price_desc">
             По сумме: по убыванию
           </option>
-          <option value="endDateTime.asc" class="ng-star-inserted">
+          <option value="ending_asc">
             По дате окончания: сначала старые
           </option>
-          <option value="endDateTime.desc" class="ng-star-inserted">
+          <option value="ending_desc">
             По дате окончания: сначала новые
           </option>
-          <option value="beginDateTime.asc" class="ng-star-inserted">
+          <option value="starting_asc">
             По дате начала: сначала старые
           </option>
-          <option value="beginDateTime.desc" class="ng-star-inserted">
+          <option value="starting_desc">
             По дате начала: сначала новые
           </option>
         </select>

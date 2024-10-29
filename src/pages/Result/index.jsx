@@ -19,6 +19,7 @@ const Result = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [fetchTrigger, setFetchTrigger] = useState(false);
   const ListRef = useRef(null);
+  const [sortOption, setSortOption] = useState("");
   const [filters, setFilters] = useState({
     // дате завершения
     endDate_from: "",
@@ -32,7 +33,8 @@ const Result = () => {
     purchaseType: [],
     deliveryRegion: [],
     // Поиск по заголовку или коду.
-    search: "",
+    search: [],
+    exclude: [],
     source: [],
     status: [],
     tenderSubjectType: [],
@@ -42,33 +44,31 @@ const Result = () => {
     totalPrice_to: "",
 
   });
+  useEffect(() => {
+    getListLots({ setData, setCount, offset, filters, sortOption });
+}, [currentPage, fetchTrigger, sortOption]);
 
   useEffect(() => {
     // Load default filter data from localStorage
     const filterData = JSON.parse(localStorage.getItem("Filter")) || {};
-    const defaultRegionIds = filterData.regionIds || [];
-    const defaultSourceIds = filterData.sourceIds || [];
-
-    // Set the initial state for filters with regionIds and sourceIds
+  
+    // Set the initial state for filters with all filter data
     setFilters((prevFilters) => ({
-      ...prevFilters,
-      deliveryRegion: defaultRegionIds,
-      source: defaultSourceIds,
+      ...prevFilters, // Используем текущее состояние фильтров
+      ...filterData,  // Добавляем загруженные фильтры
     }));
+    
+    // Выполнить запрос к API с загруженными фильтрами
+    getListLots({ setData, setCount, offset: 0, filters: { ...filters, ...filterData } });
   }, []);
-
-  console.log(filters.deliveryRegion)
-
 
   const itemsPerPage = 20;
   const offset = itemsPerPage * (currentPage -1)
 
-  useEffect(() => {
-      getListLots({ setData, setCount, offset, filters });
-  }, [currentPage, fetchTrigger]);
-
   const handleButtonClick = () => {
     setFetchTrigger((prev) => !prev); 
+
+    localStorage.setItem("Filter", JSON.stringify(filters));
   };
 
   const totalPages = Math.ceil(count / itemsPerPage); // общее количество страниц
@@ -122,6 +122,12 @@ const Result = () => {
 
     const fileName = "selected_lots.xlsx";
     XLSX.writeFile(workbook, fileName);
+  };
+
+
+  const handleSortChange = (selectedSort) => {
+    setSortOption(selectedSort);
+    setFetchTrigger((prev) => !prev); 
   };
 
   return (
@@ -186,7 +192,7 @@ const Result = () => {
                   </div>
                   <div className="panel__layout panel__layout--right">
                     <div className="toolbar">
-                      <SortLots />
+                      <SortLots sortOption={sortOption} setSortOption={setSortOption} />
                     </div>
                   </div>
                 </div>

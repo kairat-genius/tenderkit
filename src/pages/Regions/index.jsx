@@ -45,7 +45,7 @@ const Regions = () => {
 
     const filterData = {
       ...currentFilter,
-      regionIds: selectedIds, // Store selected IDs
+      deliveryRegion: selectedIds, // Store selected IDs
     };
 
     localStorage.setItem("Filter", JSON.stringify(filterData));
@@ -58,7 +58,7 @@ const Regions = () => {
 
     const currentFilter = JSON.parse(localStorage.getItem("Filter")) || {};
 
-    delete currentFilter.regionIds;
+    delete currentFilter.deliveryRegion;
 
     localStorage.setItem("Filter", JSON.stringify(currentFilter));
     
