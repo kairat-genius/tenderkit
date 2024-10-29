@@ -22,9 +22,11 @@ export const postLogin = ({ email, password, onClose }) => {
         Cookies.set('access', access, { expires: accessExpiry });
 
         toast.success('Вы успешно авторизовались!'); 
-        onClose();
 
-        window.location.href = '/cabinet/profile';
+        setTimeout(() => {
+            onClose();
+            window.location.href = '/cabinet/profile';
+        }, 1000);
 
     })
     .catch(error => {

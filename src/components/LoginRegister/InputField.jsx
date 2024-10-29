@@ -1,5 +1,5 @@
 const InputField = ({
-    type = "text",
+  type = "text",
     placeholder,
     label,
     isInvalid = false,
@@ -7,29 +7,29 @@ const InputField = ({
     formcontrolname,
     value,
     onChange,
-  }) => {
-    return (
-      <div className={`modal__layout ${isInvalid ? "inputfield--alert" : ""}`}>
-        <div className={`inputfield ${suffix ? "inputfield--suffix" : ""}`}>
-          <input
-            type={type}
-            placeholder={placeholder}
-            formcontrolname={formcontrolname}
-            className="inputfield__input input ng-dirty ng-touched ng-invalid"
-            value={value}
-            onChange={onChange}
-          />
-          <label className="inputfield__label">{label}</label>
-          {suffix && <div className="inputfield__suffix">{suffix}</div>}
-        </div>
-        {isInvalid && (
-          <div className="validation-message validation-message--alert">
-            Поле не заполнено!
-          </div>
-        )}
+    errorMessage,
+}) => {
+  return (
+    <div className={`modal__layout ${isInvalid ? "inputfield--alert" : ""}`}>
+      <div className={`inputfield ${suffix ? "inputfield--suffix" : ""}`}>
+        <input
+          type={type}
+          placeholder={placeholder}
+          formcontrolname={formcontrolname}
+          className={`inputfield__input input ${isInvalid ? "ng-invalid" : ""}`} 
+          value={value}
+          onChange={onChange}
+        />
+        <label className="inputfield__label">{label}</label>
+        {suffix && <div className="inputfield__suffix">{suffix}</div>}
       </div>
-    );
-  };
-  
-  export default InputField;
-  
+      {isInvalid && (
+        <div className="validation-message validation-message--alert">
+          {errorMessage || "Поле не заполнено!"}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default InputField;
