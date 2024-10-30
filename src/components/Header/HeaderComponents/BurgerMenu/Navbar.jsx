@@ -92,14 +92,14 @@ const Navbar = ({data, openModal, closeMenu}) => {
               <dt class="m-menu__dt"> Написать в мессенджеры </dt>
               <dd class="m-menu__dd">
                 <a
-                  href="https://wa.me/+77005790001"
+                  href="https://wa.me/+77057638953"
                   target="_blank"
                   class="m-menu__link link"
                 >
                   <span class="m-menu__icon icon">
                     <WhatsupAlt class="icon__svg" />
                   </span>
-                  +7 (700)-579-00-01 - WhatsApp
+                  +7 (705)-763-89-53 - WhatsApp
                 </a>
               </dd>
               <dd class="m-menu__dd">
@@ -111,24 +111,16 @@ const Navbar = ({data, openModal, closeMenu}) => {
                   <span class="m-menu__icon icon">
                     <TelegramAlt class="icon__svg" />
                   </span>
-                  +7 (700)-579-00-01 - Telegram
+                  +7 (705)-763-89-53 - Telegram
                 </a>
               </dd>
-              <dt class="m-menu__dt"> Связаться с нами (9:30-18:30, пн-пт) </dt>
+              <dt class="m-menu__dt"> Звонки </dt>
               <dd class="m-menu__dd">
-                <a href="tel:+77075790000" class="m-menu__link link">
+                <a href="tel:+77057638953" class="m-menu__link link">
                   <span class="m-menu__icon icon">
                     <CallAlt class="icon__svg" />
                   </span>
-                  +7 (707)-579-00-00 - бесплатный звонок
-                </a>
-              </dd>
-              <dd class="m-menu__dd">
-                <a href="tel:+79585815790" class="m-menu__link link">
-                  <span class="m-menu__icon icon">
-                    <CallAlt class="icon__svg" />
-                  </span>
-                  +7 (958)-581-57-90 - для РФ
+                  +7 (705)-763-89-53
                 </a>
               </dd>
             </dl>

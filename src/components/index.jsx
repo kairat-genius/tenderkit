@@ -20,7 +20,7 @@ export { default as OrganizerModal} from './OrganizerModal';
 export { default as LotInfo} from './Detail/LotInfo'
 export { default as Documents} from './Detail/Documents'
 export {default as LotActionsDetail} from './Detail/LotActionsDetail'
-
+export { default as LotLoading} from './LotList/LotLoading'
 export { default as LotList} from './LotList'
 export { default as Share} from './Share'
 

@@ -6,27 +6,27 @@ import { ReactComponent as SlideLeft } from "../../../assets/svg/pointer/slide-l
 
 const reviewsData = [
     {
-      src: "/src/assets/reviews/interteach.jpg",
+      src: "/assets/reviews/interteach.jpg",
       alt: "Interteach",
       title: "Interteach - image №59",
     },
     {
-      src: "/src/assets/reviews/interteach.jpg",
+      src: "/assets/reviews/interteach.jpg",
       alt: "Kompra",
       title: "Kompra - image №60",
     },
     {
-      src: "/src/assets/reviews/interteach.jpg",
+      src: "/assets/reviews/interteach.jpg",
       alt: "Zharyktas",
       title: "Zharyktas - image №61",
     },
     {
-      src: "/src/assets/reviews/interteach.jpg",
+      src: "/assets/reviews/interteach.jpg",
       alt: "Kazjoltrans",
       title: "Kazjoltrans - image №62",
     },
     {
-      src: "/src/assets/reviews/interteach.jpg",
+      src: "/assets/reviews/interteach.jpg",
       alt: "Kazkomplekt",
       title: "Kazkomplekt - image №63",
     },
@@ -157,7 +157,7 @@ const Reviews = () => {
           <img
             loading="lazy"
             class="modal__image"
-            src="/src/assets/reviews/interteach.jpg"
+            src="/assets/reviews/interteach.jpg"
             alt="null"
             title="null"
           />

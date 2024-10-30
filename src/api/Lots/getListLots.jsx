@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {LOT_LIST, accessToken} from "../../Fetch/settings"
 
-export const getListLots = ({setData, setCount, offset, filters, sortOption}) => {
+export const getListLots = async ({setData, setCount, offset, filters, sortOption}) => { 
     const headers = accessToken
     ? { 'Authorization': `JWT ${accessToken}` }
     : {};
@@ -29,11 +29,11 @@ export const getListLots = ({setData, setCount, offset, filters, sortOption}) =>
        
       };
       
-    axios.get(LOT_LIST, { headers, params })
-    .then((response) => {
-        setData(response.data.results)
-        setCount(response.data.count)
-    })
-
-    
-}
+      try {
+        const response = await axios.get(LOT_LIST, { headers, params });
+        setData(response.data.results);
+        setCount(response.data.count);
+    } catch (error) {
+        console.error("Error fetching lots:", error);
+    }
+};

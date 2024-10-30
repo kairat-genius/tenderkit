@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import * as XLSX from "xlsx"; 
+import { useData } from "../../hooks/DataContext";
 import { getListFolder } from "../../api/User/Folder/getListFolder";
 // svg
 import { ReactComponent as Xls } from "../../assets/svg/document/xls.svg";
@@ -7,12 +8,13 @@ import { ReactComponent as Folder } from "../../assets/svg/document/folder.svg";
 
 // components 
 import { Filter } from "./ResultComponents/index";
-import { Pagination, LotList, SortLots } from "../../components";
+import { Pagination, LotList, SortLots, LotLoading } from "../../components";
 
 import { getListLots } from "../../api/Lots/getListLots";
 
 const Result = () => {
-  const [data, setData] = useState([]);
+  const { data } = useData();
+  const [Lotdata, setData] = useState([]);
   const [count, setCount] = useState(0);
   const [selectedLots, setSelectedLots] = useState([]); 
   const [selectAll, setSelectAll] = useState(false); 
@@ -46,9 +48,18 @@ const Result = () => {
     totalPrice_to: "",
 
   });
+
+  const [isLoading, setIsLoading] = useState(false); 
+  
   useEffect(() => {
-    getListLots({ setData, setCount, offset, filters, sortOption });
-}, [currentPage, fetchTrigger, sortOption]);
+    const fetchData = async () => {
+      setIsLoading(true); // Set loading state to true
+      await getListLots({ setData, setCount, offset, filters, sortOption });
+      setIsLoading(false); // Set loading state to false after fetching
+    };
+    
+    fetchData();
+  }, [currentPage, fetchTrigger, sortOption]);
 
   useEffect(() => {
     const filterData = JSON.parse(localStorage.getItem("Filter")) || {};
@@ -58,14 +69,21 @@ const Result = () => {
       ...filterData,  
     }));
     
-    // Выполнить запрос к API с загруженными фильтрами
-    getListLots({ setData, setCount, offset: 0, filters: { ...filters, ...filterData } });
+    const fetchDataWithFilters = async () => {
+      setIsLoading(true); 
+      await getListLots({ setData, setCount, offset: 0, filters: { ...filters, ...filterData } });
+      setIsLoading(false); 
+    };
+    
+    fetchDataWithFilters();
   }, []);
 
 
   useEffect(() => {
-    getListFolder({ setFolder });
-  }, []);
+    if (data && data.subscription && data.subscription.tariff.folder_access !== false) {
+      getListFolder({ setFolder });
+    }
+  }, [data]);
 
   const itemsPerPage = 20;
   const offset = itemsPerPage * (currentPage -1)
@@ -75,6 +93,10 @@ const Result = () => {
     setFetchTrigger((prev) => !prev); 
 
     localStorage.setItem("Filter", JSON.stringify(filters));
+
+    if (ListRef.current) {
+      ListRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   const totalPages = Math.ceil(count / itemsPerPage); // общее количество страниц
@@ -94,7 +116,7 @@ const Result = () => {
     if (selectAll) {
       setSelectedLots([]); // Снимаем выделение со всех лотов
     } else {
-      setSelectedLots(data.map((lot) => lot.slug)); // Выбираем все лоты
+      setSelectedLots(Lotdata.map((lot) => lot.slug)); // Выбираем все лоты
     }
     setSelectAll(!selectAll); // Переключаем состояние "выбрать все"
   };
@@ -112,7 +134,7 @@ const Result = () => {
 
    // Функция для генерации XML файла
    const downloadSelectedLots = () => {
-    const selectedData = data.filter((lot) => selectedLots.includes(lot.slug));
+    const selectedData = Lotdata.filter((lot) => selectedLots.includes(lot.slug));
 
     const worksheet = XLSX.utils.json_to_sheet(selectedData.map(lot => ({
       LotNumber: lot.lotNumber,
@@ -202,7 +224,11 @@ const Result = () => {
             <div className="searchresults__layout searchresults__layout--sm">
               <div className="container">
                 <ul className="searchresults__list">
-                  {data.map((lot) => (
+                {isLoading ? 
+                (Array.from({ length: 20 }, (_, index) => ( <li className="searchresults__item ng-star-inserted" key={index}> <LotLoading /></li>
+                       ))
+                  ) : (
+                  Lotdata.map((lot) => (
                     <li className="searchresults__item ng-star-inserted" key={lot.slug}>
                       <LotList 
                         lot={lot}
@@ -214,7 +240,8 @@ const Result = () => {
                         setOpenDropdownId={setOpenDropdownId}
                       />
                     </li>
-                  ))}
+                  ))
+                )}
                 </ul>
               </div>
             </div>

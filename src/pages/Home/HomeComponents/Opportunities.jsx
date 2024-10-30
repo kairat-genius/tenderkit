@@ -48,20 +48,20 @@ const Opportunities = () => {
                   </div>
                   <div class="possibility__frame">
                     <picture>
-                      <source srcset="/src/assets/possibility/new-message.png 1x, /src/assets/possibility/new-message@2x.png 2x" />
+                      <source srcset="/assets/possibility/new-message.png 1x, /src/assets/possibility/new-message@2x.png 2x" />
                       <img
-                        src="/src/assets/possibility/new-message.png"
+                        src="/assets/possibility/new-message.png"
                         class="possibility__image possibility__image--new-message"
                       />
                     </picture>
                     <picture>
                       <source
                         media="(max-width: 1023px)"
-                        srcset="/src/assets/possibility/phone.png 1x, /src/assets/possibility/phone@2x.png 2x"
+                        srcset="/assets/possibility/phone.png 1x, /src/assets/possibility/phone@2x.png 2x"
                       />
-                      <source srcset="/src/assets/possibility/email.png 1x, assets/img/possibility/newsletter/email@2x.png 2x" />
+                      <source srcset="/assets/possibility/email.png 1x, assets/img/possibility/newsletter/email@2x.png 2x" />
                       <img
-                        src="/src/assets/possibility/email.png"
+                        src="/assets/possibility/email.png"
                         class="possibility__image possibility__image--email"
                       />
                     </picture>
@@ -91,12 +91,12 @@ const Opportunities = () => {
                   </div>
                   <div className="possibility__frame">
                     <img
-                      src="/src/assets/possibility/search.png"
+                      src="/assets/possibility/search.png"
                       loading="lazy"
                       className="possibility__image possibility__image--search"
                     />
                     <img
-                      src="/src/assets/possibility/lot.png"
+                      src="/assets/possibility/lot.png"
                       loading="lazy"
                       className="possibility__image possibility__image--lot"
                     />
@@ -129,7 +129,7 @@ const Opportunities = () => {
                   </div>
                   <div className="possibility__frame">
                     <img
-                      src="/src/assets/possibility/search1.png"
+                      src="/assets/possibility/search1.png"
                       loading="lazy"
                       className="possibility__image"
                     />
@@ -152,22 +152,22 @@ const Opportunities = () => {
                   </div>
                   <div className="possibility__frame">
                     <img
-                      src="/src/assets/possibility/tracking4.png"
+                      src="/assets/possibility/tracking4.png"
                       loading="lazy"
                       className="possibility__image possibility__image--4"
                     />
                     <img
-                      src="/src/assets/possibility/tracking3.png"
+                      src="/assets/possibility/tracking3.png"
                       loading="lazy"
                       className="possibility__image possibility__image--3"
                     />
                     <img
-                      src="/src/assets/possibility/tracking2.png"
+                      src="/assets/possibility/tracking2.png"
                       loading="lazy"
                       className="possibility__image possibility__image--2"
                     />
                     <img
-                      src="/src/assets/possibility/tracking1.png"
+                      src="/assets/possibility/tracking1.png"
                       loading="lazy"
                       className="possibility__image possibility__image--1"
                     />
@@ -199,13 +199,13 @@ const Opportunities = () => {
                   </div>
                   <div className="possibility__frame">
                     <img
-                      src="/src/assets/svg/document/pdf.svg"
+                      src="/assets/svg/document/pdf.svg"
                       loading="lazy"
                       className="possibility__image possibility__image--pdf"
                     />
                     <picture className="possibility__picture">
                       <img
-                        src="/src/assets/possibility/summary.png"
+                        src="/assets/possibility/summary.png"
                         loading="lazy"
                         className="possibility__image possibility__image--summary"
                       />
@@ -237,17 +237,17 @@ const Opportunities = () => {
                   </div>
                   <div className="possibility__frame">
                     <img
-                      src="/src/assets/possibility/monitoring1.png"
+                      src="/assets/possibility/monitoring1.png"
                       loading="lazy"
                       className="possibility__image possibility__image--1"
                     />
                     <img
-                      src="/src/assets/possibility/monitoring2.png"
+                      src="/assets/possibility/monitoring2.png"
                       loading="lazy"
                       className="possibility__image possibility__image--2"
                     />
                     <img
-                      src="/src/assets/possibility/monitoring3.png"
+                      src="/assets/possibility/monitoring3.png"
                       loading="lazy"
                       className="possibility__image possibility__image--3"
                     />
@@ -280,7 +280,7 @@ const Opportunities = () => {
                   </div>
                   <div className="possibility__frame">
                     <img
-                      src="/src/assets/possibility/employees.png"
+                      src="/assets/possibility/employees.png"
                       loading="lazy"
                       className="possibility__image"
                     />
@@ -315,14 +315,14 @@ const Opportunities = () => {
                   <div className="possibility__frame">
                     <picture className="possibility__picture">
                       <img
-                        src="/src/assets/possibility/search3.png"
+                        src="/assets/possibility/search3.png"
                         loading="lazy"
                         className="possibility__image possibility__image--search"
                       />
                     </picture>
                     <picture className="possibility__picture">
                       <img
-                        src="/src/assets/possibility/search4.png"
+                        src="/assets/possibility/search4.png"
                         loading="lazy"
                         className="possibility__image possibility__image--table"
                       />
@@ -357,12 +357,12 @@ const Opportunities = () => {
                   <DashedApi className="api__dashed" />
                   <SettingApi className="api__setting" />
                   <img
-                    src="/src/assets/svg/api/logo.svg"
+                    src="/assets/svg/api/logo.svg"
                     loading="lazy"
                     className="api__image api__image--logo"
                   />
                   <img
-                    src="/src/assets/svg/api/crm.svg"
+                    src="/assets/svg/api/crm.svg"
                     loading="lazy"
                     className="api__image api__image--crm"
                   />

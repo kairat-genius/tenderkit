@@ -84,8 +84,7 @@ const Footer = () => {
                     class="footer__link"
                     href="/education"
                   >
-                    {" "}
-                    Обучение{" "}
+                    Обучение
                   </a>
                 </li>
                 <li class="footer__item">
@@ -94,8 +93,7 @@ const Footer = () => {
                     class="footer__link"
                     href="/analytics"
                   >
-                    {" "}
-                    Аналитика{" "}
+                    Аналитика
                   </a>
                 </li>
               </ul>
@@ -107,8 +105,7 @@ const Footer = () => {
                     class="footer__link"
                     href="/register-suppliers-manufacturers"
                   >
-                    {" "}
-                    Реестр поставщиков и производителей{" "}
+                    Реестр поставщиков и производителей
                   </a>
                 </li>
                 <li class="footer__item">
@@ -117,8 +114,7 @@ const Footer = () => {
                     class="footer__link"
                     href="/register-qualified-employees"
                   >
-                    {" "}
-                    Реестр квалифицированных сотрудников{" "}
+                    Реестр квалифицированных сотрудников
                   </a>
                 </li>
               </ul>
@@ -128,8 +124,7 @@ const Footer = () => {
               <ul class="footer__list">
                 <li class="footer__item">
                   <a routerlink="/blog" class="footer__link" href="/blog">
-                    {" "}
-                    Блог{" "}
+                    Блог
                   </a>
                 </li>
                 <li class="footer__item">
@@ -201,21 +196,17 @@ const Footer = () => {
               <h3 class="footer__title"> Контакты </h3>
               <ul class="footer__list">
                 <li class="footer__item">
-                  <a href="tel:+77075790000" class="footer__link">
-                    {" "}
-                    +7 (707)-579-00-00{" "}
+                  <a href="tel:+77057638953" class="footer__link">
+                  +7 (705)-763-89-53
                   </a>
                 </li>
                 <li class="footer__item">
                   <a href="tel:+79585815790" class="footer__link">
-                    {" "}
-                    +7 (958)-581-57-90 - для РФ{" "}
                   </a>
                 </li>
                 <li class="footer__item">
-                  <a href="https://wa.me/+77005790001" class="footer__link">
-                    {" "}
-                    +7 (700)-579-00-01 - WhatsApp{" "}
+                  <a href="https://wa.me/+77057638953" class="footer__link">
+                    +7 (705)-763-89-53 - WhatsApp
                   </a>
                 </li>
                 <li class="footer__item">
@@ -223,21 +214,18 @@ const Footer = () => {
                     href="tg://resolve?domain=Portalzakupki"
                     class="footer__link"
                   >
-                    {" "}
-                    +7 (700)-579-00-01 - Telegram{" "}
+                    +7 (705)-763-89-53 - Telegram
                   </a>
                 </li>
                 <li class="footer__item">
-                  <a href="mailto:info@zakupki.kz" class="footer__link">
-                    {" "}
-                    info@zakupki.kz{" "}
+                  <a href="mailto:info@tenderkit.kz" class="footer__link">
+                    info@tenderkit.kz
                   </a>
                 </li>
                 <li class="footer__item">
-                  <a href="https://zakupki.kz/contacts" class="footer__link">
-                    {" "}
+                  <a href="https://tenderkit.kz/contacts" class="footer__link">
                     Проспект Бауыржан Момышулы 2/1, 10&nbsp;этаж;
-                    1006&nbsp;офис, г.&nbsp;Астана{" "}
+                    1006&nbsp;офис, г.&nbsp;Астана
                   </a>
                 </li>
               </ul>
