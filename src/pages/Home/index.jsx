@@ -12,107 +12,32 @@ const Home = () => {
   const email = queryParams.email;
 
   return (
-      <main class="ng-star-inserted">
-        <section class="hero">
-          <div class="hero__container container">
-            <h1 class="hero__title">
+      <main className="ng-star-inserted">
+        <section className="hero">
+          <div className="hero__container container">
+            <h1 className="hero__title">
               Поиск тендеров в&nbsp;Казахстане по&nbsp;всем площадкам
               <br />
               в&nbsp;одном месте
             </h1>
-            <a href="" class="hero__onboarding">
+            <a href="" className="hero__onboarding">
               Нужна помощь с поиском?
             </a>
-            <area-panel hidden="">
-              <div class="hero__search-options ng-star-inserted">
-                <div class="hero__search-option">
-                  <div class="checkbox checkbox--primary">
-                    <input
-                      type="checkbox"
-                      name="checkall"
-                      class="checkbox__control"
-                    />
-                    <div class="checkbox__check"></div>
-                    <label class="checkbox__label"> Выбрать все </label>
-                  </div>
-                </div>
-                <div class="hero__search-option ng-star-inserted">
-                  <div class="checkbox checkbox--primary">
-                    <input
-                      type="checkbox"
-                      name="goszakup"
-                      class="checkbox__control"
-                    />
-                    <div class="checkbox__check"></div>
-                    <label class="checkbox__label">
-                      Государственные закупки
-                    </label>
-                  </div>
-                </div>
-                <div class="hero__search-option ng-star-inserted">
-                  <div class="checkbox checkbox--primary">
-                    <input
-                      type="checkbox"
-                      name="goszakup"
-                      class="checkbox__control"
-                    />
-                    <div class="checkbox__check"></div>
-                    <label class="checkbox__label"> Самрук-Қазына </label>
-                  </div>
-                </div>
-                <div class="hero__search-option ng-star-inserted">
-                  <div class="checkbox checkbox--primary">
-                    <input
-                      type="checkbox"
-                      name="goszakup"
-                      class="checkbox__control"
-                    />
-                    <div class="checkbox__check"></div>
-                    <label class="checkbox__label"> ЕЭП Mitwork </label>
-                  </div>
-                </div>
-                <div class="hero__search-option">
-                  <div class="checkbox checkbox--primary">
-                    <input
-                      type="checkbox"
-                      name="others"
-                      class="checkbox__control"
-                    />
-                    <div class="checkbox__check"></div>
-                    <label class="checkbox__label"> Другие площадки </label>
-                    <div class="checkbox__help">
-                      <div class="tariff-table__help">
-                        <div class="primary-hint">
-                          <div class="primary-hint__description">
-                            <div class="primary-hint__description-text">
-                              Портал закупок ERG, MP.kz, Nadloc, ЕТS-Тендер,
-                              Национальный банк, BI-Group, Bazis-A и другие
-                              коммерческие площадки
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-            </area-panel>
             <SearchBox />
-            <dl class="hero__dl">
-              <dt class="hero__dt"> Поиск по: </dt>
-              <dd class="hero__dd">
-                <a routerlink="plans" class="hero__link" href="/plans">
+            <dl className="hero__dl">
+              <dt className="hero__dt"> Поиск по: </dt>
+              <dd className="hero__dd">
+                <a routerlink="plans" className="hero__link" href="/plans">
                   планам,
                 </a>
               </dd>
-              <dd class="hero__dd">
-                <a routerlink="result" class="hero__link" href="/result">
+              <dd className="hero__dd">
+                <a routerlink="result" className="hero__link" href="/result">
                   закупкам,
                 </a>
               </dd>
-              <dd class="hero__dd">
-                <a routerlink="contracts" class="hero__link" href="/contracts">
+              <dd className="hero__dd">
+                <a routerlink="contracts" className="hero__link" href="/contracts">
                   договорам
                 </a>
               </dd>

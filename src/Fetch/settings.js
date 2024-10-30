@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 
-const API_DOMAIN = 'http://217.12.38.253';
+const API_DOMAIN = 'https://tenderkit.kz';
 const API_PREFIX = '/api/v1/';
 const CONCATE = API_DOMAIN + API_PREFIX;
 
@@ -56,6 +56,12 @@ export const LOT_DETAIL_OTHER = (slug) => CONCATE + `list/other/lot/${slug}/`;
       export const SUBJECTTYPE = CONCATE + 'list/tenderSubjectType/';
       export const STATUS = CONCATE + 'list/status/';
       export const ORGANIZER = CONCATE + 'list/organizer/';
+
+// папки
+export const LIST_CABINET_FOLDER = CONCATE + 'user/list/folder/';
+export const LIST_FOLDER = CONCATE + 'list/folder/';
+export const CREATE_FOLDER = CONCATE + 'create/folder/';
+export const DELETE_FOLDER = CONCATE + 'delete/folder/';
       
 
 

@@ -7,7 +7,7 @@ const User = ({ onClick, data, openModal, closeMenu }) => {
       <div class="m-menu__overlay" onClick={onClick}></div>
       <div class="m-menu__container">
         {data && data.fio ? (
-          <CabinetNav header="sidebar--header ng-star-inserted" />
+          <CabinetNav header="sidebar--header ng-star-inserted" closeMenu={closeMenu}/>
         ) : (
           <div class="button-group button-group--vertical ng-star-inserted">
             <div class="button-group__layout" id="registracia">

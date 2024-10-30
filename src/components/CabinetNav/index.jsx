@@ -11,7 +11,7 @@ import { ReactComponent as Recent } from "../../assets/cabinet/recent.svg";
 
 import { ReactComponent as Logout } from "../../assets/cabinet/logout.svg";
 
-const CabinetNav = ({header}) => {
+const CabinetNav = ({header, closeMenu}) => {
  
   const handleLogout = () => {
       Cookies.remove('refresh');
@@ -26,6 +26,7 @@ const CabinetNav = ({header}) => {
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
             }
             to="/cabinet/profile"
+            onClick={header ? () => closeMenu() : undefined}
           >
             <span class="sidebar__icon icon">
               <UserAlt class="icon__svg" />
@@ -39,6 +40,7 @@ const CabinetNav = ({header}) => {
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
             }
             to="/cabinet/subscribes"
+            onClick={header ? () => closeMenu() : undefined}
           >
             <span class="sidebar__icon icon">
               <Mail class="icon__svg" />
@@ -52,6 +54,7 @@ const CabinetNav = ({header}) => {
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
             }
             to="/cabinet/tracking"
+            onClick={header ? () => closeMenu() : undefined}
           >
             <span class="sidebar__icon icon">
               <Tracking class="icon__svg" />
@@ -65,6 +68,7 @@ const CabinetNav = ({header}) => {
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
             }
             to="/cabinet/favorites"
+            onClick={header ? () => closeMenu() : undefined}
           >
             <span class="sidebar__icon icon">
               <Star class="icon__svg" />
@@ -78,6 +82,7 @@ const CabinetNav = ({header}) => {
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
             }
             to="/cabinet/folders"
+            onClick={header ? () => closeMenu() : undefined}
           >
             <span class="sidebar__icon icon">
               <Folder class="icon__svg" />
@@ -91,6 +96,7 @@ const CabinetNav = ({header}) => {
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
             }
             to="/cabinet/mailing-history"
+            onClick={header ? () => closeMenu() : undefined}
           >
             <span class="sidebar__icon icon">
               <Recent class="icon__svg" />

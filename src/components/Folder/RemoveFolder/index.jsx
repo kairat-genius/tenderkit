@@ -1,12 +1,18 @@
 import React from "react";
+import { postDeleteFolder } from "../../../api/User/Folder/postDeleteFolder";
 
-const RemoveFolder = ({ closeModal }) => {
+const RemoveFolder = ({ closeModal, folder, onRemove}) => {
+
+  const handleRemove = (e) => {
+    e.preventDefault(); 
+    postDeleteFolder({ folder_id: folder.id, closeModal, onRemove})
+  };
   return (
-    <folder-remove-modal class="modal modal--guarantees modal--active ng-star-inserted">
+    <div class="modal modal--guarantees modal--active ng-star-inserted">
       <div class="modal__container">
         <div class="modal__header">
           <div class="modal__title modal__title--center">
-            Вы действительно хотите удалить данную папку?
+            Вы действительно хотите удалить данную "{folder.title}" папку?
           </div>
         </div>
         <div class="modal__body">
@@ -18,7 +24,7 @@ const RemoveFolder = ({ closeModal }) => {
                 </button>
               </div>
               <div class="button-group__layout">
-                <button type="button"class="button button--primary button--expand">
+                <button type="button"class="button button--primary button--expand" onClick={handleRemove}>
                   Удалить
                 </button>
               </div>
@@ -26,7 +32,7 @@ const RemoveFolder = ({ closeModal }) => {
           </div>
         </div>
       </div>
-    </folder-remove-modal>
+    </div>
   );
 };
 

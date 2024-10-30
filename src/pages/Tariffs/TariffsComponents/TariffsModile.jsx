@@ -1,10 +1,9 @@
 import React, {useState} from "react";
-import textData from "./tariffs.json"; 
 // svg
 import { ReactComponent as Chevronright } from "../../../assets/svg/pointer/chevronright.svg";
 import { ReactComponent as Check } from "../../../assets/svg/icon/check.svg";
 
-const TariffsModile = ({ tariffs, openModal }) => {
+const TariffsModile = ({ tariffs, openModal, textData }) => {
   const [openTariffId, setOpenTariffId] = useState(null); 
 
   const handleToggle = (id) => {

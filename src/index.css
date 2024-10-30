@@ -72,13 +72,9 @@
 
 }
 
-
-
-
 .ckeditor-container ul,
 .ckeditor-container ol {
   padding-left: 1em;     
-  list-style-position: inside;
   margin: 0;             
 }
 
@@ -105,6 +101,10 @@
   .ckeditor-container{
     max-width: 500px;
   }
+
+  .resultnone {
+    display: none!important;
+  }
 }
 
 @media (max-width: 560px) {
@@ -124,3 +124,34 @@
     max-width: 260px;
   }
 }
+
+/* результаты */
+@media (max-width: 480px) {
+  .result-button {
+    display: block!important;
+  }
+  .resultfooter {
+    width: 100%; 
+}
+  .resultfooter .button--primary-outline {
+    width: 100%; 
+    padding: 2px 16px;;
+  }
+  .resultmobile{
+     margin-top: 10px;
+     justify-content: center!important;
+  }
+
+  .resultmobile .button--primary {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 780px) {
+  .resultfolder {
+    display: none;
+  }
+}
+
+

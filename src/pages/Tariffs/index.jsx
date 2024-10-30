@@ -4,6 +4,7 @@ import {Breadcrumb, OrderTariff} from "../../components";
 import { TariffsModile, TariffsDesktop } from "./TariffsComponents";
 import { getTariff } from "../../api/Tariff/getTariff";
 import { useData } from "../../hooks/DataContext";
+import textData from "../../json/tariffs.json"; 
 const Tariffs = () => {
  const [datatariffs, setData] = useState([])
  const [showModal, setShowModal] = useState(false);
@@ -28,7 +29,7 @@ const closeModal = () => {
 
  const [isMobile, setIsMobile] = useState(window.innerWidth <= 796);
   useEffect(() => {
-    getTariff({setData});
+    getTariff({setData, data});
 
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 796);
@@ -52,11 +53,11 @@ const closeModal = () => {
                 <h1 class="visually-hidden"> Тарифы </h1>
                 <section class="content__layout">
                   <h2 class="content__title"> Тарифы </h2>
-                  {!isMobile &&<TariffsDesktop tariffs={datatariffs} openModal={openModal}/>}
+                  {!isMobile &&<TariffsDesktop tariffs={datatariffs} openModal={openModal} textData={textData}/>}
                 </section>
               </div>
        
-              {isMobile &&<TariffsModile tariffs={datatariffs} openModal={openModal}/>}
+              {isMobile &&<TariffsModile tariffs={datatariffs} openModal={openModal} textData={textData}/>}
             </div>
           </div>
         </main>

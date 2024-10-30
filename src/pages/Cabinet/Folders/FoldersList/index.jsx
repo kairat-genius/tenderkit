@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-
+import { getListCabinetFolder } from "../../../../api/User/Folder/getListCabinetFolder";
 // svg
 import { ReactComponent as FolderColored } from "../../../../assets/svg/document/folder-colored.svg";
 import { ReactComponent as Plus } from "../../../../assets/svg/pointer/plus.svg";
@@ -8,35 +8,70 @@ import { ReactComponent as EditAltFilled } from "../../../../assets/svg/pointer/
 import { ReactComponent as Trash } from "../../../../assets/svg/pointer/trash.svg";
 
 // components FoldersList
-import {CreateEditFolder, RemoveFolder} from "../../../../components";
+import {CreateEditFolder, RemoveFolder, Pagination} from "../../../../components";
 
 const FoldersList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isEditing, setIsEditing] = useState(false); // новое состояние для отслеживания режима
+  const [isEditing, setIsEditing] = useState(false);
   const [isRemoveModalOpen, setIsRemoveModalOpen] = useState(false);
+  const [count, setCount] = useState(0)
+  const [data, setData] = useState([])
+  const [selectedFolder, setSelectedFolder] = useState({ id: null, title: "" }); 
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12
+
+
+  useEffect (() =>{
+     getListCabinetFolder({setData, setCount, currentPage})
+  }, [currentPage]);
+
+  const refreshFolders = () => {
+    getListCabinetFolder({ setData, setCount, currentPage }); 
+  };
+
+  const totalPages = Math.ceil(count / itemsPerPage);
+
+const handlePageChange = (page) => {
+  if (page >= 1 && page <= totalPages) {
+    setCurrentPage(page);
+  }
+};
 
   const openCreateModal = () => {
-    setIsEditing(false); // устанавливаем создание
+    setIsEditing(false);
     setIsModalOpen(true);
   };
 
   const openEditModal = () => {
-    setIsEditing(true); // устанавливаем редактирование
+    setIsEditing(true);
     setIsModalOpen(true);
   };
 
-  const openRemoveModal = () => {
+  const openRemoveModal = (folder) => {
+    setSelectedFolder(folder); 
     setIsRemoveModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setIsRemoveModalOpen(false); // закрываем модалку удаления
+    setIsRemoveModalOpen(false);
+    setSelectedFolder({ id: null, title: "" }); 
   };
+
+  const removeFolder = (folderId) => {
+    setData((prevData) => prevData.filter(folder => folder.id !== folderId));
+    setCount((prevCount) => prevCount - 1);
+  };
+
+  const isFolderNameUnique = (name) => {
+    return !data.some((folder) => folder.title.toLowerCase() === name.toLowerCase());
+  };
+
 
   return (
     <>
-      <app-folders class="body__iner-content body__iner-content--overflow ng-star-inserted">
+      <div class="body__iner-content body__iner-content--overflow ng-star-inserted">
         <h2 class="body__title title title--h3"> Папки</h2>
         <div class="body__layout ng-star-inserted">
           <div class="folders folders--cabinet">
@@ -55,17 +90,18 @@ const FoldersList = () => {
                   </div>
                 </div>
               </div>
-              <div class="folders__row ng-star-inserted">
+              {data.map((folder) => (
+              <div class="folders__row ng-star-inserted" key={folder.id}>
                 <Link
                   className="folders__cell folders__cell--w-full folders__cell--link"
-                  to="/cabinet/folders/1293"
+                  to={`/cabinet/folders/${folder.title}`}
                 >
                   <div class="button-group button-group--sm">
                     <div class="button-group__layout">
                       <a class="folders__button folders__button--folder button">
                         <span
                           class="button__icon icon"
-                          style={{ color: "rgb(253, 127, 111)" }}
+                          style={{ color: "rgb(0, 122, 128)" }}
                         >
                           <FolderColored class="icon__svg" />
                         </span>
@@ -73,7 +109,7 @@ const FoldersList = () => {
                     </div>
                     <div class="button-group__layout truncate">
                       <span class="truncate" title="папка">
-                        папка
+                        {folder.title}
                       </span>
                     </div>
                   </div>
@@ -95,7 +131,7 @@ const FoldersList = () => {
                       <button
                         type="button"
                         class="folders__button folders__button--remove button"
-                        onClick={openRemoveModal}
+                        onClick={() => openRemoveModal(folder)}
                       >
                         <span class="button__icon icon">
                           <Trash class="icon__svg" />
@@ -105,62 +141,20 @@ const FoldersList = () => {
                   </div>
                 </div>
               </div>
-              <div class="folders__row ng-star-inserted">
-                <Link
-                  className="folders__cell folders__cell--w-full folders__cell--link"
-                  to="/cabinet/folders/1294"
-                >
-                  <div class="button-group button-group--sm">
-                    <div class="button-group__layout">
-                      <a class="folders__button folders__button--folder button">
-                        <span
-                          class="button__icon icon"
-                          style={{ color: "rgb(65, 175, 181)" }}
-                        >
-                          <FolderColored class="icon__svg" />
-                        </span>
-                      </a>
-                    </div>
-                    <div class="button-group__layout truncate">
-                      <span class="truncate" title="папки">
-                        папки
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-                <div class="folders__cell">
-                  <div class="button-group">
-                    <div class="button-group__layout button-group__layout--rtl">
-                      <button
-                        type="button"
-                        class="folders__button folders__button--edit button"
-                        onClick={openEditModal} 
-                      >
-                        <span class="button__icon icon">
-                          <EditAltFilled class="icon__svg" />
-                        </span>
-                      </button>
-                    </div>
-                    <div class="button-group__layout">
-                      <button
-                        type="button"
-                        class="folders__button folders__button--remove button"
-                        onClick={openRemoveModal}
-                      >
-                        <span class="button__icon icon">
-                          <Trash class="icon__svg" />
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-      </app-folders>
-      {isModalOpen && <CreateEditFolder closeModal={closeModal} isEditing={isEditing} />}
-      {isRemoveModalOpen && <RemoveFolder closeModal={closeModal} />}
+        {totalPages > 1 && (
+      <div class="body__layout">
+        <div class="panel panel--footer">
+        <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+        </div>
+      </div>
+      )}
+      </div>
+      {isModalOpen && <CreateEditFolder closeModal={closeModal} isEditing={isEditing} refreshFolders={refreshFolders} existingFolders={isFolderNameUnique}  />}
+      {isRemoveModalOpen && <RemoveFolder closeModal={closeModal} folder={selectedFolder} onRemove={removeFolder}/>}
     </>
   );
 };

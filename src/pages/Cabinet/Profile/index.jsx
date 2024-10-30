@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useData } from "../../../hooks/DataContext";
-
+import { Link } from "react-router-dom";
 // svg
 import { ReactComponent as UserAlt } from "../../../assets/cabinet/user-alt.svg";
 import { ReactComponent as PersonalCard } from "../../../assets/cabinet/personal-card.svg";
@@ -72,10 +72,10 @@ useEffect(() => {
                 <div class="card__label"> Тариф </div>
                 <div class="card__data"> {data.subscription && data.subscription.tariff.name ? data.subscription.tariff.name : null} </div>
               </div>
-              <div class="card__actions" id="profil_perepodkluchit">
-                <button routerlink="/tariffs" class="button button--primary-outline" tabindex="0">
+              <div class="card__actions">
+                <Link to="/tariffs" class="button button--primary-outline" tabindex="0">
                   Переподключить тариф
-                </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import { formatPurchaseType } from "../../hooks/LotUtils";
 import DateTime from "./DateTime";
 import LotActions from "./LotActions";
 
-const LotList = ({ lot, checked, onChange, chekbox }) => {
+const LotList = ({ lot, checked, onChange, chekbox, folders, openDropdownId, setOpenDropdownId, FavoriteRemove }) => {
   return (
     <div className={`sr-item ${checked ? "sr-item--selected" : ""}`}>
       <div class="sr-item__container">
@@ -98,7 +98,10 @@ const LotList = ({ lot, checked, onChange, chekbox }) => {
               </span>
             )}
           </div>
-          <LotActions lot={lot} />
+          <LotActions lot={lot} folders={folders}
+          openDropdownId={openDropdownId}
+          setOpenDropdownId={setOpenDropdownId}
+          FavoriteRemove={FavoriteRemove}/>
         </div>
       </div>
     </div>

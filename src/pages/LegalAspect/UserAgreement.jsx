@@ -1,5 +1,5 @@
 import React from "react";
-import agreementData from "./userAgreement.json";
+import agreementData from "../../json/userAgreement.json";
 import { Breadcrumb } from "../../components";
 const UserAgreement = () => {
   return (

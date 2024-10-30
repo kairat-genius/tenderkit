@@ -1,4 +1,7 @@
 import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const clients = [
     { id: 1, src: "/src/assets/clients/magnum.png", alt: "magnum" },
@@ -24,59 +27,36 @@ const clients = [
 
   ];
 
-const Clients = () => {
-  return (
-    <section class="content__block">
-      <div class="container container--lg">
-        <h2 class="content__title"> Наши клиенты и партнеры </h2>
-        <div class="slider">
-          <div class="slider__container container container--lg">
-            <ngx-slick-carousel class="slider__items carousel slick-initialized slick-slider">
-              <button
-                class="slick-prev slick-arrow"
-                aria-label="Previous"
-                type="button"
-              >
-                Previous
-              </button>
-              <div class="slick-list draggable">
-                <div
-                  class="slick-track"
-                  style={{
-                    opacity: "1",
-                    width: "6020px",
-                    transform: "translate3d(-1204px, 0px, 0px)",
-                  }}
-                >
-                  {clients.map((client) => (
-                    <div
-                      key={client.id}
-                      className="slide slick-slide ng-star-inserted"
-                      data-slick-index={client.id - 1}
-                      aria-hidden="false"
-                      style={{ width: "172px" }}
-                      tabindex="0"
-                    >
-                      <div className="slider__item">
-                        <img alt={client.alt} src={client.src} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <button
-                class="slick-next slick-arrow"
-                aria-label="Next"
-                type="button"
-              >
-                Next
-              </button>
-            </ngx-slick-carousel>
+  const Clients = () => {
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 5,
+      slidesToScroll: 5,    
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: true,
+    };
+  
+    return (
+      <section className="content__block">
+        <div className="container container--lg">
+          <h2 className="content__title">Наши клиенты и партнеры</h2>
+          <div className="slider">
+            <div className="slider__container container container--lg">
+              <Slider {...settings} className="slider__items carousel">
+                {clients.map((client) => (
+                  <div key={client.id} className="slider__item">
+                    <img alt={client.alt} src={client.src} />
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
-
-export default Clients;
+      </section>
+    );
+  };
+  
+  export default Clients;

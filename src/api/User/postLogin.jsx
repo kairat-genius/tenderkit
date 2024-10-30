@@ -32,7 +32,9 @@ export const postLogin = ({ email, password, onClose }) => {
     .catch(error => {
         if (error.response && error.response.data) {
             const errorMessage = error.response.data.detail;
-            if (errorMessage) {
+            if (errorMessage === "No active account found with the given credentials") {
+                toast.error("Аккаунт с указанными данными не найден.");
+            } else {
                 toast.error(errorMessage);  
             }
         } else if (error.request) {

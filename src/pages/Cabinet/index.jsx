@@ -21,6 +21,7 @@ const CabinetLayout = () => {
   const isProfileRoute = location.pathname === '/cabinet/profile'; 
   const isTrackingRoute = location.pathname === '/cabinet/tracking'; 
   const isFavoriteRoute = location.pathname === '/cabinet/favorites';
+  const isFolderRoute = location.pathname === '/cabinet/folders';
 
   return (
     <div id="elToResetScroll" className="layout__body">
@@ -37,6 +38,8 @@ const CabinetLayout = () => {
                 {isTrackingRoute && data.subscription && data.subscription.tariff.tracking_tenders_access === false ? (
                   <NoTariff />
                 ) : isFavoriteRoute && data.subscription && data.subscription.tariff.favorite_access === false ? (
+                  <NoTariff />
+                ) : isFolderRoute && data.subscription && data.subscription.tariff.folder_access === false ? (
                   <NoTariff />
                 ) : (isProfileRoute || data.subscription) ? (
                   <Outlet />

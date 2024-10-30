@@ -1,10 +1,9 @@
 import React from "react";
-import textData from "./tariffs.json"; 
 // svg
 import { ReactComponent as Check } from "../../../assets/svg/icon/check.svg";
 
 
-const TariffsDesktop = ({ tariffs, openModal }) => {
+const TariffsDesktop = ({ tariffs, openModal, textData }) => {
   const renderAccessIcons = (accessKey) => {
     return tariffs.map((tariff) =>
       tariff[accessKey] ? (

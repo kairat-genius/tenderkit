@@ -30,8 +30,8 @@ const FilterFooter = ({ onClick, isFilterVisible, handleButtonClick, setFilters 
 
   return (
     <div className="filter__footer">
-      <div className="panel">
-        <div className="panel__layout">
+      <div className="panel result-button">
+        <div className="panel__layout result-button">
           <div className="button-group">
             <div className="button-group__layout desktop">
               <button
@@ -60,7 +60,6 @@ const FilterFooter = ({ onClick, isFilterVisible, handleButtonClick, setFilters 
               <button
                 type="button"
                 className="button button--secondary-outline"
-                id="poisk_zakupok_podpisatsya"
               >
                 <span className="button__icon button__icon--before icon">
                   <Mail className="icon__svg" />
@@ -70,22 +69,18 @@ const FilterFooter = ({ onClick, isFilterVisible, handleButtonClick, setFilters 
                 </span>
               </button>
             </subscribe-btn>
-          </div>
-        </div>
-        <div className="panel__layout panel__layout--rtl">
-          <div className="button-group">
-            <div className="button-group__layout">
+            <div className="button-group__layout resultfooter">
               <button type="button" className="button button--primary-outline" onClick={handleResetFilters}>
                 Сбросить фильтр
               </button>
             </div>
-            <div className="button-group__layout" id="poisk_zakupok_poisk">
+          </div>
+        </div>
+            <div className="button-group__layout resultmobile">
               <button type="button" className="button button--primary" onClick={handleButtonClick}>
                 Поиск
               </button>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
-import * as XLSX from "xlsx"; // Import xlsx
+import * as XLSX from "xlsx"; 
+import { getListFolder } from "../../api/User/Folder/getListFolder";
 // svg
 import { ReactComponent as Xls } from "../../assets/svg/document/xls.svg";
 import { ReactComponent as Folder } from "../../assets/svg/document/folder.svg";
@@ -15,11 +16,12 @@ const Result = () => {
   const [count, setCount] = useState(0);
   const [selectedLots, setSelectedLots] = useState([]); 
   const [selectAll, setSelectAll] = useState(false); 
-
+  const [openDropdownId, setOpenDropdownId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [fetchTrigger, setFetchTrigger] = useState(false);
   const ListRef = useRef(null);
   const [sortOption, setSortOption] = useState("");
+  const [folders, setFolder] = useState([]);
   const [filters, setFilters] = useState({
     // дате завершения
     endDate_from: "",
@@ -60,10 +62,16 @@ const Result = () => {
     getListLots({ setData, setCount, offset: 0, filters: { ...filters, ...filterData } });
   }, []);
 
+
+  useEffect(() => {
+    getListFolder({ setFolder });
+  }, []);
+
   const itemsPerPage = 20;
   const offset = itemsPerPage * (currentPage -1)
 
   const handleButtonClick = () => {
+    setCurrentPage(1);
     setFetchTrigger((prev) => !prev); 
 
     localStorage.setItem("Filter", JSON.stringify(filters));
@@ -160,7 +168,7 @@ const Result = () => {
                         <span className="toolbar__icon button__icon button__icon--before icon">
                           <Xls className="icon__svg" />
                         </span>
-                        Скачать все
+                        Скачать <span className="resultfolder">&nbsp;все</span>
                       </button>
                     </div>
                   </div>
@@ -170,11 +178,11 @@ const Result = () => {
                         <span className="toolbar__icon button__icon icon button__icon--before">
                           <Folder className="icon__svg" />
                         </span>
-                        <span className="ng-star-inserted">Добавить в папку</span>
+                        <span className="ng-star-inserted resultfolder">Добавить в папку</span>
                       </button>
                     </div>
                   </div>
-                  <div className="panel__layout ng-star-inserted">
+                  <div className="panel__layout ng-star-inserted resultnone">
                     <div className={`toolbar toolbar--secondary ${selectedLots.length > 0 ? '' : 'toolbar--disabled'}`}>
                       <p className="toolbar__item">
                         {selectedLots.length > 0 
@@ -201,6 +209,9 @@ const Result = () => {
                         checked={selectedLots.includes(lot.slug)} 
                         onChange={() => handleSelectLot(lot.slug)} 
                         chekbox={true}
+                        folders={folders}
+                        openDropdownId={openDropdownId}
+                        setOpenDropdownId={setOpenDropdownId}
                       />
                     </li>
                   ))}

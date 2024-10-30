@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import { postCreateFolder } from "../../../api/User/Folder/postCreateFolder";
 
-// svg
-import {ReactComponent as FolderColored} from "../../../assets/svg/document/folder-colored.svg"
+const CreateEditFolder = ({ closeModal, isEditing, refreshFolders, existingFolders }) => {
+  const [title, setTitle] = useState("");
+  const [error, setError] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!existingFolders(title)) {
+      setError("Папка с таким названием уже существует!");
+      return;
+    }
 
-const CreateEditFolder = ({closeModal, isEditing }) => {
+    postCreateFolder({ title, closeModal, refreshFolders });
+  };
+
   return (
-    <folder-edit-modal class="modal modal--active ng-star-inserted">
-      <div class="modal__container">
+    <div class="modal modal--active ng-star-inserted">
+      <div class="modal__container" style={{ minHeight: "0" }}>
         <div class="modal__header">
-          <div class="modal__title"> {isEditing ? "Изменение папки" : "Создание папки"} </div>
+          <div class="modal__title">
+            {isEditing ? "Изменение папки" : "Создание папки"}{" "}
+          </div>
           <div class="modal__close" onClick={closeModal}></div>
         </div>
         <form
-       noValidate=""
+          noValidate=""
           autoComplete="off"
           class="modal__body ng-untouched ng-pristine ng-valid"
+          onSubmit={handleSubmit}
         >
           <div class="modal__section">
             <div class="modal__layout">
@@ -24,86 +37,42 @@ const CreateEditFolder = ({closeModal, isEditing }) => {
                   type="text"
                   class="inputfield__input input ng-untouched ng-pristine ng-valid"
                   placeholder="Название папки"
+                  value={title}
+                  onChange={(e) => {
+                    setTitle(e.target.value);
+                    setError("");
+                  }}
                 />
                 <label class="inputfield__label"> Название папки </label>
+                {error && (
+                  <div className="validation-message validation-message--alert">
+                    {error}
+                  </div>
+                )}
               </div>
             </div>
           </div>
-          <div class="modal__section">
-            <legend class="modal__legend"> Выберите цвет </legend>
-            <ul class="option option--folders-list">
-              <li class="option__layout ng-star-inserted">
-                <span class="icon" style={{color: "rgb(65, 175, 181)"}}>
-                  <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-              <li class="option__layout ng-star-inserted option__layout--selected">
-                <span class="icon" style={{color: "rgb(0, 122, 128)"}}>
-                <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-              <li class="option__layout ng-star-inserted">
-                <span class="icon" style={{color: "rgb(253, 127, 111)"}}>
-                <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-              <li class="option__layout ng-star-inserted">
-                <span class="icon" style={{color: "rgb(106, 161, 255)"}}>
-                <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-              <li class="option__layout ng-star-inserted">
-                <span class="icon" style={{color: "rgb(148, 84, 146)"}}>
-                <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-              <li class="option__layout ng-star-inserted">
-                <span class="icon" style={{color: "rgb(115, 112, 181)"}}>
-                <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-              <li class="option__layout ng-star-inserted">
-                <span class="icon" style={{color: "rgb(178, 224, 97)"}}>
-                <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-              <li class="option__layout ng-star-inserted">
-                <span class="icon" style={{color: "rgb(108, 151, 64)"}}>
-                <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-              <li class="option__layout ng-star-inserted">
-                <span class="icon" style={{color: "rgb(210, 74, 74)"}}>
-                <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-              <li class="option__layout ng-star-inserted">
-                <span class="icon" style={{color: "rgb(215, 182, 9)"}}>
-                <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-              <li class="option__layout ng-star-inserted">
-                <span class="icon" style={{color: "rgb(111, 119, 127)"}}>
-                <FolderColored class="icon__svg"/>
-                </span>
-              </li>
-            </ul>
-          </div>
           <div class="modal__section modal__section--footer">
             <div class="modal__layout modal__layout--sm">
-              <button class="button button--primary button--expand">
+              <button
+                class="button button--primary button--expand"
+                type="submit"
+              >
                 Сохранить
               </button>
             </div>
             <div class="modal__layout modal__layout--sm">
-              <button class="button button--primary-transparent button--expand">
+              <button
+                class="button button--primary-transparent button--expand"
+                onClick={closeModal}
+              >
                 Отмена
               </button>
             </div>
           </div>
         </form>
       </div>
-    </folder-edit-modal>
+    </div>
   );
 };
 
