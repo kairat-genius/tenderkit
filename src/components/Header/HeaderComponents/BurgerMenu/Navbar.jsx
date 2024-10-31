@@ -19,7 +19,7 @@ const Navbar = ({data, openModal, closeMenu}) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
   return ( 
-      <div className="m-nav m-nav--active">
+      <div className="m-nav m-nav--active" style={{zIndex: "10000"}}>
         <div class="m-nav__container">
           <ul class="m-nav__list">
           <li className={`m-nav__item dropdown dropdown--header ${activeDropdown === "tenders" ? 'dropdown--active' : ''}`}>
@@ -85,6 +85,7 @@ const Navbar = ({data, openModal, closeMenu}) => {
             <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/popular-tender-categories" label="Самые популярные категории тендеров" closeMenu={closeMenu}/>
             <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/about-us" label="О нас" closeMenu={closeMenu}/>
             <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/instruction" label="Инструкция" closeMenu={closeMenu}/>
+            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/contacts" label="Контакты" closeMenu={closeMenu}/>
             <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/faq" label="FAQ" closeMenu={closeMenu}/>
           </ul>
           <div class="m-nav__layout">

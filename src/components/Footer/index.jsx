@@ -217,17 +217,7 @@ const Footer = () => {
                     +7 (705)-763-89-53 - Telegram
                   </a>
                 </li>
-                <li class="footer__item">
-                  <a href="mailto:info@tenderkit.kz" class="footer__link">
-                    info@tenderkit.kz
-                  </a>
-                </li>
-                <li class="footer__item">
-                  <a href="https://tenderkit.kz/contacts" class="footer__link">
-                    Проспект Бауыржан Момышулы 2/1, 10&nbsp;этаж;
-                    1006&nbsp;офис, г.&nbsp;Астана
-                  </a>
-                </li>
+              
               </ul>
             </div>
           </div>
