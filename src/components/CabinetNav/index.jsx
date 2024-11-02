@@ -20,7 +20,7 @@ const CabinetNav = ({header, closeMenu}) => {
   };
   return (
     <ul className={`sidebar ${header ? header : ''}`}>
-        <li class="sidebar__layout">
+        <li className="sidebar__layout">
           <NavLink
             className={({ isActive }) => 
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
@@ -28,13 +28,13 @@ const CabinetNav = ({header, closeMenu}) => {
             to="/cabinet/profile"
             onClick={header ? () => closeMenu() : undefined}
           >
-            <span class="sidebar__icon icon">
-              <UserAlt class="icon__svg" />
+            <span className="sidebar__icon icon">
+              <UserAlt className="icon__svg" />
             </span>
             Профиль
           </NavLink>
         </li>
-        <li class="sidebar__layout">
+        <li className="sidebar__layout">
           <NavLink
              className={({ isActive }) => 
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
@@ -42,13 +42,13 @@ const CabinetNav = ({header, closeMenu}) => {
             to="/cabinet/subscribes"
             onClick={header ? () => closeMenu() : undefined}
           >
-            <span class="sidebar__icon icon">
-              <Mail class="icon__svg" />
+            <span className="sidebar__icon icon">
+              <Mail className="icon__svg" />
             </span>
             Мои подписки
           </NavLink>
         </li>
-        <li class="sidebar__layout">
+        <li className="sidebar__layout">
           <NavLink
              className={({ isActive }) => 
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
@@ -56,13 +56,13 @@ const CabinetNav = ({header, closeMenu}) => {
             to="/cabinet/tracking"
             onClick={header ? () => closeMenu() : undefined}
           >
-            <span class="sidebar__icon icon">
-              <Tracking class="icon__svg" />
+            <span className="sidebar__icon icon">
+              <Tracking className="icon__svg" />
             </span>
             Отслеживание
           </NavLink>
         </li>
-        <li class="sidebar__layout">
+        <li className="sidebar__layout">
           <NavLink
             className={({ isActive }) => 
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
@@ -70,13 +70,13 @@ const CabinetNav = ({header, closeMenu}) => {
             to="/cabinet/favorites"
             onClick={header ? () => closeMenu() : undefined}
           >
-            <span class="sidebar__icon icon">
-              <Star class="icon__svg" />
+            <span className="sidebar__icon icon">
+              <Star className="icon__svg" />
             </span>
             Избранное
           </NavLink>
         </li>
-        <li class="sidebar__layout">
+        <li className="sidebar__layout">
           <NavLink
             className={({ isActive }) => 
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
@@ -84,13 +84,13 @@ const CabinetNav = ({header, closeMenu}) => {
             to="/cabinet/folders"
             onClick={header ? () => closeMenu() : undefined}
           >
-            <span class="sidebar__icon icon">
-              <Folder class="icon__svg" />
+            <span className="sidebar__icon icon">
+              <Folder className="icon__svg" />
             </span>
             Папки
           </NavLink>
         </li>
-        <li class="sidebar__layout">
+        <li className="sidebar__layout">
           <NavLink
              className={({ isActive }) => 
               isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"
@@ -98,21 +98,21 @@ const CabinetNav = ({header, closeMenu}) => {
             to="/cabinet/mailing-history"
             onClick={header ? () => closeMenu() : undefined}
           >
-            <span class="sidebar__icon icon">
-              <Recent class="icon__svg" />
+            <span className="sidebar__icon icon">
+              <Recent className="icon__svg" />
             </span>
             История рассылок
             </NavLink>
         </li>
-        <li class="sidebar__layout">
+        <li className="sidebar__layout">
           <a
             routerlinkactive="sidebar__link--active"
-            class="sidebar__link sidebar__link--logout"
+            className="sidebar__link sidebar__link--logout"
             onClick={handleLogout}
             href="/"
           >
-            <span class="sidebar__icon icon">
-              <Logout class="icon__svg" />
+            <span className="sidebar__icon icon">
+              <Logout className="icon__svg" />
             </span>
             Выйти
           </a>

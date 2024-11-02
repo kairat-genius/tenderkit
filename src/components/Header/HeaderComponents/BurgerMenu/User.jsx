@@ -3,17 +3,17 @@ import CabinetNav from "../../../CabinetNav";
 
 const User = ({ onClick, data, openModal, closeMenu }) => {
   return (
-    <div class="m-menu m-menu--active">
-      <div class="m-menu__overlay" onClick={onClick}></div>
-      <div class="m-menu__container">
+    <div className="m-menu m-menu--active">
+      <div className="m-menu__overlay" onClick={onClick}></div>
+      <div className="m-menu__container">
         {data && data.fio ? (
           <CabinetNav header="sidebar--header ng-star-inserted" closeMenu={closeMenu}/>
         ) : (
-          <div class="button-group button-group--vertical ng-star-inserted">
-            <div class="button-group__layout" id="registracia">
+          <div className="button-group button-group--vertical ng-star-inserted">
+            <div className="button-group__layout" id="registracia">
               <button
                 type="button"
-                class="button button--primary button--md button--expand"
+                className="button button--primary button--md button--expand"
                 onClick={() => {
                   openModal("register");
                   closeMenu();
@@ -22,10 +22,10 @@ const User = ({ onClick, data, openModal, closeMenu }) => {
                 Регистрация
               </button>
             </div>
-            <div class="button-group__layout" id="voiti">
+            <div className="button-group__layout" id="voiti">
               <button
                 type="button"
-                class="button button--secondary-transparent button--md button--expand"
+                className="button button--secondary-transparent button--md button--expand"
                 onClick={() => { openModal("login"); closeMenu(); }}
               >
                 Войти

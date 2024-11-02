@@ -59,16 +59,16 @@ const Register = ({ onClose}) => {
 
 
   return (
-    <register-modal class="modal modal--register modal--active" >
-      <div class="modal__container">
-        <div class="modal__header">
-          <div class="modal__title"> Регистрация </div>
-          <div class="modal__close" onClick={onClose}></div>
+    <div className="modal modal--register modal--active" >
+      <div className="modal__container">
+        <div className="modal__header">
+          <div className="modal__title"> Регистрация </div>
+          <div className="modal__close" onClick={onClose}></div>
         </div>
-        <div class="modal__body ng-dirty ng-touched ng-invalid">
-          <div class="tab-content">
-            <div class="tab-content__panel tab-content__panel--active">
-              <div class="modal__section">
+        <div className="modal__body ng-dirty ng-touched ng-invalid">
+          <div className="tab-content">
+            <div className="tab-content__panel tab-content__panel--active">
+              <div className="modal__section">
                 <InputField
                   placeholder="Ф.И.О"
                   label="Ф.И.О"
@@ -139,14 +139,14 @@ const Register = ({ onClose}) => {
                   }
                 />
               </div>
-              <div class="modal__section modal__section--footer">
-                <div class="modal__layout modal__layout--sm" id="registracia_dalee">
-                  <button  type="button"  class="button button--primary button--expand" onClick={handleRegister}>
+              <div className="modal__section modal__section--footer">
+                <div className="modal__layout modal__layout--sm" id="registracia_dalee">
+                  <button  type="button"  className="button button--primary button--expand" onClick={handleRegister}>
                     Регистрация 
                   </button>
                 </div>
-                <div class="modal__layout modal__layout--sm">
-                  <button type="button" class="button button--secondary-transparent button--expand" onClick={onClose}>
+                <div className="modal__layout modal__layout--sm">
+                  <button type="button" className="button button--secondary-transparent button--expand" onClick={onClose}>
                     Отмена
                   </button>
                 </div>
@@ -155,7 +155,7 @@ const Register = ({ onClose}) => {
           </div>
         </div>
       </div>
-    </register-modal>
+    </div>
   );
 };
 

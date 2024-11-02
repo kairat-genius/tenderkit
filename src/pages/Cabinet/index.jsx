@@ -25,7 +25,7 @@ const CabinetLayout = () => {
 
   return (
     <div id="elToResetScroll" className="layout__body">
-      <cabinet className="ng-star-inserted">
+      <div className="ng-star-inserted">
         <div className="layout__container ng-star-inserted">
           <div className="body body--cabinet">
             <div className="body__content">
@@ -50,7 +50,7 @@ const CabinetLayout = () => {
             </div>
           </div>
         </div>
-      </cabinet>
+      </div>
       <Footer />
     </div>
   );

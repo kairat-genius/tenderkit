@@ -31,74 +31,74 @@ const AccountResetPassword = ({uuid, token, email}) => {
 
 
   return (
-    <div class="modal modal--active">
-      <div class="modal__container">
-        <div class="modal__header">
-          <div class="modal__title">Новый пароль</div>
-          <div class="modal__close" onClick={handleCloseModal}></div>
+    <div className="modal modal--active">
+      <div className="modal__container">
+        <div className="modal__header">
+          <div className="modal__title">Новый пароль</div>
+          <div className="modal__close" onClick={handleCloseModal}></div>
         </div>
-        <div class="modal__body ng-untouched ng-pristine ng-invalid">
-          <div class="modal__section">
-            <div class="modal__layout">
-              <div class="inputfield inputfield--disabled">
+        <div className="modal__body ng-untouched ng-pristine ng-invalid">
+          <div className="modal__section">
+            <div className="modal__layout">
+              <div className="inputfield inputfield--disabled">
                 <input
                   value={email || ""}
                   type="text"
                   placeholder="E-mail"
                   formcontrolname="email"
-                  class="inputfield__input input ng-untouched ng-pristine ng-valid"
+                  className="inputfield__input input ng-untouched ng-pristine ng-valid"
                 />
-                <label class="inputfield__label"> E-mail </label>
+                <label className="inputfield__label"> E-mail </label>
               </div>
             </div>
-            <div class="modal__layout">
-              <div class="inputfield inputfield--suffix">
+            <div className="modal__layout">
+              <div className="inputfield inputfield--suffix">
                 <input
                   formcontrolname="password"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  class="inputfield__input input ng-untouched ng-pristine ng-invalid"
+                  className="inputfield__input input ng-untouched ng-pristine ng-invalid"
                   type={showNewPassword ? "text" : "password"}
                   placeholder="Придумайте новый пароль"
                   onBlur={handleBlurNewPassword}
                 />
-                <label class="inputfield__label">
+                <label className="inputfield__label">
                   Придумайте новый пароль
                 </label>
-                <div class="inputfield__suffix">
+                <div className="inputfield__suffix">
                   <button
                     type="button"
-                    class="inputfield__button button"
+                    className="inputfield__button button"
                     title="Показать пароль"
                     onClick={() => setShowNewPassword(!showNewPassword)} 
                   >
-                    <span class="icon">
+                    <span className="icon">
                       <Eye />
                     </span>
                   </button>
                 </div>
               </div>
             </div>
-            <div class="modal__layout">
-              <div class="inputfield inputfield--suffix">
+            <div className="modal__layout">
+              <div className="inputfield inputfield--suffix">
                 <input
                   formcontrolname="confirm_password"
-                  class="inputfield__input input ng-untouched ng-pristine ng-invalid"
+                  className="inputfield__input input ng-untouched ng-pristine ng-invalid"
                   type={showConfirmPassword ? "text" : "password"}
                   placeholder="Придумайте новый пароль"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   onBlur={handleBlurConfirmPassword}
                 />
-                <label class="inputfield__label"> Повторите пароль </label>
-                <div class="inputfield__suffix">
+                <label className="inputfield__label"> Повторите пароль </label>
+                <div className="inputfield__suffix">
                   <button
                     type="button"
-                    class="inputfield__button button"
+                    className="inputfield__button button"
                     title="Показать пароль"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)} 
                   >
-                    <span class="icon">
+                    <span className="icon">
                     <Eye />
                     </span>
                   </button>
@@ -106,9 +106,9 @@ const AccountResetPassword = ({uuid, token, email}) => {
               </div>
             </div>
           </div>
-          <div class="modal__section modal__section--footer">
-            <div class="modal__layout">
-              <button class="button button--primary button--expand" disabled={!newPassword || !confirmPassword} onClick={handleResetPassword}>
+          <div className="modal__section modal__section--footer">
+            <div className="modal__layout">
+              <button className="button button--primary button--expand" disabled={!newPassword || !confirmPassword} onClick={handleResetPassword}>
                 Войти
               </button>
             </div>

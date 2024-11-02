@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 // svg
 import { ReactComponent as PhoneOffice } from "../../assets/svg/social/phone-office.svg";
@@ -14,19 +14,18 @@ import ContactLink from "./ContactLink";
 import "leaflet/dist/leaflet.css";
 
 const Contacts = () => {
-  const [center, setCenter] = useState({ lat: 51.18308, lng: 71.423 });
+  const [center] = useState({ lat: 51.18308, lng: 71.423 });
   const ZOOM_LEVEL = 16;
-  const mapRef = useRef();
 
   return (
-    <main class="ng-star-inserted">
-      <div class="layout__container">
-        <div class="body body--contacts">
-          <div class="body__content">
+    <main className="ng-star-inserted">
+      <div className="layout__container">
+        <div className="body body--contacts">
+          <div className="body__content">
             <Breadcrumb />
-            <h1 class="body__heading"> Контакты </h1>
-            <div class="body__container">
-              <div class="body__section">
+            <h1 className="body__heading"> Контакты </h1>
+            <div className="body__container">
+              <div className="body__section">
                 <ContactLink
                   href="tel:+77057638953"
                   icon={PhoneOffice}
@@ -61,10 +60,9 @@ const Contacts = () => {
                 <MapContainer
                   center={center}
                   zoom={ZOOM_LEVEL}
-                  ref={mapRef}
                   className="body__map map"
                 >
-                  <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+                  <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                   <Marker position={center}>
                     <Popup>
                       Республика Казахстан, город Астана проспект Республики 58

@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 // Обёрточный компонент для всех маршрутов внутри 
 const IndexLayout = () => {
   return (
-    <div id="elToResetScroll" class="layout__body">
+    <div id="elToResetScroll" className="layout__body">
       <Outlet />
       <Footer/>
     </div>

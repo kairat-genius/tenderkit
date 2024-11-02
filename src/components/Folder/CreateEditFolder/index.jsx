@@ -15,27 +15,27 @@ const CreateEditFolder = ({ closeModal, isEditing, refreshFolders, existingFolde
   };
 
   return (
-    <div class="modal modal--active ng-star-inserted">
-      <div class="modal__container" style={{ minHeight: "0" }}>
-        <div class="modal__header">
-          <div class="modal__title">
+    <div className="modal modal--active ng-star-inserted">
+      <div className="modal__container" style={{ minHeight: "0" }}>
+        <div className="modal__header">
+          <div className="modal__title">
             {isEditing ? "Изменение папки" : "Создание папки"}{" "}
           </div>
-          <div class="modal__close" onClick={closeModal}></div>
+          <div className="modal__close" onClick={closeModal}></div>
         </div>
         <form
           noValidate=""
           autoComplete="off"
-          class="modal__body ng-untouched ng-pristine ng-valid"
+          className="modal__body ng-untouched ng-pristine ng-valid"
           onSubmit={handleSubmit}
         >
-          <div class="modal__section">
-            <div class="modal__layout">
-              <div class="inputfield">
+          <div className="modal__section">
+            <div className="modal__layout">
+              <div className="inputfield">
                 <input
                   formcontrolname="name"
                   type="text"
-                  class="inputfield__input input ng-untouched ng-pristine ng-valid"
+                  className="inputfield__input input ng-untouched ng-pristine ng-valid"
                   placeholder="Название папки"
                   value={title}
                   onChange={(e) => {
@@ -43,7 +43,7 @@ const CreateEditFolder = ({ closeModal, isEditing, refreshFolders, existingFolde
                     setError("");
                   }}
                 />
-                <label class="inputfield__label"> Название папки </label>
+                <label className="inputfield__label"> Название папки </label>
                 {error && (
                   <div className="validation-message validation-message--alert">
                     {error}
@@ -52,18 +52,18 @@ const CreateEditFolder = ({ closeModal, isEditing, refreshFolders, existingFolde
               </div>
             </div>
           </div>
-          <div class="modal__section modal__section--footer">
-            <div class="modal__layout modal__layout--sm">
+          <div className="modal__section modal__section--footer">
+            <div className="modal__layout modal__layout--sm">
               <button
-                class="button button--primary button--expand"
+                className="button button--primary button--expand"
                 type="submit"
               >
                 Сохранить
               </button>
             </div>
-            <div class="modal__layout modal__layout--sm">
+            <div className="modal__layout modal__layout--sm">
               <button
-                class="button button--primary-transparent button--expand"
+                className="button button--primary-transparent button--expand"
                 onClick={closeModal}
               >
                 Отмена

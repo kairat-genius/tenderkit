@@ -152,11 +152,11 @@ const Reviews = () => {
         </div>
       </div>
       {activeImage && (
-      <div class="modal modal--image modal--active" onClick={handleCloseModal}>
-        <div clickoutside="" class="modal__container">
+      <div className="modal modal--image modal--active" onClick={handleCloseModal}>
+        <div clickoutside="" className="modal__container">
           <img
             loading="lazy"
-            class="modal__image"
+            className="modal__image"
             src="/assets/reviews/interteach.jpg"
             alt="null"
             title="null"

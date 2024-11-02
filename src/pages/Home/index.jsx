@@ -20,9 +20,6 @@ const Home = () => {
               <br />
               в&nbsp;одном месте
             </h1>
-            <a href="" className="hero__onboarding">
-              Нужна помощь с поиском?
-            </a>
             <SearchBox />
             <dl className="hero__dl">
               <dt className="hero__dt"> Поиск по: </dt>

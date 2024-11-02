@@ -33,12 +33,12 @@ const FavoriteRemove = (slug) => {
 };
 
   return (
-    <favorites class="body__iner-content body__iner-content--overflow ng-star-inserted">
-      <h2 class="body__title title title--h3"> Избранное</h2>
-      <div class="body__layout searchresults">
-        <ul class="searchresults__list">
+    <main className="body__iner-content body__iner-content--overflow ng-star-inserted">
+      <h2 className="body__title title title--h3"> Избранное</h2>
+      <div className="body__layout searchresults">
+        <ul className="searchresults__list">
         {data.map((lot) => (
-          <li class="searchresults__item ng-star-inserted" key={lot.slug}>
+          <li className="searchresults__item ng-star-inserted" key={lot.slug}>
               <LotList lot={lot}  folders={folders}
                         openDropdownId={openDropdownId}
                         setOpenDropdownId={setOpenDropdownId}
@@ -48,13 +48,13 @@ const FavoriteRemove = (slug) => {
         </ul>
       </div>
       {totalPages > 1 && (
-      <div class="body__layout">
-        <div class="panel panel--footer">
+      <div className="body__layout">
+        <div className="panel panel--footer">
         <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
         </div>
       </div>
       )}
-    </favorites>
+    </main>
   );
 };
 

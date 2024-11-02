@@ -14,19 +14,19 @@ const DateTime = ({ lot }) => {
   const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); // Переводим миллисекунды в дни
 
   return (
-    <div class="sr-item__layout">
-      <div class="sr-item__date-info">
+    <div className="sr-item__layout">
+      <div className="sr-item__date-info">
       {lot.startingDate && (
         <>
-        <div class="sr-item__date-info-section sr-item__date-info-section--sm ng-star-inserted">
-          <span class="sr-item__date-info-icon icon">
-            <Calendar class="icon__svg" />
+        <div className="sr-item__date-info-section sr-item__date-info-section--sm ng-star-inserted">
+          <span className="sr-item__date-info-icon icon">
+            <Calendar className="icon__svg" />
           </span>
           {formatDate(lot.startingDate)}
         </div>
-        <div class="sr-item__date-info-section sr-item__date-info-section--md ng-star-inserted">
-          <span class="sr-item__date-info-icon icon">
-            <Clock class="icon__svg" />
+        <div className="sr-item__date-info-section sr-item__date-info-section--md ng-star-inserted">
+          <span className="sr-item__date-info-icon icon">
+            <Clock className="icon__svg" />
           </span>
           {formatTime(lot.startingDate)}
         </div>
@@ -34,18 +34,18 @@ const DateTime = ({ lot }) => {
        )}
         {lot.endingDate && (
         <>
-        <div class="sr-item__date-info-section sr-item__date-info-section--md ng-star-inserted">
+        <div className="sr-item__date-info-section sr-item__date-info-section--md ng-star-inserted">
           —
         </div>
-        <div class="sr-item__date-info-section sr-item__date-info-section--sm ng-star-inserted">
-          <span class="sr-item__date-info-icon icon">
-            <Calendar class="icon__svg" />
+        <div className="sr-item__date-info-section sr-item__date-info-section--sm ng-star-inserted">
+          <span className="sr-item__date-info-icon icon">
+            <Calendar className="icon__svg" />
           </span>
           {formatDate(lot.endingDate)}
         </div>
-        <div class="sr-item__date-info-section sr-item__date-info-section--md ng-star-inserted">
-          <span class="sr-item__date-info-icon icon">
-            <Clock class="icon__svg" />
+        <div className="sr-item__date-info-section sr-item__date-info-section--md ng-star-inserted">
+          <span className="sr-item__date-info-icon icon">
+            <Clock className="icon__svg" />
           </span>
           {formatTime(lot.endingDate)}
         </div>
@@ -53,7 +53,7 @@ const DateTime = ({ lot }) => {
         )}
 
         {isExpired ? (
-          <div class="sr-item__badge sr-item__badge--neutral ng-star-inserted">
+          <div className="sr-item__badge sr-item__badge--neutral ng-star-inserted">
             <div className="sr-item__badge sr-item__badge--neutral">
               Время истекло
             </div>

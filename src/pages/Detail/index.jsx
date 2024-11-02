@@ -330,22 +330,6 @@ const Detail = () => {
                             </a>
                           </div>
                         )}
-                        <div class="lot__sidebar-section">
-                          <a
-                            href="https://eep.mitwork.kz?utm_source=zakupki&amp;utm_medium=banner&amp;utm_campaign=zakupki"
-                            target="_blank"
-                            class="promo"
-                          >
-                            <img
-                              src="https://zakupki.kz/assets/img/banner-mitwork.jpg"
-                              width="285"
-                              height="285"
-                              alt="Евразийский электронный портал"
-                              title="Евразийский электронный портал"
-                              class="promo__image"
-                            />
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </div>

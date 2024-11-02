@@ -1,12 +1,12 @@
 const WhyCard = ({title, description, IconComponent}) => {
   return (
-    <div class="why-card">
-      <span class="why-card__icon why-card__icon--folders icon">
-        <IconComponent class="icon__svg" />
+    <div className="why-card">
+      <span className="why-card__icon why-card__icon--folders icon">
+        <IconComponent className="icon__svg" />
       </span>
-      <div class="why-card__content">
-        <h3 class="why-card__title">{title}</h3>
-        <p class="why-card__desc">
+      <div className="why-card__content">
+        <h3 className="why-card__title">{title}</h3>
+        <p className="why-card__desc">
           {description}
         </p>
       </div>

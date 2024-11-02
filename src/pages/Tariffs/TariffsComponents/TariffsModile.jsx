@@ -10,31 +10,31 @@ const TariffsModile = ({ tariffs, openModal, textData }) => {
     setOpenTariffId((prevId) => (prevId === id ? null : id)); 
   };
   return (
-    <div class="content__block content__block--theme-secondary content__block--bottom">
-      <section class="content__layout">
-        <div class="tariff-abtest ng-star-inserted">
-          <ul class="tariff-abtest__m-tariff-list">
+    <div className="content__block content__block--theme-secondary content__block--bottom">
+      <section className="content__layout">
+        <div className="tariff-abtest ng-star-inserted">
+          <ul className="tariff-abtest__m-tariff-list">
             {tariffs.map((tariff) => (
               <li key={tariff.id}>
                 <div
-                  class="tariff-abtest__m-tariff-item ng-star-inserted"
+                  className="tariff-abtest__m-tariff-item ng-star-inserted"
                   onClick={() => handleToggle(tariff.id)}
                 >
-                  <div class="tariff-abtest__m-tariff-left">
-                    <div class="tariff-abtest__feat"> {tariff.name} </div>
-                    <div class="tariff-abtest__feat-desc">
+                  <div className="tariff-abtest__m-tariff-left">
+                    <div className="tariff-abtest__feat"> {tariff.name} </div>
+                    <div className="tariff-abtest__feat-desc">
                     {tariff.price} ₸ /в {tariff.duration === 365 ? "год" : `${tariff.duration} дней`}
                     </div>
                   </div>
-                  <div class="tariff-abtest__m-tariff-right">
-                    <span class="icon m-tariff-icon">
-                      <Chevronright class="icon__svg" />
+                  <div className="tariff-abtest__m-tariff-right">
+                    <span className="icon m-tariff-icon">
+                      <Chevronright className="icon__svg" />
                     </span>
                   </div>
                 </div>
                 {openTariffId === tariff.id && (
-                  <div class="tariff-abtest ng-star-inserted">
-                    <ul class="tariff-abtest__m-feat-list">
+                  <div className="tariff-abtest ng-star-inserted">
+                    <ul className="tariff-abtest__m-feat-list">
                       {textData.rows.map(
                         (feature) =>
                           tariff[feature.key] && (
@@ -59,13 +59,13 @@ const TariffsModile = ({ tariffs, openModal, textData }) => {
                           )
                       )}
                     </ul>
-                    <div class="tariff-abtest__m-panel-buy"  style={{ backgroundColor: '#e4f0e9' }}>
-                      <div class="tariff-abtest__m-total">
+                    <div className="tariff-abtest__m-panel-buy"  style={{ backgroundColor: '#e4f0e9' }}>
+                      <div className="tariff-abtest__m-total">
                         Итого: {tariff.price} ₸ /в {tariff.duration === 365 ? "год" : `${tariff.duration} дней`}
                       </div>
-                      <div class="button-group button-group--tariff-buy" style={{ width: "100px", margin: "0 auto" }}>
-                        <div class="button-group__layout">
-                          <button type="button" class="button button--primary tariff-abtest__m-buy" onClick={() => openModal(tariff.id, tariff.name)}>
+                      <div className="button-group button-group--tariff-buy" style={{ width: "100px", margin: "0 auto" }}>
+                        <div className="button-group__layout">
+                          <button type="button" className="button button--primary tariff-abtest__m-buy" onClick={() => openModal(tariff.id, tariff.name)}>
                             Купить
                           </button>
                         </div>

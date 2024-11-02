@@ -40,40 +40,40 @@ useEffect(() => {
   </div>; 
   }
   return (
-    <main-page class="body__iner-content ng-star-inserted">
-      <div class="body__iner-content">
-        <h2 class="body__title title title--h3"> Профиль </h2>
-        <div class="body__layout">
-          <div class="card">
+    <main className="body__iner-content ng-star-inserted">
+      <div className="body__iner-content">
+        <h2 className="body__title title title--h3"> Профиль </h2>
+        <div className="body__layout">
+          <div className="card">
             <CardLayout IconComponent={PersonalCard} label="ID Пользователя" dataId={data.user_id}/>
             <CardLayout IconComponent={Letter} label="E-mail" dataId={userData?.email}/>
             <CardLayout IconComponent={UserAlt} label="Ф.И.О" dataId={userData?.fio}/>
             <CardLayout IconComponent={Building} label="Компания" dataId={userData?.companyName}/>
             <CardLayout IconComponent={PhoneAlt} label="Номер телефона" dataId={userData?.phone}/>
-            <div class="card__footer">
-              <button type="button" class="button button--secondary-transparent button--md button--expand" onClick={openModal} >
-                <span class="button__icon button__icon--before icon">
-                  <Cog class="icon__svg" />
+            <div className="card__footer">
+              <button type="button" className="button button--secondary-transparent button--md button--expand" onClick={openModal} >
+                <span className="button__icon button__icon--before icon">
+                  <Cog className="icon__svg" />
                 </span>
                 Настройки
               </button>
             </div>
           </div>
         </div>
-        <div class="body__layout">
-          <div class="card card--center">
-            <div class="card__layout">
-              <div class="card__image">
-                <span class="card__icon icon icon">
-                  <Medal class="icon__svg" />
+        <div className="body__layout">
+          <div className="card card--center">
+            <div className="card__layout">
+              <div className="card__image">
+                <span className="card__icon icon icon">
+                  <Medal className="icon__svg" />
                 </span>
               </div>
-              <div class="card__details">
-                <div class="card__label"> Тариф </div>
-                <div class="card__data"> {data.subscription && data.subscription.tariff.name ? data.subscription.tariff.name : null} </div>
+              <div className="card__details">
+                <div className="card__label"> Тариф </div>
+                <div className="card__data"> {data.subscription && data.subscription.tariff.name ? data.subscription.tariff.name : null} </div>
               </div>
-              <div class="card__actions">
-                <Link to="/tariffs" class="button button--primary-outline" tabindex="0">
+              <div className="card__actions">
+                <Link to="/tariffs" className="button button--primary-outline" tabIndex="0">
                   Переподключить тариф
                 </Link>
               </div>
@@ -82,7 +82,7 @@ useEffect(() => {
         </div>
       </div>
       {isModalOpen && <UserEditModal closeModal={closeModal} data={userData} onUpdateUserData={handleUpdateUserData}/>}
-    </main-page>
+    </main>
   );
 };
 

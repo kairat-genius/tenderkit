@@ -42,7 +42,7 @@ const LotActions = ({ lot, folders, openDropdownId, setOpenDropdownId, FavoriteR
         data.subscription.tariff.tracking_tenders_access !== false && (
           <div className="sr-item__action ng-star-inserted">
             <button
-              class={`button button--action button--sm ${
+              className={`button button--action button--sm ${
                 isTracking
                   ? "button--primary-transparent"
                   : "button--secondary-transparent"
@@ -60,7 +60,7 @@ const LotActions = ({ lot, folders, openDropdownId, setOpenDropdownId, FavoriteR
         )}
       {data.subscription &&
         data.subscription.tariff.favorite_access !== false && (
-          <div class="sr-item__action ng-star-inserted">
+          <div className="sr-item__action ng-star-inserted">
             <button
               className={`button button--action button--sm ${
                 isFavorite

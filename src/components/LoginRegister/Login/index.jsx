@@ -27,14 +27,14 @@ const Login = ({ onClose, onSwitchToRegister }) => {
     setIsRecoveringPassword(!isRecoveringPassword);
   };
   return (
-    <login-modal class="modal modal--active">
-      <div class="modal__container">
-        <div class="modal__header">
-          <div class="modal__title"> {isRecoveringPassword ? "Восстановление пароля" : "Войти"}</div>
-          <div class="modal__close" onClick={onClose}></div>
+    <div className="modal modal--active">
+      <div className="modal__container">
+        <div className="modal__header">
+          <div className="modal__title"> {isRecoveringPassword ? "Восстановление пароля" : "Войти"}</div>
+          <div className="modal__close" onClick={onClose}></div>
         </div>
-        <div class="modal__body ng-untouched ng-pristine ng-invalid">
-          <div class="modal__section">
+        <div className="modal__body ng-untouched ng-pristine ng-invalid">
+          <div className="modal__section">
             <InputField
               placeholder="E-mail"
               label="E-mail"
@@ -64,26 +64,26 @@ const Login = ({ onClose, onSwitchToRegister }) => {
               }
             />
              )}
-            <div class="modal__layout">
-              <button type="button" class="button button--primary-transparent button--md button--expand" onClick={handleToggleRecovery}>
+            <div className="modal__layout">
+              <button type="button" className="button button--primary-transparent button--md button--expand" onClick={handleToggleRecovery}>
               {isRecoveringPassword ? "" : "Забыли пароль?"}
               
               </button>
             </div>
           </div>
-          <div class="modal__section modal__section--footer">
-            <div class="modal__layout modal__layout--sm">
+          <div className="modal__section modal__section--footer">
+            <div className="modal__layout modal__layout--sm">
               <button
-                class="button button--primary button--expand"
+                className="button button--primary button--expand"
                 disabled={!email || (!isRecoveringPassword && !password)}
                 onClick={isRecoveringPassword ? handleResetPassword : handleLogin}
               >
                 {isRecoveringPassword ? "Восстановить" : "Войти"}
               </button>
             </div>
-            <div class="modal__layout modal__layout--sm">
+            <div className="modal__layout modal__layout--sm">
               <button
-                class="button button--primary-transparent button--expand"
+                className="button button--primary-transparent button--expand"
                 onClick={(e) => {
                   e.preventDefault();
                   onSwitchToRegister();
@@ -95,7 +95,7 @@ const Login = ({ onClose, onSwitchToRegister }) => {
           </div>
         </div>
       </div>
-    </login-modal>
+    </div>
   );
 };
 

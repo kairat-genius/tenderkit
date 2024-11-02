@@ -8,41 +8,41 @@ import { ReactComponent as TelegramAlt } from "../../../../assets/svg/social/tel
 
 const Phone = ({onClick}) => {
   return (
-    <div class="m-menu m-menu--active">
-    <div class="m-menu__overlay" onClick={onClick}></div>
+    <div className="m-menu m-menu--active">
+    <div className="m-menu__overlay" onClick={onClick}></div>
 
-    <div class="m-menu__container">
-      <dl class="m-menu__dl">
-        <dt class="m-menu__dt"> Написать в мессенджеры </dt>
-        <dd class="m-menu__dd">
+    <div className="m-menu__container">
+      <dl className="m-menu__dl">
+        <dt className="m-menu__dt"> Написать в мессенджеры </dt>
+        <dd className="m-menu__dd">
           <a
             href="https://wa.me/+77057638953"
             target="_blank"
-            class="m-menu__link link"
+            className="m-menu__link link"
           >
-            <span class="m-menu__icon icon">
-              <WhatsupAlt class="icon__svg" />
+            <span className="m-menu__icon icon">
+              <WhatsupAlt className="icon__svg" />
             </span>
             +7 (705)-763-89-53 - WhatsApp
           </a>
         </dd>
-        <dd class="m-menu__dd">
+        <dd className="m-menu__dd">
           <a
             href="tg://resolve?domain=Portalzakupki"
             target="_blank"
-            class="m-menu__link link"
+            className="m-menu__link link"
           >
-            <span class="m-menu__icon icon">
-              <TelegramAlt class="icon__svg" />
+            <span className="m-menu__icon icon">
+              <TelegramAlt className="icon__svg" />
             </span>
             +7 (705)-763-89-53 - Telegram
           </a>
         </dd>
-        <dt class="m-menu__dt"> Звонки </dt>
-        <dd class="m-menu__dd">
-          <a href="tel:+77057638953" class="m-menu__link link">
-            <span class="m-menu__icon icon">
-              <CallAlt class="icon__svg" />
+        <dt className="m-menu__dt"> Звонки </dt>
+        <dd className="m-menu__dd">
+          <a href="tel:+77057638953" className="m-menu__link link">
+            <span className="m-menu__icon icon">
+              <CallAlt className="icon__svg" />
             </span>
             +7 (705)-763-89-53
           </a>

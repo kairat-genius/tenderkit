@@ -18,33 +18,33 @@ const TariffsDesktop = ({ tariffs, openModal, textData }) => {
     );
   };
   return (
-    <div class="tariff-abtest ng-star-inserted">
-      <div class="tariff-abtest__table">
-        <div id="sticky_layout" class="tariff-abtest__row tariff-abtest__row--header tariff-abtest__row--sticky" >
-          <div class="tariff-abtest__cell tariff-abtest__cell--title"  style={{ width: "30%" }}>
-            <span class="tariff-abtest__title">Наименование</span>
+    <div className="tariff-abtest ng-star-inserted">
+      <div className="tariff-abtest__table">
+        <div id="sticky_layout" className="tariff-abtest__row tariff-abtest__row--header tariff-abtest__row--sticky" >
+          <div className="tariff-abtest__cell tariff-abtest__cell--title"  style={{ width: "30%" }}>
+            <span className="tariff-abtest__title">Наименование</span>
           </div>
           {tariffs.map((tariff) => (
-            <div class="tariff-abtest__cell ng-star-inserted"  style={{ width: "17.5%" }} key={tariff.id} >
-              <div class="tariff-abtest__title"> {tariff.name} </div>
-              <div class="tariff-abtest__price">
+            <div className="tariff-abtest__cell ng-star-inserted"  style={{ width: "17.5%" }} key={tariff.id} >
+              <div className="tariff-abtest__title"> {tariff.name} </div>
+              <div className="tariff-abtest__price">
               {tariff.price} ₸ /в {tariff.duration === 365 ? "год" : `${tariff.duration} дней`}
               </div>
-              <button class="tariff-abtest__buy" id="tarify_baza_vybrat" onClick={() => openModal(tariff.id, tariff.name)}>
+              <button className="tariff-abtest__buy" id="tarify_baza_vybrat" onClick={() => openModal(tariff.id, tariff.name)}>
                 Купить
               </button>
             </div>
           ))}
         </div>
         {textData.rows.map((row) => (
-        <div class="tariff-abtest__row ng-star-inserted" key={row.key}>
+        <div className="tariff-abtest__row ng-star-inserted" key={row.key}>
         
-          <div class="tariff-abtest__cell tariff-abtest__cell--title" style={{ width: "30%" }} >
-            <div class="tariff-abtest__feat">
+          <div className="tariff-abtest__cell tariff-abtest__cell--title" style={{ width: "30%" }} >
+            <div className="tariff-abtest__feat">
             {row.title}
             </div>
             <div>
-              <span class="tariff-abtest__feat-desc">
+              <span className="tariff-abtest__feat-desc">
               {row.description}
               </span>
             </div>

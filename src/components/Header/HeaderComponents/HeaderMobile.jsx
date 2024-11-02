@@ -46,16 +46,7 @@ const HeaderMobile = ({data, openModal}) => {
 
     <div className="header mobile">
       <div className="header__container container container--lg">
-        <div className="header__section">
-          <a routerlink="/" className="header__logo logo" href="/">
-            <img
-              src="/index.svg"
-              alt="tenderkit.kz"
-              title="tenderkit.kz"
-              className="logo__image"
-            />
-          </a>
-        </div>
+      <a href="/" className="header__logo logo"><span>Tender</span>kit</a>
         <div className="header__section header__section--rtl">
           <div className="button-group">
             <div className="button-group__layout">

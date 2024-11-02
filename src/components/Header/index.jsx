@@ -34,9 +34,9 @@ const Header = () => {
 
 
   return (
-    <header class="layout__header">
-        <TopDesktop/>
-        <HeaderDesktop openModal={openModal} data={data}/>
+    <header className="layout__header">
+        <TopDesktop openModal={openModal} data={data}/>
+        <HeaderDesktop/>
         <HeaderMobile openModal={openModal} data={data}/>
 
 

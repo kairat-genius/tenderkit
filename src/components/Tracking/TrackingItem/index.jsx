@@ -20,37 +20,37 @@ const TrackingItem = ({ history, lot, onMoveToHistory, onMoveToActive }) => {
   };
 
   return (
-    <div class="tracking-sidebar__layout ng-star-inserted">
+    <div className="tracking-sidebar__layout ng-star-inserted">
       <a href={`/result/${lot.slug}`} className="sr-item__name ng-star-inserted">
       {lot.title && (
-        <h3 class="tracking-sidebar__title"> {lot.title} </h3>
+        <h3 className="tracking-sidebar__title"> {lot.title} </h3>
       )}
-        <div class="tracking-sidebar__body">
-          <dd class="description-list description-list--inline">
+        <div className="tracking-sidebar__body">
+          <dd className="description-list description-list--inline">
           {lot.lotNumber && (
-            <div class="description-list__layout">
-              <dt class="description-list__key"> № Лота: </dt>
-              <dd class="description-list__value"> {lot.lotNumber} </dd>
+            <div className="description-list__layout">
+              <dt className="description-list__key"> № Лота: </dt>
+              <dd className="description-list__value"> {lot.lotNumber} </dd>
             </div>
           )}
            {lot.status && (
-            <div class="description-list__layout">
-              <dt class="description-list__key"> Статус: </dt>
-              <dd class="description-list__value"> {lot.status} </dd>
+            <div className="description-list__layout">
+              <dt className="description-list__key"> Статус: </dt>
+              <dd className="description-list__value"> {lot.status} </dd>
             </div>
            )}
           </dd>
         </div>
       </a>
-      <div class="tracking-sidebar__meta">
-        <time class="tracking-sidebar__date">
+      <div className="tracking-sidebar__meta">
+        <time className="tracking-sidebar__date">
           {formatDate(lot.created_at)}
         </time>
-        <ul class="button-group button-group--divider">
-          <li class="button-group__layout ng-star-inserted">
+        <ul className="button-group button-group--divider">
+          <li className="button-group__layout ng-star-inserted">
             <button
               type="button"
-              class="button button--secondary-transparent button--icon button--sm"
+              className="button button--secondary-transparent button--icon button--sm"
               onClick={handleTrackingToggle}
               title={
                 history === false || history === undefined
@@ -58,7 +58,7 @@ const TrackingItem = ({ history, lot, onMoveToHistory, onMoveToActive }) => {
                   : "Восстановить"
               }
             >
-              <div class="button__icon icon">
+              <div className="button__icon icon">
                 {history === false || history === undefined ? (
                   <TrashOutline />
                 ) : (

@@ -44,15 +44,14 @@ const closeModal = () => {
 
 
   return (
-      <tariffs class="ng-star-inserted">
-        <main class="ng-star-inserted">
-          <div class="content ng-star-inserted">
-            <div class="content__block content__block--head content__block--theme-secondary">
-              <div class="container container--lg">
+        <main className="ng-star-inserted">
+          <div className="content ng-star-inserted">
+            <div className="content__block content__block--head content__block--theme-secondary">
+              <div className="container container--lg">
                 <Breadcrumb />
-                <h1 class="visually-hidden"> Тарифы </h1>
-                <section class="content__layout">
-                  <h2 class="content__title"> Тарифы </h2>
+                <h1 className="visually-hidden"> Тарифы </h1>
+                <section className="content__layout">
+                  <h2 className="content__title"> Тарифы </h2>
                   {!isMobile &&<TariffsDesktop tariffs={datatariffs} openModal={openModal} textData={textData}/>}
                 </section>
               </div>
@@ -60,9 +59,8 @@ const closeModal = () => {
               {isMobile &&<TariffsModile tariffs={datatariffs} openModal={openModal} textData={textData}/>}
             </div>
           </div>
+          {showModal && <OrderTariff closeModal={closeModal} tariffId={selectedTariff.id} tariffName={selectedTariff.name}/>}
         </main>
-        {showModal && <OrderTariff closeModal={closeModal} tariffId={selectedTariff.id} tariffName={selectedTariff.name}/>}
-      </tariffs>
   );
 };
 

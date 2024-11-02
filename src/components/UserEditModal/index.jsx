@@ -37,26 +37,26 @@ const UserEditModal = ({ closeModal, data, onUpdateUserData }) => {
   };
 
   return (
-    <user-edit-modal class="modal modal--active">
-      <div class="modal__container">
-        <div class="modal__header">
-          <div class="modal__title"> Настройки профиля </div>
-          <div class="modal__close" onClick={closeModal}></div>
+    <user-edit-modal className="modal modal--active">
+      <div className="modal__container">
+        <div className="modal__header">
+          <div className="modal__title"> Настройки профиля </div>
+          <div className="modal__close" onClick={closeModal}></div>
         </div>
-        <div class="modal__body ng-pristine ng-invalid ng-touched">
-          <div class="modal__section">
-            <div class="modal__layout">
-              <div class="inputfield">
+        <div className="modal__body ng-pristine ng-invalid ng-touched">
+          <div className="modal__section">
+            <div className="modal__layout">
+              <div className="inputfield">
                 <input
                   name="4"
                   type="text"
                   placeholder="E-mail"
                   formcontrolname="email"
-                  class="inputfield__input input ng-untouched ng-pristine"
+                  className="inputfield__input input ng-untouched ng-pristine"
                   disabled="true"
                   value={data.email}
                 />
-                <label class="inputfield__label"> E-mail </label>
+                <label className="inputfield__label"> E-mail </label>
               </div>
             </div>
             <InputField
@@ -84,15 +84,15 @@ const UserEditModal = ({ closeModal, data, onUpdateUserData }) => {
               onChange={(e) => setPhone(e.target.value)}
             />
           </div>
-          <div class="modal__section">
-            <div class="modal__layout modal__layout--sm">
-              <button class="button button--primary-transparent button--expand" onClick={handleResetPassword}>
-                <span class="ng-star-inserted"> Изменить пароль </span>
+          <div className="modal__section">
+            <div className="modal__layout modal__layout--sm">
+              <button className="button button--primary-transparent button--expand" onClick={handleResetPassword}>
+                <span className="ng-star-inserted"> Изменить пароль </span>
               </button>
             </div>
-            <div class="modal__layout modal__layout--sm">
+            <div className="modal__layout modal__layout--sm">
               <button
-                class="button button--primary button--expand"
+                className="button button--primary button--expand"
                 disabled={isSaving || !isChanged}
                 onClick={handleSave}
               >

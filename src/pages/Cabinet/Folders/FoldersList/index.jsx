@@ -71,18 +71,18 @@ const handlePageChange = (page) => {
 
   return (
     <>
-      <div class="body__iner-content body__iner-content--overflow ng-star-inserted">
-        <h2 class="body__title title title--h3"> Папки</h2>
-        <div class="body__layout ng-star-inserted">
-          <div class="folders folders--cabinet">
-            <div class="folders__table">
-              <div class="folders__row folders__row--header">
-                <div class="folders__cell folders__cell--w-full">
-                  <div class="button-group">
-                    <div class="button-group__layout">
-                      <button class="folders__button folders__button--add button" onClick={openCreateModal}>
-                        <span class="button__icon button__icon--before icon">
-                          <Plus class="icon__svg" />
+      <div className="body__iner-content body__iner-content--overflow ng-star-inserted">
+        <h2 className="body__title title title--h3"> Папки</h2>
+        <div className="body__layout ng-star-inserted">
+          <div className="folders folders--cabinet">
+            <div className="folders__table">
+              <div className="folders__row folders__row--header">
+                <div className="folders__cell folders__cell--w-full">
+                  <div className="button-group">
+                    <div className="button-group__layout">
+                      <button className="folders__button folders__button--add button" onClick={openCreateModal}>
+                        <span className="button__icon button__icon--before icon">
+                          <Plus className="icon__svg" />
                         </span>
                         Создать новую папку
                       </button>
@@ -91,50 +91,50 @@ const handlePageChange = (page) => {
                 </div>
               </div>
               {data.map((folder) => (
-              <div class="folders__row ng-star-inserted" key={folder.id}>
+              <div className="folders__row ng-star-inserted" key={folder.id}>
                 <Link
                   className="folders__cell folders__cell--w-full folders__cell--link"
                   to={`/cabinet/folders/${folder.title}`}
                 >
-                  <div class="button-group button-group--sm">
-                    <div class="button-group__layout">
-                      <a class="folders__button folders__button--folder button">
+                  <div className="button-group button-group--sm">
+                    <div className="button-group__layout">
+                      <button className="folders__button folders__button--folder button">
                         <span
-                          class="button__icon icon"
+                          className="button__icon icon"
                           style={{ color: "rgb(0, 122, 128)" }}
                         >
-                          <FolderColored class="icon__svg" />
+                          <FolderColored className="icon__svg" />
                         </span>
-                      </a>
+                      </button>
                     </div>
-                    <div class="button-group__layout truncate">
-                      <span class="truncate" title="папка">
+                    <div className="button-group__layout truncate">
+                      <span className="truncate" title="папка">
                         {folder.title}
                       </span>
                     </div>
                   </div>
                 </Link>
-                <div class="folders__cell">
-                  <div class="button-group">
-                    <div class="button-group__layout button-group__layout--rtl">
+                <div className="folders__cell">
+                  <div className="button-group">
+                    <div className="button-group__layout button-group__layout--rtl">
                       <button
                         type="button"
-                        class="folders__button folders__button--edit button"
+                        className="folders__button folders__button--edit button"
                         onClick={openEditModal} 
                       >
-                        <span class="button__icon icon">
-                          <EditAltFilled class="icon__svg" />
+                        <span className="button__icon icon">
+                          <EditAltFilled className="icon__svg" />
                         </span>
                       </button>
                     </div>
-                    <div class="button-group__layout">
+                    <div className="button-group__layout">
                       <button
                         type="button"
-                        class="folders__button folders__button--remove button"
+                        className="folders__button folders__button--remove button"
                         onClick={() => openRemoveModal(folder)}
                       >
-                        <span class="button__icon icon">
-                          <Trash class="icon__svg" />
+                        <span className="button__icon icon">
+                          <Trash className="icon__svg" />
                         </span>
                       </button>
                     </div>
@@ -146,8 +146,8 @@ const handlePageChange = (page) => {
           </div>
         </div>
         {totalPages > 1 && (
-      <div class="body__layout">
-        <div class="panel panel--footer">
+      <div className="body__layout">
+        <div className="panel panel--footer">
         <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
         </div>
       </div>
