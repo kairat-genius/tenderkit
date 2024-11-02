@@ -14,7 +14,7 @@ import { ReactComponent as Wpatsup } from "../../../assets/svg/social/whatsup.sv
 import { ReactComponent as Telegram } from "../../../assets/svg/social/telegram.svg";
 import { ReactComponent as IconUsers } from "../../../assets/svg/icon/icon-users.svg";
 
-import { Clients, Reviews, WhyCard, Opportunities } from "./index";
+import { Reviews, WhyCard, Opportunities } from "./index";
 
 const ContentHome = () => {
   return (
@@ -170,7 +170,6 @@ const ContentHome = () => {
           </div>
         </div>
       </section>
-      <Clients />
       <Reviews />
     </div>
   );

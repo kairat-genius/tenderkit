@@ -1,15 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// svg
-import { ReactComponent as Arrowright } from "../../../assets/svg/mobile/arrowright.svg";
-import { ReactComponent as SettingApi } from "../../../assets/svg/api/setting-api.svg";
-import { ReactComponent as DashedApi } from "../../../assets/svg/api/dashed-api.svg";
-
 const Opportunities = () => {
   return (
     <section className="content__layout">
-      <h2 className="content__title content__title--lg"> Возможности </h2>
+      <h2 className="content__title content__title--lg"> Наши возможности </h2>
       <div className="content__layout content__layout--md">
         <div className="grid grid--possibility">
           <section className="possibility possibility--newsletter possibility--row">

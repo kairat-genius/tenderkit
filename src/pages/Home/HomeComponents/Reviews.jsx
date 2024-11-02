@@ -1,169 +1,150 @@
-import React, { useRef, useState, useLayoutEffect, useEffect } from "react";
-
+import React, { useRef, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./index.css";
 // svg
-import { ReactComponent as SlideRight } from "../../../assets/svg/pointer/slide-right.svg";
-import { ReactComponent as SlideLeft } from "../../../assets/svg/pointer/slide-left.svg";
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <svg className={`${className} arrow-6 custom-arrow--next`} onClick={onClick} style={{ ...style }} width="5px" height="17px" viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <g>
+      <polygon className="arrow-6-pl" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+    </g>
+  </svg>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+       <svg className={`${className} arrow-6 custom-arrow--prev`} onClick={onClick}  style={{ ...style }} width="5px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+       <g transform="translate(8.500000, 8.500000) scale(-1, 1) translate(-8.500000, -8.500000)">
+         <polygon className="arrow-6-pl" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+       </g>
+     </svg>
+  );
+}
 const reviewsData = [
-    {
-      src: "/assets/reviews/interteach.jpg",
-      alt: "Interteach",
-      title: "Interteach - image №59",
-    },
-    {
-      src: "/assets/reviews/interteach.jpg",
-      alt: "Kompra",
-      title: "Kompra - image №60",
-    },
-    {
-      src: "/assets/reviews/interteach.jpg",
-      alt: "Zharyktas",
-      title: "Zharyktas - image №61",
-    },
-    {
-      src: "/assets/reviews/interteach.jpg",
-      alt: "Kazjoltrans",
-      title: "Kazjoltrans - image №62",
-    },
-    {
-      src: "/assets/reviews/interteach.jpg",
-      alt: "Kazkomplekt",
-      title: "Kazkomplekt - image №63",
-    },
-  ];
+  {
+    name: "Аян Нурмухаметов",
+    date: "22 августа",
+    review:
+      "Отличный сервис! Теперь не нужно тратить время на поиск тендеров по разным площадкам — все в одном месте. Рекомендую!",
+  },
+  {
+    name: "Динара Тлеубаева",
+    date: "15 ноября",
+    review:
+      "Тендеры приходят на почту каждый день, что очень удобно. Благодаря этому я всегда в курсе свежих тендеров!",
+  },
+  {
+    name: "Алибек Сагидуллаев",
+    date: "22 января",
+    review:
+      "Персональный менеджер помог мне разобраться с платформой. Очень доволен поддержкой и качеством обслуживания.",
+  },
+  {
+    name: "Алия Жанибекова",
+    date: "3 сентября",
+    review:
+      "Скачивание тендеров в формате Excel значительно упростило мою работу. Удобно анализировать данные и делиться ими с командой.",
+  },
+  {
+    name: "Нурсултан Касымов",
+    date: "4 мая",
+    review:
+      "Удобный поиск и много фильтров. Очень легко находить именно то, что нужно. Я впечатлён!",
+  },
+  {
+    name: "Гульнара Бекмагамбетова",
+    date: "8 февраля",
+    review:
+      "Приятно удивлена тем, насколько быстро можно найти нужные тендеры. Tenderkit действительно экономит время!",
+  },
+  {
+    name: "Роман Аманжолов",
+    date: "3 апреля",
+    review:
+      "Пользуюсь услугами tenderkit уже несколько месяцев. Очень доволен. Чувствую, что мои шансы на победу в тендерах возросли.",
+  },
+  {
+    name: "Асем Султанова",
+    date: "26 июля",
+    review:
+      "Все тендеры в одном месте — это мечта! Особенно нравится, что не нужно регистрироваться на каждой площадке.",
+  },
+  {
+    name: "Ерлан Тагиров",
+    date: "9 октября",
+    review:
+      "Сервис работает без сбоев. Всегда могу рассчитывать на оперативную информацию о новых закупках.",
+  },
+  {
+    name: "Лаура Кенжебаева",
+    date: "8 декабря",
+    review:
+      "Отличная платформа для тех, кто хочет участвовать в тендерах. Очень полезная рассылка и качественный поиск.",
+  },
+];
 
 const Reviews = () => {
-  const scrollRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [activeImage, setActiveImage] = useState(null);
+  const sliderRef = useRef(null);
 
-  const updateButtonStates = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
-    }
-  };
-
-  const handleScrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTo({
-        left: 0,
-        behavior: "smooth",
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, 
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow className="custom-arrow custom-arrow--next"/>,
+    prevArrow: <SamplePrevArrow className="custom-arrow custom-arrow--prev"/>,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+    beforeChange: (current, next) => {
+      const slides = document.querySelectorAll('.slick-slide');
+      slides.forEach((slide) => {
+        if (slide.classList.contains('slick-active')) {
+          slide.setAttribute('inert', 'true'); 
+        } else {
+          slide.removeAttribute('inert'); 
+        }
       });
-    }
+    },
   };
-
-  const handleScrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTo({
-        left: scrollRef.current.scrollWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const handleImageClick = (imgSrc, imgAlt, imgTitle) => {
-    setActiveImage({ src: imgSrc, alt: imgAlt, title: imgTitle });
-  };
-
-  const handleCloseModal = () => {
-    setActiveImage(null);
-  };
-
-  useLayoutEffect(() => {
-    updateButtonStates();
-  }, []);
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-
-    const handleImageLoad = () => {
-      updateButtonStates();
-    };
-
-    const images = scrollContainer.querySelectorAll("img");
-    images.forEach((img) => {
-      img.addEventListener("load", handleImageLoad);
-    });
-
-    window.addEventListener("resize", updateButtonStates);
-    scrollContainer.addEventListener("scroll", updateButtonStates);
-
-    return () => {
-      images.forEach((img) => {
-        img.removeEventListener("load", handleImageLoad);
-      });
-      window.removeEventListener("resize", updateButtonStates);
-      scrollContainer.removeEventListener("scroll", updateButtonStates);
-    };
-  }, []);
+    
 
   return (
     <section className="content__block content__block--theme-secondary">
       <div className="container container--md">
         <h2 className="content__title">Отзывы</h2>
         <div className="reviews">
-          <div
-            id="reviewsScroll"
-            className="horizontal-scroll horizontal-scroll--box horizontal-scroll--reviews"
-            ref={scrollRef}
-          >
-            <div className="horizontal-scroll__wrap">
-              <ul className="reviews__list">
-              {reviewsData.map((review, index) => (
-                  <li className="reviews__item ng-star-inserted" key={index}>
-                    <img
-                      loading="lazy"
-                      className="reviews__image"
-                      src={review.src}
-                      alt={review.alt}
-                      title={review.title}
-                      onClick={() =>
-                        handleImageClick(review.src, review.alt, review.title)
-                      }
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <button
-            type="button"
-            className="reviews__button reviews__button--prev"
-            onClick={handleScrollLeft}
-            disabled={!canScrollLeft}
-          >
-            <span className="icon">
-              <SlideLeft className="icon__svg" />
-            </span>
-          </button>
-          <button
-            type="button"
-            className="reviews__button reviews__button--next"
-            onClick={handleScrollRight}
-            disabled={!canScrollRight}
-          >
-            <span className="icon">
-              <SlideRight className="icon__svg" />
-            </span>
-          </button>
+          <Slider ref={sliderRef} {...settings} >
+            {reviewsData.map((review, index) => (
+              <div className="col-md-4" key={index}>
+                <div className="ant074_testimonials-testim-inner ant074_testimonials-first">
+                <h6>
+                    {review.name}
+                  </h6>
+                  <span className="ant__comment" >
+                      {review.date}
+                    </span>
+                  <p>{review.review}</p>
+                  
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
-      {activeImage && (
-      <div className="modal modal--image modal--active" onClick={handleCloseModal}>
-        <div clickoutside="" className="modal__container">
-          <img
-            loading="lazy"
-            className="modal__image"
-            src="/assets/reviews/interteach.jpg"
-            alt="null"
-            title="null"
-          />
-        </div>
-      </div>
-      )}
     </section>
   );
 };
