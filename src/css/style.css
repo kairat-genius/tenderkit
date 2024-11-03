@@ -17524,7 +17524,6 @@ header .logo:hover {
 
 @media (min-width: 1140px) {
     .feedback-card__actions {
-        grid-template-columns:1fr 1fr;
         gap: 20px;
         margin-top: 24px
     }
@@ -17536,7 +17535,7 @@ header .logo:hover {
 
 .why {
     padding: 24px 16px;
-    background-color: #343a40;
+    background-color: #0C839B;
     border-radius: 20px;
     box-shadow: 0 8px 40px var(--color-box-shadow);
     overflow: hidden;
@@ -17548,7 +17547,7 @@ header .logo:hover {
 }
 
 .why__title span {
-    color: #3fbcc2
+    color: #98FF98
 }
 
 @media (min-width: 768px) {

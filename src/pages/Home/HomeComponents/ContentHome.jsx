@@ -33,12 +33,7 @@ const ContentHome = () => {
                   <a href="tel:+77057638953" className="button button--primary">
                     Позвонить
                   </a>
-                  <button
-                    type="button"
-                    className="button button--primary-outline"
-                  >
-                    Заказать звонок
-                  </button>
+                  
                 </div>
               </article>
               <article className="feedback-card feedback-card--main feedback-card--write">
@@ -47,16 +42,6 @@ const ContentHome = () => {
                   мы подробно ответим на все вопросы
                 </p>
                 <div className="feedback-card__actions">
-                  <a
-                    href="tel:+77057638953"
-                    target="_blank"
-                    className="button button--tertiary"
-                  >
-                    <span className="button__icon button__icon--before icon">
-                      <Telegram className="icon__svg" />
-                    </span>
-                    Telegram
-                  </a>
                   <a
                     href="https://wa.me/+77057638953"
                     target="_blank"
@@ -78,7 +63,7 @@ const ContentHome = () => {
                   <IconFileArrow />
                 </div>
                 <div className="statistics__text">
-                  <dt className="statistics__title"> 82 811 </dt>
+                  <dt className="statistics__title"> 200 000+ </dt>
                   <dd className="statistics__desc">
                     тендеров
                     <br />
@@ -91,7 +76,7 @@ const ContentHome = () => {
                   <IconCopy />
                 </div>
                 <div className="statistics__text">
-                  <dt className="statistics__title"> 15+&nbsp;лет </dt>
+                  <dt className="statistics__title"> 5+&nbsp;лет </dt>
                   <dd className="statistics__desc">
                     на рынке
                     <br />
@@ -104,7 +89,7 @@ const ContentHome = () => {
                   <IconUsers />
                 </div>
                 <div className="statistics__text">
-                  <dt className="statistics__title"> 200 000+ </dt>
+                  <dt className="statistics__title"> 100 000+ </dt>
                   <dd className="statistics__desc">
                     пользователей
                     <br />

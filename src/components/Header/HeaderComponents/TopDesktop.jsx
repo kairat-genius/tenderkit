@@ -11,7 +11,6 @@ import { ReactComponent as ChevrondownAlt } from "../../../assets/svg/pointer/ch
 
 // components header
 import SocialButton from "./SocialButton";
-import { TrackingBlog } from "./index";
 
 const TopDesktop = ({openModal, data}) => {
   const handleLogout = () => {
