@@ -30,7 +30,7 @@ const ContentHome = () => {
                   и наши мы специалисты ответят на ваши вопросы
                 </p>
                 <div className="feedback-card__actions">
-                  <a href="tel:+77075790000" className="button button--primary">
+                  <a href="tel:+77057638953" className="button button--primary">
                     Позвонить
                   </a>
                   <button
@@ -48,7 +48,7 @@ const ContentHome = () => {
                 </p>
                 <div className="feedback-card__actions">
                   <a
-                    href="tg://resolve?domain=Portalzakupki"
+                    href="tel:+77057638953"
                     target="_blank"
                     className="button button--tertiary"
                   >
@@ -58,7 +58,7 @@ const ContentHome = () => {
                     Telegram
                   </a>
                   <a
-                    href="https://wa.me/+77005790001"
+                    href="https://wa.me/+77057638953"
                     target="_blank"
                     className="button button--tertiary"
                   >

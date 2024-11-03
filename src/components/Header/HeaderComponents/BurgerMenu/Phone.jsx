@@ -28,7 +28,7 @@ const Phone = ({onClick}) => {
         </dd>
         <dd className="m-menu__dd">
           <a
-            href="tg://resolve?domain=Portalzakupki"
+            href="tel:+77057638953"
             target="_blank"
             className="m-menu__link link"
           >

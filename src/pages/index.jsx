@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import Footer from "../components/Footer";
+import { Footer } from "../components";
 
 // Обёрточный компонент для всех маршрутов внутри 
 const IndexLayout = () => {

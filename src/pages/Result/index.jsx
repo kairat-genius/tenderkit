@@ -95,11 +95,11 @@ const Result = () => {
     localStorage.setItem("Filter", JSON.stringify(filters));
 
     if (ListRef.current) {
-      ListRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      ListRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
   };
 
-  const totalPages = Math.ceil(count / itemsPerPage); // общее количество страниц
+  const totalPages = Math.ceil(count / itemsPerPage); 
 
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {

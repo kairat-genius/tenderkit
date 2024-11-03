@@ -43,25 +43,25 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
   };
 
   return (
-    <div class="content">
-      <div class="content__block content__block--filter">
-        <div class="container">
+    <div className="content">
+      <div className="content__block content__block--filter">
+        <div className="container">
           <Breadcrumb />
-          <h1 class="visually-hidden"> seo.TENDER_SEARCH </h1>
+          <h1 className="visually-hidden"> seo.TENDER_SEARCH </h1>
           <div
-            class={`filter filter--no-padding ${
+            className={`filter filter--no-padding ${
               isFilterVisible ? "filter--active" : ""
             }`}
           >
-            <div class="filter__title">
+            <div className="filter__title">
               Поиск закупок
               <button
                 type="button"
-                class="filter__toggle button"
+                className="filter__toggle button"
                 onClick={toggleFilterVisibility}
               >
-                <span class="icon">
-                  <IconFilter class="icon__svg" />
+                <span className="icon">
+                  <IconFilter className="icon__svg" />
                 </span>
               </button>
             </div>
@@ -70,35 +70,35 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
             handleFilterChange={handleFilterChange}
             />
             {isFilterVisible && (
-              <search-filter class="filter__body ng-star-inserted">
+              <div className="filter__body ng-star-inserted">
                 <MultiSelectResult
                   filters={filters}
                   handleFilterChange={handleFilterChange}
                 />
-                <div class="filter__layout">
-                  <div class="field-group">
-                    <div class="field-group__section">
-                      <div class="field-group__layout" onClick={toggExcludeModal}>
-                        <div class="inputfield inputfield--suffix">
+                <div className="filter__layout">
+                  <div className="field-group">
+                    <div className="field-group__section">
+                      <div className="field-group__layout" onClick={toggExcludeModal}>
+                        <div className="inputfield inputfield--suffix">
                           <input
                             type="text"
-                            class="inputfield__input input"
+                            className="inputfield__input input"
                             readOnly=""
                             placeholder="Исключить слова"
                             value={filters.exclude.length > 0 ? `Исключено слов: ${filters.exclude.length}` : ""}
                           />
-                          <label class="inputfield__label">
+                          <label className="inputfield__label">
                             Исключить слова
                           </label>
-                          <div class="inputfield__suffix">
-                            <span class="inputfield__icon inputfield__icon--primary icon">
-                              <AddSquare class="icon__svg" />
+                          <div className="inputfield__suffix">
+                            <span className="inputfield__icon inputfield__icon--primary icon">
+                              <AddSquare className="icon__svg" />
                             </span>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="field-group__section">
+                    <div className="field-group__section">
                       <Calendar
                         label="Дата начало от"
                         value={filters.startDate_from}
@@ -116,9 +116,9 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                     </div>
                   </div>
                 </div>
-                <div class="filter__layout">
-                  <div class="field-group">
-                    <div class="field-group__section">
+                <div className="filter__layout">
+                  <div className="field-group">
+                    <div className="field-group__section">
                       <PriceFilter
                         name="sumForm"
                         placeholder="Мин. сумма закупки"
@@ -138,7 +138,7 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                         }
                       />
                     </div>
-                    <div class="field-group__section">
+                    <div className="field-group__section">
                       <Calendar
                         label="Дата окончания от"
                         value={filters.endDate_from}
@@ -156,33 +156,33 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                     </div>
                   </div>
                 </div>
-                <div class="filter__layout">
-                  <div class="field-group">
-                    <div class="field-group__section">
-                      <div class="field-group__layout" onClick={toggleOrganizerModal}>
-                        <div class="inputfield inputfield--suffix">
+                <div className="filter__layout">
+                  <div className="field-group">
+                    <div className="field-group__section">
+                      <div className="field-group__layout" onClick={toggleOrganizerModal}>
+                        <div className="inputfield inputfield--suffix">
                           <input
                             type="text"
-                            class="inputfield__input input"
+                            className="inputfield__input input"
                             readOnly=""
                             placeholder="Организаторы"
                             value={filters.organizer.length > 0 ? `Организаторов: ${filters.organizer.length}` : ""}
                           />
-                          <label class="inputfield__label">
+                          <label className="inputfield__label">
                             Организаторы
                           </label>
-                          <div class="inputfield__suffix">
-                            <span class="inputfield__icon inputfield__icon--primary icon">
-                              <AddSquare class="icon__svg" />
+                          <div className="inputfield__suffix">
+                            <span className="inputfield__icon inputfield__icon--primary icon">
+                              <AddSquare className="icon__svg" />
                             </span>
                           </div>
                         </div>
                       </div>
-                      <div class="field-group__layout">
+                      <div className="field-group__layout">
                         <form
                           noValidate=""
                           autoComplete="off"
-                          class="inputfield ng-untouched ng-pristine ng-valid"
+                          className="inputfield ng-untouched ng-pristine ng-valid"
                         >
                           <input
                             type="text"
@@ -191,7 +191,7 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                             autoCapitalize="none"
                             spellCheck="false"
                             name="lotNumber"
-                            class="inputfield__input input ng-untouched ng-pristine ng-valid"
+                            className="inputfield__input input ng-untouched ng-pristine ng-valid"
                             placeholder="Номер лота"
                             value={filters.lotNumber}
                             onChange={(event) =>
@@ -201,36 +201,36 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                               )
                             }
                           />
-                          <label class="inputfield__label"> Номер лота </label>
+                          <label className="inputfield__label"> Номер лота </label>
                         </form>
                       </div>
                     </div>
-                    <div class="field-group__section">
-                      <sidebar-filter-subscribe class="field-group__layout">
+                    <div className="field-group__section">
+                      <sidebar-filter-subscribe className="field-group__layout">
                         <div
                           clickoutside=""
-                          class="primary-select primary-select--disabled"
+                          className="primary-select primary-select--disabled"
                         >
-                          <div class="primary-select__header">
-                            <div class="primary-select__container">
-                              <div class="primary-select__label ng-star-inserted">
+                          <div className="primary-select__header">
+                            <div className="primary-select__container">
+                              <div className="primary-select__label ng-star-inserted">
                                 Мои подписки
                               </div>
-                              <div class="primary-select__value ng-star-inserted">
+                              <div className="primary-select__value ng-star-inserted">
                                 Доступно по платному тарифу
                               </div>
                             </div>
-                            <div class="primary-select__toggle icon">
-                              <ChevrondownAlt class="icon__svg" />
+                            <div className="primary-select__toggle icon">
+                              <ChevrondownAlt className="icon__svg" />
                             </div>
                           </div>
-                          <div class="primary-select__body"></div>
+                          <div className="primary-select__body"></div>
                         </div>
                       </sidebar-filter-subscribe>
                     </div>
                   </div>
                 </div>
-              </search-filter>
+              </div>
             )}
             <FilterFooter
               onClick={toggleFilterVisibility}

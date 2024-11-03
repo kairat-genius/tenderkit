@@ -2,7 +2,6 @@ import React from "react";
 import Cookies from 'js-cookie';
 import {Link} from "react-router-dom"
 // svg
-import { ReactComponent as Instagram } from "../../../assets/svg/social/instagram.svg";
 import { ReactComponent as TelegramTop } from "../../../assets/svg/social/telegram-top.svg";
 import { ReactComponent as Whatsapp } from "../../../assets/svg/social/whatsapp.svg";
 import { ReactComponent as CallAlt } from "../../../assets/svg/icon/call-alt.svg";
@@ -94,17 +93,12 @@ const TopDesktop = ({openModal, data}) => {
         <div className="top__section top__section--rtl">
           <ul className="button-group button-group--sm">
             <SocialButton
-              href="https://www.instagram.com/zakupki.kz"
-              title="Instagram"
-              IconComponent={Instagram}
-            />
-            <SocialButton
               href="https://wa.me/+77057638953"
               title="Написать в WhatsApp"
               IconComponent={Whatsapp}
             />
             <SocialButton
-              href="tg://resolve?domain=Portalzakupki"
+              href="tel:+77057638953"
               title="Написать в Telegram"
               IconComponent={TelegramTop}
             />
@@ -138,7 +132,7 @@ const TopDesktop = ({openModal, data}) => {
                       </dd>
                       <dd className="m-menu__dd">
                         <a
-                          href="tg://resolve?domain=Portalzakupki"
+                          href="tel:+77057638953"
                           target="_blank"
                           className="m-menu__link link"
                         >
@@ -165,7 +159,7 @@ const TopDesktop = ({openModal, data}) => {
               </div>
             </li>
             <li className="button-group__layout">
-              <a href="tel:+77075790000" className="top__link__phone">
+              <a href="tel:+77057638953" className="top__link__phone">
               +7 (705)-763-89-53
               </a>
             </li>

@@ -1,5 +1,5 @@
 import "./Header.css";
-import React, { useState} from "react"
+import React, { useState, memo} from "react"
 import { useData } from "../../hooks/DataContext";
 
 // components header
@@ -55,7 +55,7 @@ const Header = () => {
         </div>
       )}
     </header>
-  );
+);
 };
 
 export default Header;

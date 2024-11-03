@@ -1,3 +1,5 @@
+export { default as Footer } from './Footer';
+export { default as Header } from './Header';
 export { default as UserEditModal } from './UserEditModal';
 export { default as SCardLayout } from './CardLayout';
 export { default as SocialGroupLayout } from './SocialGroupLayout';

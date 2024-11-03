@@ -50,6 +50,7 @@ const Root = () => {
 
   return (
     <DataProvider>
+      <Header />
     <Suspense
       fallback={
         <div className="loader-container">
@@ -57,7 +58,6 @@ const Root = () => {
         </div>
       }
     >
-      <Header />
       <Routes>
         <Route path="/" element={<IndexLayout/>}>
           <Route index element={<Home />} />
