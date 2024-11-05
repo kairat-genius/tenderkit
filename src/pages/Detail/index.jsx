@@ -5,7 +5,8 @@ import {
   LotActionsDetail,
   Documents,
   Breadcrumb,
-  MetaTags
+  MetaTags,
+  NotFound404
 } from "../../components";
 import { useParams } from "react-router-dom";
 import { getDetailLot } from "../../api/Lots/getDetailLot";
@@ -23,15 +24,23 @@ const Detail = () => {
   const [detail, setDetail] = useState({ advertisement: {} });
   const [other, setOther] = useState([]);
   const [isInfoVisible, setInfoVisible] = useState(false);
-
+  const [error, setError] = useState(null);
   useEffect(() => {
-    getDetailLot(setDetail, slug);
+    getDetailLot(setDetail, slug, setError);
     getDetailLotOther(setOther, slug);
   }, [slug]);
 
   const toggleInfoVisibility = () => {
     setInfoVisible(!isInfoVisible);
   };
+
+  if (error) {
+    if (error.response && error.response.status === 404) {
+      return <NotFound404 />;
+    }
+    return <div>Error: {error.message}</div>;
+  }
+
 
   const now = new Date();
   const endingDate = new Date(detail.advertisement.endingDate);

@@ -18,8 +18,6 @@ const Home = () => {
         <div className="hero__container container">
           <h1 className="hero__title">
             Поиск тендеров в&nbsp;Казахстане по&nbsp;всем площадкам
-            <br />
-            в&nbsp;одном месте
           </h1>
           <SearchBox />
           <dl className="hero__dl">

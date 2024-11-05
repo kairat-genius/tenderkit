@@ -39,7 +39,7 @@ const Tracking = lazy(() => import("../src/pages/Cabinet/Tracking"));
 const FoldersList = lazy(() => import("../src/pages/Cabinet/Folders/FoldersList"));
 const FoldersDetail = lazy(() => import("../src/pages/Cabinet/Folders/FoldersDetail"));
 
-const NotFound404 = lazy(() => import("../src/components/404/404"));
+const NotFound404 = lazy(() => import("../src/components"));
 
 import { Header, Footer } from "./components";
 

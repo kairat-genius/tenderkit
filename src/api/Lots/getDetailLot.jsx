@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {LOT_DETAIL, accessToken} from "../../Fetch/settings"
 
-export const getDetailLot = (setDetail, slug) => {
+export const getDetailLot = (setDetail, slug, setError) => {
     const headers = accessToken
     ? { 'Authorization': `JWT ${accessToken}` }
     : {};
@@ -9,5 +9,8 @@ export const getDetailLot = (setDetail, slug) => {
     .then((response) => {
         setDetail(response.data);
     })
+    .catch((error) => {
+        setError(error);
+    });
 }
 

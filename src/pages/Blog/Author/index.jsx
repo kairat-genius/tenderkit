@@ -3,7 +3,7 @@ import {Aside, Pagination, FilterBlog, BlogItem} from "../../../components"
 import { getBlogAuthor } from "../../../api/Blog/getBlogAuthor";
 import { useParams } from "react-router-dom";
 import { getBlogList } from "../../../api/Blog/getBlogList";
-import {Breadcrumb, MetaTags} from "../../../components"
+import {Breadcrumb, MetaTags, NotFound404} from "../../../components"
 
 const Author = () => {
   const { author_slug } = useParams();
@@ -16,7 +16,7 @@ const Author = () => {
   const [searchText, setSearchText] = useState("");
   const [selectedTag, setSelectedTag] = useState(null);
   const blogListRef = useRef(null);
-
+  const [error, setError] = useState(null);
   useEffect(() => {
     if (author_slug) {
     getBlogList({ setData, author_slug, setCount, currentPage, filterType, searchText, tag: selectedTag  });
@@ -29,9 +29,17 @@ const Author = () => {
 
   useEffect(() => {
     if (author_slug) {
-      getBlogAuthor(setAuthor, author_slug); 
+      getBlogAuthor(setAuthor, author_slug, setError); 
     }
   }, [author_slug]); 
+
+  if (error) {
+    if (error.response && error.response.status === 404) {
+      return <NotFound404 />;
+    }
+    return <div>Error: {error.message}</div>;
+  }
+
 
   if (!author) {
     return  <div className="loader-container">

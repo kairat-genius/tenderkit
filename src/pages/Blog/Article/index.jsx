@@ -6,7 +6,7 @@ import { getBlogAuthorAbout } from "../../../api/Blog/getBlogAuthorAbout";
 import { getBlogArticleInteres } from "../../../api/Blog/getBlogArticleInteres";
 import parse from "html-react-parser";
 import { formatDateMonth } from "../../../hooks/LotUtils";
-import { Breadcrumb, MetaTags } from "../../../components";
+import { Breadcrumb, MetaTags, NotFound404 } from "../../../components";
 // svg
 import { ReactComponent as Twitter } from "../../../assets/svg/social/twitter.svg";
 import { ReactComponent as Vk } from "../../../assets/svg/social/vk.svg";
@@ -18,13 +18,21 @@ const Article = () => {
   const [author, setAuthor] = useState({ author_articles: [] });
   const [interes, setInteres] = useState([]);
   const [isCopied, setIsCopied] = useState(false);
+  const [error, setError] = useState(null);
   useEffect(() => {
     if (slug) {
-      getBlogArticle(setData, slug);
+      getBlogArticle(setData, slug, setError);
       getBlogAuthorAbout(setAuthor, slug, author_slug);
       getBlogArticleInteres(setInteres, slug);
     }
   }, [slug, author_slug]);
+
+  if (error) {
+    if (error.response && error.response.status === 404) {
+      return <NotFound404 />;
+    }
+    return <div>Error: {error.message}</div>;
+  }
 
   if (!data) {
     return (
@@ -41,6 +49,7 @@ const Article = () => {
       </div>
     );
   }
+  
 
   const content = data?.content?.replace(/\r?\n|\r/g, "") || "";
 
@@ -53,7 +62,7 @@ const Article = () => {
 
   return (
     <div class="container">
-       <MetaTags page="blogArticle" title={author.fullname} slug={author_slug} article={slug}/>
+       <MetaTags page="blogArticle" title={data.title} slug={author_slug} article={slug}/>
       <Breadcrumb urls={author.fullname} title={data.title} />
       <div class="content__layout content__layout--md columns ng-star-inserted">
         <div class="columns__content">
