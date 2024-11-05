@@ -3,7 +3,7 @@ import {Aside, Pagination, FilterBlog, BlogItem} from "../../../components"
 import { getBlogAuthor } from "../../../api/Blog/getBlogAuthor";
 import { useParams } from "react-router-dom";
 import { getBlogList } from "../../../api/Blog/getBlogList";
-import {Breadcrumb} from "../../../components"
+import {Breadcrumb, MetaTags} from "../../../components"
 
 const Author = () => {
   const { author_slug } = useParams();
@@ -55,6 +55,7 @@ const Author = () => {
 
   return (
     <div class="container">
+      <MetaTags page="blogAuthor" title={author.fullname} slug={author_slug}/>
     <Breadcrumb urls={author.fullname}/>
       <div class="content__layout content__layout--md" ref={blogListRef}>
         <div class="b-card b-card--shadow">

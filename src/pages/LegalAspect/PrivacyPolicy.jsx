@@ -1,10 +1,11 @@
 import React from 'react';
 import agreementData from "../../json/privacyPolicy.json";
-import { Breadcrumb } from "../../components";
+import { Breadcrumb, MetaTags } from "../../components";
 
 const PrivacyPolicy = () => {
     return (
         <div className="ng-star-inserted">
+           <MetaTags page="privacyPolicy"/>
         <div className="layout__container">
           <div className="body">
             <div className="body__content">

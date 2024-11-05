@@ -3,7 +3,6 @@ import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import OutsideClickHandler from "react-outside-click-handler";
 import { ru } from "date-fns/locale";
-import "./Calendar.css";
 import { format } from "date-fns";
 // svg
 import { ReactComponent as IconCalendar } from "../../assets/svg/icon/calendar.svg";

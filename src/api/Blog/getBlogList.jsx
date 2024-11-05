@@ -6,7 +6,6 @@ import {BLOG_LIST, accessToken} from "../../Fetch/settings"
 export const getBlogList = ({ setData, setCount, currentPage, author_slug, filterType, searchText, tag }) => {
     const headers = accessToken ? { 'Authorization': `JWT ${accessToken}` } : {};
 
-    // Создаем объект URLSearchParams
     const params = new URLSearchParams({ page: currentPage });
 
     // Добавляем параметры, если они не пустые
@@ -18,8 +17,28 @@ export const getBlogList = ({ setData, setCount, currentPage, author_slug, filte
     // Формируем URL с параметрами
     const url = `${BLOG_LIST}?${params.toString()}`;
 
+    const cacheKey = `blogList_${url}`;
+
+  // Попробуем получить кэшированные данные
+  const cachedData = sessionStorage.getItem(cacheKey);
+  const cacheExpiry = sessionStorage.getItem(`${cacheKey}_expiry`);
+  const isCacheValid = cacheExpiry && Date.now() < Number(cacheExpiry);
+
+  if (cachedData && isCacheValid) {
+    // Если кэш действителен, используем его
+    const parsedData = JSON.parse(cachedData);
+    setData(parsedData.results);
+    setCount(parsedData.count);
+    return;
+  }
+
     axios.get(url, { headers })
         .then((response) => {
+            const { results, count } = response.data;
+
+            // Сохраняем данные в кэш и устанавливаем время истечения
+            sessionStorage.setItem(cacheKey, JSON.stringify({ results, count }));
+            sessionStorage.setItem(`${cacheKey}_expiry`, Date.now() + 180000); 
             setData(response.data.results);
             setCount(response.data.count);
         })

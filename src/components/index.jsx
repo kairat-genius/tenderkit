@@ -42,3 +42,6 @@ export {default as OrderTariff} from './OrderTariff'
 // нет тарифа
 
 export {default as NoTariff} from './NoTariff'
+
+
+export {default as MetaTags} from './MetaTags'

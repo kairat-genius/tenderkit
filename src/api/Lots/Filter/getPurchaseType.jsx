@@ -1,10 +1,7 @@
-import axios from 'axios'
 import {PURCHASETYPE} from "../../../Fetch/settings"
+import { cacheRequest } from "./cacheRequest";
 
 export const getPurchaseType = (setPurchaseType) => {
-
-    axios.get(PURCHASETYPE)
-    .then((response) => {
-            setPurchaseType(response.data);
-    })
-}
+    const url = PURCHASETYPE;
+    cacheRequest(url, setPurchaseType, 'purchaseTypeData');
+};

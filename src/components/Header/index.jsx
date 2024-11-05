@@ -1,5 +1,4 @@
-import "./Header.css";
-import React, { useState, memo} from "react"
+import React, { useState} from "react"
 import { useData } from "../../hooks/DataContext";
 
 // components header

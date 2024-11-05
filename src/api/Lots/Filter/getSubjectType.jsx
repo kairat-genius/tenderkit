@@ -1,10 +1,6 @@
-import axios from 'axios'
 import {SUBJECTTYPE} from "../../../Fetch/settings"
-
+import { cacheRequest } from "./cacheRequest";
 export const getSubjectType = (setSubjectType) => {
-
-    axios.get(SUBJECTTYPE)
-    .then((response) => {
-            setSubjectType(response.data);
-    })
-}
+    const url = SUBJECTTYPE;
+    cacheRequest(url, setSubjectType, 'subjectTypeData');
+};

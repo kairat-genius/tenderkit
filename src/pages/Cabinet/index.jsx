@@ -1,5 +1,4 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Footer from "../../components/Footer";
 import CabinetNav from "../../components/CabinetNav";
 import { NoTariff } from "../../components";
 import { useData } from "../../hooks/DataContext";
@@ -24,8 +23,6 @@ const CabinetLayout = () => {
   const isFolderRoute = location.pathname === '/cabinet/folders';
 
   return (
-    <div id="elToResetScroll" className="layout__body">
-      <div className="ng-star-inserted">
         <div className="layout__container ng-star-inserted">
           <div className="body body--cabinet">
             <div className="body__content">
@@ -50,9 +47,6 @@ const CabinetLayout = () => {
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
-    </div>
   );
 };
 

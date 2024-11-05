@@ -7,7 +7,7 @@ const Opportunities = () => {
       <h2 className="content__title content__title--lg"> Наши возможности </h2>
       <div className="content__layout content__layout--md">
         <div className="grid grid--possibility">
-          <section className="possibility possibility--newsletter possibility--row">
+          <section className="possibility possibility--newsletter">
             <div className="possibility__content">
               <h3 className="possibility__title">
               Ежедневная рассылка на Email
@@ -18,6 +18,16 @@ const Opportunities = () => {
                 &nbsp;значительно упростить процесс поиска требуемых закупок.&nbsp;
                 </span>
                 Вы сможете настроить фильтры в рассылке, чтобы получать только ту информацию, которая соответствует вашим потребностям.
+              </p>
+            </div>
+          </section>
+          <section className="possibility possibility--AI">
+            <div className="possibility__content">
+              <h3 className="possibility__title">
+              Помощь ИИ
+              </h3>
+              <p className="possibility__desc">
+              Автоматический расчет маржинальности с помощью ИИ, оценивающего реальную рентабельность
               </p>
             </div>
           </section>

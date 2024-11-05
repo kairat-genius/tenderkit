@@ -11,7 +11,6 @@ import { ReactComponent as Folders } from "../../../assets/svg/document/folders.
 import { ReactComponent as IconCopy } from "../../../assets/svg/icon/icon-copy.svg";
 import { ReactComponent as IconFileArrow } from "../../../assets/svg/icon/icon-file-arrow.svg";
 import { ReactComponent as Wpatsup } from "../../../assets/svg/social/whatsup.svg";
-import { ReactComponent as Telegram } from "../../../assets/svg/social/telegram.svg";
 import { ReactComponent as IconUsers } from "../../../assets/svg/icon/icon-users.svg";
 
 import { Reviews, WhyCard, Opportunities } from "./index";

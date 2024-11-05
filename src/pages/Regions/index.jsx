@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Map from "./Map";
 import { getDeliveryRegion } from "../../api/Lots/Filter/getDeliveryRegion";
 import { useNavigate } from "react-router-dom";
-import Breadcrumb from "../../components/Breadcrumb";
+import {Breadcrumb, MetaTags } from "../../components";
 
 const Regions = () => {
   const [regions, setRegion] = useState([]);
@@ -66,6 +66,7 @@ const Regions = () => {
 
   return (
     <main className="ng-star-inserted">
+      <MetaTags page="regions"/>
       <div className="content">
         <div className="content__block content__block--head">
           <div className="container container--lg">

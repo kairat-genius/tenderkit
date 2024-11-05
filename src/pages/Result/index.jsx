@@ -8,7 +8,7 @@ import { ReactComponent as Folder } from "../../assets/svg/document/folder.svg";
 
 // components 
 import { Filter } from "./ResultComponents/index";
-import { Pagination, LotList, SortLots, LotLoading } from "../../components";
+import { Pagination, LotList, SortLots, LotLoading, MetaTags } from "../../components";
 
 import { getListLots } from "../../api/Lots/getListLots";
 
@@ -155,6 +155,7 @@ const Result = () => {
 
   return (
     <main className="ng-star-inserted">
+      <MetaTags page="result"/>
       <div className="content">
         <Filter setFilters={setFilters} filters={filters} handleButtonClick={handleButtonClick}/>
         <div id="top_layout" className="content__block content__block--search content__block--theme-secondary" ref={ListRef}>

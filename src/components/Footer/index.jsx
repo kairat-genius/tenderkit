@@ -51,23 +51,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              <h3 className="footer__title"> Сервисы </h3>
-              <ul className="footer__list">
-                <li className="footer__item">
-                  <a routerlink="/kompra" className="footer__link" href="/kompra">
-                    Проверка контрагента
-                  </a>
-                </li>
-                <li className="footer__item">
-                  <a
-                    routerlink="/kompra-monitoring"
-                    className="footer__link"
-                    href="/kompra-monitoring"
-                  >
-                    Мониторинг конкурентов
-                  </a>
-                </li>
-              </ul>
+             
             </div>
             <div className="footer__section">
               <h3 className="footer__title"> Тарифы и&nbsp;услуги </h3>
@@ -97,27 +81,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              <h3 className="footer__title"> Реестры </h3>
-              <ul className="footer__list">
-                <li className="footer__item">
-                  <a
-                    routerlink="/register-suppliers-manufacturers"
-                    className="footer__link"
-                    href="/register-suppliers-manufacturers"
-                  >
-                    Реестр поставщиков и производителей
-                  </a>
-                </li>
-                <li className="footer__item">
-                  <a
-                    routerlink="/register-qualified-employees"
-                    className="footer__link"
-                    href="/register-qualified-employees"
-                  >
-                    Реестр квалифицированных сотрудников
-                  </a>
-                </li>
-              </ul>
+              
             </div>
             <div className="footer__section">
               <h3 className="footer__title"> Другое </h3>
@@ -128,40 +92,8 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="footer__item">
-                  <a
-                    routerlink="/popular-tender-categories"
-                    className="footer__link"
-                    href="/popular-tender-categories"
-                  >
-                    Самые популярные категории тендеров
-                  </a>
-                </li>
-                <li className="footer__item">
-                  <a
-                    routerlink="/about-us"
-                    className="footer__link"
-                    href="/about-us"
-                  >
-                    О нас
-                  </a>
-                </li>
-                <li className="footer__item">
                   <a routerlink="/sitemap" className="footer__link" href="/sitemap">
                     Карта сайта
-                  </a>
-                </li>
-                <li className="footer__item">
-                  <a
-                    routerlink="/instruction"
-                    className="footer__link"
-                    href="/instruction"
-                  >
-                    Инструкция
-                  </a>
-                </li>
-                <li className="footer__item">
-                  <a routerlink="/faq" className="footer__link" href="/faq">
-                    FAQ
                   </a>
                 </li>
               </ul>

@@ -6,7 +6,7 @@ import OutsideClickHandler from "react-outside-click-handler";
 import { ReactComponent as Search } from "../../assets/svg/pointer/search.svg";
 
 // components Areas
-import Breadcrumb from "../../components/Breadcrumb";
+import {Breadcrumb, MetaTags } from "../../components";
 
 const Areas = () => {
   const [sources, setSource] = useState([]);
@@ -69,6 +69,7 @@ const Areas = () => {
 
   return (
     <main className="ng-star-inserted">
+       <MetaTags page="areas"/>
       <div className="content">
         <div className="content__block content__block--head">
           <div className="container container--lg">

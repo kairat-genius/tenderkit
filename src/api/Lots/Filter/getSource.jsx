@@ -1,10 +1,7 @@
-import axios from 'axios'
 import {SOURCE} from "../../../Fetch/settings"
+import { cacheRequest } from "./cacheRequest";
 
 export const getSource = (setSource) => {
-
-    axios.get(SOURCE)
-    .then((response) => {
-        setSource(response.data);
-    })
-}
+    const url = SOURCE;
+    cacheRequest(url, setSource, 'sourceData');
+};

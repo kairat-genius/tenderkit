@@ -41,9 +41,7 @@ const FoldersDetail = lazy(() => import("../src/pages/Cabinet/Folders/FoldersDet
 
 const NotFound404 = lazy(() => import("../src/components/404/404"));
 
-import Header from "./components/Header";
-
-import "./App.css";
+import { Header, Footer } from "./components";
 
 const Root = () => {
   const url = useURL();
@@ -53,8 +51,7 @@ const Root = () => {
       <Header />
     <Suspense
       fallback={
-        <div className="loader-container">
-          <div className="loader"></div>
+        <div>
         </div>
       }
     >
@@ -70,7 +67,6 @@ const Root = () => {
           <Route path={url.PrivacyPolicy.path} element={<PrivacyPolicy/>}/>
           <Route path={url.UserAgreement.path} element={<UserAgreement/>}/>
           <Route path={url.Contacts.path} element={<Contacts/>}/>
-          </Route>
 
           <Route path="/blog" element={<BlogLayout/>}>
             <Route index element={<BlogList />} />
@@ -87,12 +83,12 @@ const Root = () => {
             <Route path={url.MailingHistory.path} element={<MailingHistory/>} />
             <Route path={url.Tracking.path} element={<Tracking/>} />
           </Route>
+          </Route>
+
           <Route path="*" element={<NotFound404 />} />
-
-
-
       </Routes>
     </Suspense>
+    <Footer/>
     </DataProvider>
   );
 };

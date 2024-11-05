@@ -9,7 +9,7 @@ import { ReactComponent as Letter } from "../../assets/cabinet/letter.svg";
 import { ReactComponent as PhoneAlt } from "../../assets/cabinet/phone-alt.svg";
 
 // components Contacts
-import { Breadcrumb } from "../../components";
+import { Breadcrumb, MetaTags } from "../../components";
 import ContactLink from "./ContactLink";
 import "leaflet/dist/leaflet.css";
 
@@ -19,6 +19,7 @@ const Contacts = () => {
 
   return (
     <main className="ng-star-inserted">
+        <MetaTags page="contacts"/>
       <div className="layout__container">
         <div className="body body--contacts">
           <div className="body__content">

@@ -2,13 +2,12 @@ import React, { useState} from "react";
 
 // svg
 import { ReactComponent as CallAlt } from "../../../assets/svg/icon/call-alt.svg";
-import { ReactComponent as Tracking } from "../../../assets/svg/pointer/tracking.svg";
 import { ReactComponent as IconUser } from "../../../assets/svg/mobile/user.svg";
 import { ReactComponent as Menu } from "../../../assets/svg/mobile/menu.svg";
 import { ReactComponent as Cross } from "../../../assets/svg/mobile/cross.svg";
 
 // components header
-import { Navbar, Blog, Phone, User } from "./BurgerMenu";
+import { Navbar, Phone, User } from "./BurgerMenu";
 
 const HeaderMobile = ({data, openModal}) => {
   const [isBurgerMenu, setIsBurgerMenu] = useState(false);
@@ -52,16 +51,6 @@ const HeaderMobile = ({data, openModal}) => {
             <div className="button-group__layout">
               <button
                 type="button"
-                aria-label="Уведомления"
-                className={`header__link ${activeComponent === "blog" ? 'header__link--active' : ''}`}
-                onClick={() => handleComponentChange("blog")}
-              >
-                <span className="header__icon icon">
-                  <Tracking className="icon__svg" />
-                </span>
-              </button>
-              <button
-                type="button"
                 aria-label="Телефон"
                 className={`header__link ${activeComponent === "phone" ? 'header__link--active' : ''}`}
                 onClick={() => handleComponentChange("phone")}
@@ -97,7 +86,6 @@ const HeaderMobile = ({data, openModal}) => {
       </div>
     
         {isBurgerMenu && <Navbar isActive={isBurgerMenu} openModal={openModal} closeMenu={closeMenu} data={data}/>}
-        {activeComponent === "blog" && <Blog isActive={activeComponent === "blog"}  onClick={handleBackgroundClick} />} 
         {activeComponent === "phone" && <Phone isActive={activeComponent === "phone"}  onClick={handleBackgroundClick}/>} 
         {activeComponent === "user" && <User isActive={activeComponent === "user"} openModal={openModal} onClick={handleBackgroundClick} data={data} closeMenu={closeMenu}/>} 
 

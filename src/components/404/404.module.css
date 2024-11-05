@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 
 :root {
   --primary-color: #f9b23c;
@@ -10,11 +10,12 @@
 
 .container {
   max-width: 400px;
-  padding: 2rem;
+  padding: 4rem;
   margin: auto;
   display: grid;
   color: var(--text-dark);
 }
+
 
 .header {
   display: flex;
@@ -24,6 +25,7 @@
 .header h1 {
   font-size: 4rem;
   font-weight: 900;
+  margin: 0;
 }
 .container h3 {
   font-size: 2rem;
@@ -61,14 +63,19 @@
   background-color: var(--primary-color-dark);
 }
 
-@media (min-width: 640px) {
-  nav {
-    max-width: 1000px;
+@media (min-width: 769px) {
+  .container {
+    padding: 8rem;
   }
+}
+
+@media (min-width: 640px) {
+
   .container {
     max-width: 1200px;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    
   }
   .container img {
     max-width: 550px;
@@ -89,4 +96,4 @@
   .header h3 {
     font-size: 2.5rem;
   }
-} */
+}

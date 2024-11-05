@@ -20,27 +20,13 @@ const TopDesktop = ({openModal, data}) => {
   return (
     <div className="top desktop" style={{zIndex: '100'}}>
       <div className="top__container container container--lg">
-          <a href="/" className="header__logo logo"><span>Tender</span>kit</a>
+          <Link to="/" className="header__logo logo"><span>Tender</span>kit</Link>
         <div className="top__section">
           <ul className="top__list">
             <li className="top__item">
-              <a
-                routerlink="/instruction"
-                className="top__link"
-                href="/instruction"
-              >
-                Инструкция
-              </a>
-            </li>
-            <li className="top__item">
-              <a routerlink="/contacts" className="top__link" href="/contacts">
+              <Link className="top__link" to="/contacts">
                 Контакты
-              </a>
-            </li>
-            <li className="top__item">
-              <a routerlink="/faq" className="top__link" href="/faq">
-                FAQ
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

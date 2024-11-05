@@ -1,10 +1,6 @@
-import axios from 'axios'
 import {DELIVERY_REGION} from "../../../Fetch/settings"
-
+import { cacheRequest } from "./cacheRequest";
 export const getDeliveryRegion = (setRegion) => {
-
-    axios.get(DELIVERY_REGION)
-    .then((response) => {
-            setRegion(response.data);
-    })
-}
+    const url = DELIVERY_REGION;
+    cacheRequest(url, setRegion, 'deliveryRegion');
+};

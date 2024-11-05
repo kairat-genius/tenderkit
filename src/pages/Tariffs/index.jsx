@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
 import { toast } from 'react-toastify';
-import {Breadcrumb, OrderTariff} from "../../components";
+import {Breadcrumb, OrderTariff, MetaTags} from "../../components";
 import { TariffsModile, TariffsDesktop } from "./TariffsComponents";
 import { getTariff } from "../../api/Tariff/getTariff";
 import { useData } from "../../hooks/DataContext";
 import textData from "../../json/tariffs.json"; 
+
 const Tariffs = () => {
  const [datatariffs, setData] = useState([])
  const [showModal, setShowModal] = useState(false);
@@ -45,6 +46,7 @@ const closeModal = () => {
 
   return (
         <main className="ng-star-inserted">
+           <MetaTags page="tariffs"/>
           <div className="content ng-star-inserted">
             <div className="content__block content__block--head content__block--theme-secondary">
               <div className="container container--lg">

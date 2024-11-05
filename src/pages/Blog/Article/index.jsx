@@ -6,7 +6,7 @@ import { getBlogAuthorAbout } from "../../../api/Blog/getBlogAuthorAbout";
 import { getBlogArticleInteres } from "../../../api/Blog/getBlogArticleInteres";
 import parse from "html-react-parser";
 import { formatDateMonth } from "../../../hooks/LotUtils";
-import { Breadcrumb } from "../../../components";
+import { Breadcrumb, MetaTags } from "../../../components";
 // svg
 import { ReactComponent as Twitter } from "../../../assets/svg/social/twitter.svg";
 import { ReactComponent as Vk } from "../../../assets/svg/social/vk.svg";
@@ -53,6 +53,7 @@ const Article = () => {
 
   return (
     <div class="container">
+       <MetaTags page="blogArticle" title={author.fullname} slug={author_slug} article={slug}/>
       <Breadcrumb urls={author.fullname} title={data.title} />
       <div class="content__layout content__layout--md columns ng-star-inserted">
         <div class="columns__content">

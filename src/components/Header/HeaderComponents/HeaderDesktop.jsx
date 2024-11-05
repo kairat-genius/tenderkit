@@ -68,30 +68,6 @@ const HeaderDesktop = () => {
                   </ul>
                 </div>
               </li>
-              <li className="header__item dropdown dropdown--header dropdown--hover">
-                <button type="button" className="header__link">
-                  Сервисы
-                  <span className="dropdown__arrow-icon dropdown__arrow-icon--sm icon">
-                    <ChevrondownAlt className="icon__svg" />
-                  </span>
-                </button>
-                <div className="dropdown__body">
-                  <ul className="option option--header">
-                    <OptionLayout
-                      classLayout="option__layout"
-                      classButton="option__button"
-                      href="/kompra"
-                      label="Проверка контрагента"
-                    />
-                    <OptionLayout
-                      classLayout="option__layout"
-                      classButton="option__button"
-                      href="/kompra-monitoring"
-                      label="Мониторинг конкурентов"
-                    />
-                  </ul>
-                </div>
-              </li>
               <OptionLayout
                 classLayout="header__item"
                 classButton="header__link"
@@ -110,68 +86,12 @@ const HeaderDesktop = () => {
                 href="/education"
                 label="Аналитика"
               />
-
-              <li className="header__item dropdown dropdown--header dropdown--hover">
-                <button type="button" className="header__link">
-                  Реестры
-                  <span className="dropdown__arrow-icon dropdown__arrow-icon--sm icon">
-                    <ChevrondownAlt className="icon__svg" />
-                  </span>
-                </button>
-                <div className="dropdown__body">
-                  <ul className="option option--header">
-                    <OptionLayout
-                      classLayout="option__layout"
-                      classButton="option__button"
-                      href="/register-suppliers-manufacturers"
-                      label="Реестр поставщиков и производителей"
-                    />
-                    <OptionLayout
-                      classLayout="option__layout"
-                      classButton="option__button"
-                      href="/register-qualified-employees"
-                      label="Реестр квалифицированных сотрудников"
-                    />
-                  </ul>
-                </div>
-              </li>
               <OptionLayout
                 classLayout="header__item"
                 classButton="header__link"
                 href="/blog"
                 label="Блог"
               />
-              <OptionLayout
-                classLayout="header__item"
-                classButton="header__link"
-                href="/education"
-                label="Аналитика"
-              />
-              <li className="header__item dropdown dropdown--header dropdown--hover">
-                <button type="button" className="header__link">
-                  Ещё
-                  <span className="dropdown__arrow-icon dropdown__arrow-icon--sm icon">
-                    <ChevrondownAlt className="icon__svg" />
-                  </span>
-                </button>
-                <div className="dropdown__body">
-                  <ul className="option option--header">
-                    <OptionLayout
-                      classLayout="option__layout"
-                      classButton="option__button"
-                      href="/popular-tender-categories"
-                      label="Самые популярные категории тендеров"
-                    />
-                    <OptionLayout
-                      classLayout="option__layout"
-                      classButton="option__button"
-                      href="/about-us"
-                      label="О нас"
-                    />
-                  </ul>
-
-                </div>
-              </li>
             </ul>
           </nav>
         </div>

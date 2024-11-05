@@ -39,20 +39,6 @@ const Navbar = ({data, openModal, closeMenu}) => {
                 </ul>
               </div>
             </li>
-            <li className={`m-nav__item dropdown dropdown--header ${activeDropdown === "services" ? 'dropdown--active' : ''}`}>
-            <a className="m-nav__link" onClick={() => handleDropdownToggle("services")}>
-                Сервисы
-                <span className="dropdown__arrow-icon icon">
-                  <ChevrondownAlt className="icon__svg" />
-                </span>
-              </a>
-              <div className="dropdown__body">
-                <ul className="option">
-                  <OptionLayoutMobile href="/kompra" title="Проверка контрагентов" IconComponent={Arrowright} closeMenu={closeMenu}/>
-                  <OptionLayoutMobile href="/kompra-monitoring" title="Мониторинг конкурентов" IconComponent={Arrowright} closeMenu={closeMenu}/>
-                </ul>
-              </div>
-            </li>
             <li className="m-nav__item">
               <a routerlink="/tariffs" className="m-nav__link" href="/tariffs">
                 <span className="m-nav__text"> Тарифы </span>
@@ -67,26 +53,8 @@ const Navbar = ({data, openModal, closeMenu}) => {
               </a>
             </li>
             <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/analytics" label="Аналитика" closeMenu={closeMenu}/>
-            <li className={`m-nav__item dropdown dropdown--header ${activeDropdown === "registries" ? 'dropdown--active' : ''}`}>
-              <a className="m-nav__link" onClick={() => handleDropdownToggle("registries")} >
-                Реестры
-                <span className="dropdown__arrow-icon icon">
-                  <ChevrondownAlt className="icon__svg" />
-                </span>
-              </a>
-              <div className="dropdown__body">
-                <ul className="option">
-                  <OptionLayoutMobile href="/register-suppliers-manufacturers" title="Реестр поставщиков и производителей" IconComponent={Arrowright} closeMenu={closeMenu}/>
-                  <OptionLayoutMobile href="/register-qualified-employees" title="Реестр квалифицированных сотрудников" IconComponent={Arrowright} closeMenu={closeMenu}/>
-                </ul>
-              </div>
-            </li>
             <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/blog" label="Блог" closeMenu={closeMenu}/>
-            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/popular-tender-categories" label="Самые популярные категории тендеров" closeMenu={closeMenu}/>
-            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/about-us" label="О нас" closeMenu={closeMenu}/>
-            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/instruction" label="Инструкция" closeMenu={closeMenu}/>
             <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/contacts" label="Контакты" closeMenu={closeMenu}/>
-            <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/faq" label="FAQ" closeMenu={closeMenu}/>
           </ul>
           <div className="m-nav__layout">
             <dl className="m-menu__dl">

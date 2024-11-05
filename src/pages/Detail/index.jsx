@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Breadcrumb from "../../components/Breadcrumb";
 import {
   LotInfo,
   LotList,
   LotActionsDetail,
   Documents,
+  Breadcrumb,
+  MetaTags
 } from "../../components";
 import { useParams } from "react-router-dom";
 import { getDetailLot } from "../../api/Lots/getDetailLot";
@@ -59,12 +60,13 @@ const Detail = () => {
     data.subscription.tariff &&
     data.subscription.tariff.tender_access !== false;
   return (
-    <lot class="ng-star-inserted">
+    <main class="ng-star-inserted">
+      <MetaTags page="detailLot" title={detail.title} slug={slug}/>
       <div class="layout__container">
         <div class="body">
           <div class="body__content">
             <Breadcrumb lot={detail.title} />
-            <lot-info class="ng-star-inserted">
+            <div class="ng-star-inserted">
               <div class="body__container">
                 <h1 class="visually-hidden">
                   Тендер {detail.truCode}: Товар {detail.advertisement.title},
@@ -349,11 +351,11 @@ const Detail = () => {
                   )}
                 </div>
               </div>
-            </lot-info>
+            </div>
           </div>
         </div>
       </div>
-    </lot>
+    </main>
   );
 };
 

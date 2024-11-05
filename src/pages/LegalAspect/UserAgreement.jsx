@@ -1,9 +1,10 @@
 import React from "react";
 import agreementData from "../../json/userAgreement.json";
-import { Breadcrumb } from "../../components";
+import { Breadcrumb, MetaTags } from "../../components";
 const UserAgreement = () => {
   return (
     <div className="ng-star-inserted">
+         <MetaTags page="userAgreement"/>
       <div className="layout__container">
         <div className="body">
           <div className="body__content">

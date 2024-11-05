@@ -1,10 +1,7 @@
-import axios from 'axios'
 import {ORGANIZER} from "../../../Fetch/settings"
+import { cacheRequest } from "./cacheRequest";
 
 export const getOrganizer = (setOrganizer, searchTerm) => {
-
-    axios.get(`${ORGANIZER}?search=${searchTerm}`)
-    .then((response) => {
-            setOrganizer(response.data);
-    })
-}
+    const url = `${ORGANIZER}?search=${searchTerm}`;
+    cacheRequest(url, setOrganizer, 'organizerData', { search: searchTerm });
+};

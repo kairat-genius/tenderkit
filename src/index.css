@@ -158,3 +158,139 @@
 .leaflet-right {
   display: none;
 }
+
+
+/* отзывы */
+
+
+.col-md-4 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
+.ant074_testimonials-testim-inner {
+  position: relative;
+  text-align: center;
+  padding: 0 25px 25px 25px;
+  border: 1px solid #ebebeb;
+  background-color: #fff;
+  border-radius: 7px 7px;
+  border-bottom: 2px solid #e0e0e0;
+  box-shadow: rgba(33, 33, 33, .055) 0 4px 24px 5px;
+  flex: 1 1 300px;          
+  margin: 10px;             
+  height: 100%;            
+  min-height: 250px;       
+  max-height: none;        
+  overflow: hidden; 
+}
+
+.ant074_testimonials-testim-inner.expanded {
+  max-height: none; 
+}
+
+.ant074_testimonials-testim-inner p {
+  font-size: 17px;
+  line-height: 28px;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.ant074_testimonials-testim-inner h6 {
+  font-size: 15px;
+  margin-top: 10px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.ant__comment {
+  color: #868695;
+  font-size: 12px;
+}
+
+
+.arrow-6 {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.arrow-6 polygon,
+.arrow-6 path {
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  fill: #337AB7;
+}
+
+.custom-arrow--next {
+  right: -40px; 
+}
+
+.custom-arrow--prev {
+  left: -40px;
+}
+
+@media (max-width: 779px) {
+  .ant074_testimonials-testim-inner {
+    min-height: 200px
+  }
+
+  }
+
+
+  /* фильтр календарь */
+
+  
+.DayPicker .rdp-months {
+  margin: 0 auto;
+}
+
+.DayPicker .rdp-caption_label {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.DayPicker .rdp-day {
+  font-size: 12px;
+  max-width: 32px;
+  max-height: 32px;
+  
+}
+
+.calendar-filter {
+  position: absolute;
+  z-index: 10; 
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 266px;
+  height: 380px;
+}
+
+
+/* загрузка */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Занимает всю высоту экрана */
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

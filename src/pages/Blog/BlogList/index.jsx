@@ -8,7 +8,7 @@ import {
 } from "../../../components";
 import { getBlogListTag } from "../../../api/Blog/getBlogListTag";
 import { getBlogList } from "../../../api/Blog/getBlogList";
-import {Breadcrumb} from "../../../components"
+import {Breadcrumb, MetaTags} from "../../../components"
 
 const BlogList = () => {
   const [data, setData] = useState([]);
@@ -46,6 +46,7 @@ const BlogList = () => {
 
   return (
     <div class="container">
+      <MetaTags page="blog"/>
     <Breadcrumb />
       <OnTrend />
       <section id="articles-layout" className="content__layout" ref={blogListRef}>

@@ -6820,7 +6820,7 @@ header .logo:hover {
 
 .hero__searchbar {
     margin-top: 16px;
-    background-color: #2592a4;
+    background-color: var(--color-gray-8);
     padding: 24px;
     border-radius: 16px;
     display: grid;
@@ -13339,6 +13339,8 @@ header .logo:hover {
     }
 }
 
+
+
 @media (min-width: 1024px) {
     .our-features__layout {
         column-gap:80px
@@ -14469,7 +14471,7 @@ header .logo:hover {
     }
 
     .footer__container {
-        grid-template-columns: 1fr
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .promo__image {
@@ -16060,6 +16062,12 @@ header .logo:hover {
     }
 }
 
+@media (max-width: 400px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+    }
+}
+
 .tariff-card {
     position: relative;
     z-index: 0;
@@ -17547,7 +17555,7 @@ header .logo:hover {
 }
 
 .why__title span {
-    color: #98FF98
+    color: #0056A6
 }
 
 @media (min-width: 768px) {
@@ -17809,17 +17817,17 @@ header .logo:hover {
     transition: transform .3s ease-in-out,opacity .3s ease-out
 }
 
-.possibility--documentation .possibility__image {
+.possibility--AI .possibility__image {
     margin-right: 0
 }
 
-.possibility--documentation .possibility__image--search {
+.possibility--AI .possibility__image--search {
     z-index: 1;
     max-width: 74%;
     margin-bottom: -12%
 }
 
-.possibility--documentation .possibility__image--lot {
+.possibility--AI .possibility__image--lot {
     max-width: 92%
 }
 
@@ -17867,7 +17875,6 @@ header .logo:hover {
 
     .possibility--newsletter {
         --possibility-gradient: linear-gradient( 157deg, #4184b5, #569bc2 38%, #a5d8f4 );
-        margin-top: 50px;
         overflow: initial
     }
 
@@ -17875,7 +17882,7 @@ header .logo:hover {
         display: none
     }
 
-    .possibility--documentation {
+    .possibility--AI {
         --possibility-gradient: linear-gradient( 157deg, #4184b5, #569bc2 38%, #a5d8f4 )
     }
 
@@ -18055,7 +18062,6 @@ header .logo:hover {
 
     .possibility--newsletter {
         --possibility-gradient: linear-gradient( 104deg, #41aeb5, #56c2c2 45%, #a5e6f4 );
-        margin-top: 28px;
         overflow: initial
     }
 
@@ -18080,11 +18086,11 @@ header .logo:hover {
         transform: translateY(80px)
     }
 
-    .possibility--documentation {
+    .possibility--AI {
         --possibility-gradient: linear-gradient( 104deg, #4184b5, #569bc2 45%, #a5d8f4 )
     }
 
-    .possibility--documentation .possibility__image {
+    .possibility--AI .possibility__image {
         transform: scale(.9);
         transform-origin: right bottom
     }
