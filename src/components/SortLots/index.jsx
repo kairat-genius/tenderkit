@@ -17,11 +17,11 @@ const SortLots = ({ sortOption, setSortOption }) => {
           value={sortOption} 
           onChange={handleChange} 
         >
-          <option value="published_oldest">
-            По дате публикации: сначала старые
-          </option>
           <option value="published_newest">
             По дате публикации: сначала новые
+          </option>
+          <option value="published_oldest">
+            По дате публикации: сначала старые
           </option>
           <option value="price_asc">
             По сумме: по возрастанию

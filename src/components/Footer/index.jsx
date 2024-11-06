@@ -143,7 +143,7 @@ const Footer = () => {
                 </li>
                 <li className="footer__item">
                   <a
-                    href="tg://resolve?domain=Portalzakupki"
+                    href="tel:+77057638953"
                     className="footer__link"
                   >
                     +7 (705)-763-89-53 - Telegram

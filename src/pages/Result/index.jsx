@@ -22,7 +22,7 @@ const Result = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [fetchTrigger, setFetchTrigger] = useState(false);
   const ListRef = useRef(null);
-  const [sortOption, setSortOption] = useState("");
+  const [sortOption, setSortOption] = useState("published_newest");
   const [folders, setFolder] = useState([]);
   const [filters, setFilters] = useState({
     // дате завершения
@@ -71,7 +71,7 @@ const Result = () => {
     
     const fetchDataWithFilters = async () => {
       setIsLoading(true); 
-      await getListLots({ setData, setCount, offset: 0, filters: { ...filters, ...filterData } });
+      await getListLots({ setData, setCount, offset: 0, sortOption, filters: { ...filters, ...filterData } });
       setIsLoading(false); 
     };
     
