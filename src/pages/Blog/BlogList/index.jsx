@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  Aside,
-  OnTrend,
-  Pagination,
-  FilterBlog,
-  BlogItem,
-} from "../../../components";
 import { getBlogListTag } from "../../../api/Blog/getBlogListTag";
 import { getBlogList } from "../../../api/Blog/getBlogList";
-import {Breadcrumb, MetaTags} from "../../../components"
+import Breadcrumb from "../../../components/Breadcrumb";
+import MetaTags from "../../../components/MetaTags";
+import Aside from "../../../components/blog/Aside";
+import OnTrend from "../../../components/blog/OnTrend";
+import Pagination from "../../../components/Pagination";
+import FilterBlog from "../../../components/blog/FilterBlog";
+import BlogItem from "../../../components/blog/BlogItem";
+
 
 const BlogList = () => {
   const [data, setData] = useState([]);

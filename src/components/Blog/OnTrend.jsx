@@ -3,7 +3,7 @@ import { getBlogListPopular } from "../../api/Blog/getBlogListPopular";
 import { ReactComponent as Eye } from "../../assets/svg/pointer/eye.svg";
 import { ReactComponent as Message } from "../../assets/svg/icon/message.svg";
 import { Link } from "react-router-dom";
-import { formatDateMonth, formatMinutes } from "../../hooks/LotUtils";
+import { formatDateMonth} from "../../hooks/LotUtils";
 const OnTrend = () => {
   const [data, setData] = useState([]);
 

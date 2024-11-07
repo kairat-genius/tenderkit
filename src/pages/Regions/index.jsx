@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import Map from "./Map";
 import { getDeliveryRegion } from "../../api/Lots/Filter/getDeliveryRegion";
 import { useNavigate } from "react-router-dom";
-import {Breadcrumb, MetaTags } from "../../components";
 
+import Breadcrumb from "../../components/Breadcrumb";
+import MetaTags from "../../components/MetaTags";
 const Regions = () => {
   const [regions, setRegion] = useState([]);
   const [selectAll, setSelectAll] = useState(false); // State for "Select All"

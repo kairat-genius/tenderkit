@@ -5,7 +5,9 @@ import { getBlogComment } from "../../api/Blog/comment/getBlogComment";
 import { formatTimeAgo } from "../../hooks/LotUtils";
 import Pagination from "../Pagination";
 import { useData } from "../../hooks/DataContext";
-import {Login, Register} from "../../components"
+
+import Login from "../../components/LoginRegister/Login"
+import Register from "../../components/LoginRegister/Register"
 
 const BlogComment = () => {
   const { slug } = useParams();

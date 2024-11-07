@@ -1,6 +1,7 @@
 import React from "react";
 import agreementData from "../../json/userAgreement.json";
-import { Breadcrumb, MetaTags } from "../../components";
+import Breadcrumb from "../../components/Breadcrumb";
+import MetaTags from "../../components/MetaTags";
 const UserAgreement = () => {
   return (
     <div className="ng-star-inserted">

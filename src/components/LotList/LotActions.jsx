@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { postCreateDeleteFavorite } from "../../api/User/Favorite/postCreateDeleteFavorite";
 import { postCreateDeleteTracking } from "../../api/User/Tracking/postCreateDeleteTracking";
 

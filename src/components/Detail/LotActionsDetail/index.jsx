@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Share } from "../../../components";
+import Share from "../../../components/Share";
 import { postCreateDeleteFavorite } from "../../../api/User/Favorite/postCreateDeleteFavorite";
 import { postCreateDeleteTracking } from "../../../api/User/Tracking/postCreateDeleteTracking";
 import { ReactComponent as Tracking } from "../../../assets/svg/icon/tracking.svg";
 import { ReactComponent as Star } from "../../../assets/svg/icon/star.svg";
 import { useData } from "../../../hooks/DataContext";
+
 const LotActionsDetail = ({lot}) => {
     const { data } = useData();
     const [isFavorite, setIsFavorite] = useState(lot.is_favorite);

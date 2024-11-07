@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { BlogItem, BlogComment } from "../../../components";
+
 import { getBlogArticle } from "../../../api/Blog/getBlogArticle";
 import { getBlogAuthorAbout } from "../../../api/Blog/getBlogAuthorAbout";
 import { getBlogArticleInteres } from "../../../api/Blog/getBlogArticleInteres";
 import parse from "html-react-parser";
 import { formatDateMonth } from "../../../hooks/LotUtils";
-import { Breadcrumb, MetaTags, NotFound404 } from "../../../components";
+
+
+
+import NotFound404 from "../../../components/NotFound404";
+import Breadcrumb from "../../../components/Breadcrumb";
+import MetaTags from "../../../components/MetaTags";
+
+import BlogComment  from "../../../components/blog/BlogComment";
+import BlogItem from "../../../components/blog/BlogItem";
+
 // svg
 import { ReactComponent as Twitter } from "../../../assets/svg/social/twitter.svg";
 import { ReactComponent as Vk } from "../../../assets/svg/social/vk.svg";

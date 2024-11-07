@@ -1,16 +1,17 @@
 import React from 'react';
-
+import { Helmet } from 'react-helmet';
 import styles from './404.module.css';
 import img_404 from "../../assets/404.jpg";
 
 
 const NotFound404 = () => {
-  const goToHome = () => {
-    window.location.href = '/'; 
-  };
 
   return (
     <div className={styles.container404}>
+      <Helmet>
+      <title>"Страница не найдена - 404</title>
+      <meta name="robots" content="noindex, nofollow"/>
+    </Helmet>
       <div className={styles.container}>
         <div className={styles.header}>
           <h1>404</h1>
@@ -22,7 +23,7 @@ const NotFound404 = () => {
             Извините, запрашиваемая вами страница не найдена. Пожалуйста, вернитесь
             на главную страницу!
           </p>
-          <button onClick={goToHome}>НА ГЛАВНУЮ</button>
+          <a href="/" className={styles.goHomeButton}>НА ГЛАВНУЮ</a>
         </div>
       </div>
     </div>

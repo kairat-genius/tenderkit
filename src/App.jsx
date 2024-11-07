@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { lazy } from "react";
 import {
   Route,
   RouterProvider,
@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { DataProvider } from "./hooks/DataContext";
 
-const IndexLayout = lazy(() => import('../src/pages'))
+import IndexLayout from '../src/pages';
 
 const Home = lazy(() => import("../src/pages/Home"));
 const Regions = lazy(() => import("../src/pages/Regions"));
@@ -41,7 +41,8 @@ const FoldersDetail = lazy(() => import("../src/pages/Cabinet/Folders/FoldersDet
 
 const NotFound404 = lazy(() => import("../src/components/NotFound404"));
 
-import { Header, Footer } from "./components";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const Root = () => {
   const url = useURL();
@@ -49,12 +50,6 @@ const Root = () => {
   return (
     <DataProvider>
       <Header />
-    <Suspense
-      fallback={
-        <div>
-        </div>
-      }
-    >
       <Routes>
         <Route path="/" element={<IndexLayout/>}>
           <Route index element={<Home />} />
@@ -67,6 +62,7 @@ const Root = () => {
           <Route path={url.PrivacyPolicy.path} element={<PrivacyPolicy/>}/>
           <Route path={url.UserAgreement.path} element={<UserAgreement/>}/>
           <Route path={url.Contacts.path} element={<Contacts/>}/>
+          <Route path="*" element={<NotFound404/>}/>
 
           <Route path="/blog" element={<BlogLayout/>}>
             <Route index element={<BlogList />} />
@@ -83,13 +79,11 @@ const Root = () => {
             <Route path={url.MailingHistory.path} element={<MailingHistory/>} />
             <Route path={url.Tracking.path} element={<Tracking/>} />
           </Route>
-          </Route>
-
-          <Route path="*" element={<NotFound404 />} />
+          </Route>     
       </Routes>
-    </Suspense>
     <Footer/>
     </DataProvider>
+    
   );
 };
 

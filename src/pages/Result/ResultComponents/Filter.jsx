@@ -13,7 +13,8 @@ import {
   PriceFilter,
   Exclude,
 } from "../../../components/Filter";
-import { Breadcrumb, OrganizerModal } from "../../../components";
+import Breadcrumb from "../../../components/Breadcrumb";
+const OrganizerModal = React.lazy(() => import("../../../components/OrganizerModal"));
 import MultiSelectResult from "./MultiSelectResult";
 
 

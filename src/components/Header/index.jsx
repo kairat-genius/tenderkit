@@ -1,16 +1,30 @@
-import React, { useState} from "react"
+import React, { useState, useEffect} from "react"
 import { useData } from "../../hooks/DataContext";
 
 // components header
 import {TopDesktop, HeaderMobile, HeaderDesktop} from "./HeaderComponents";
 
 // Login / Register
-import {Login, Register} from "../index"
+const Login = React.lazy(() => import("../LoginRegister/Login"));
+const Register = React.lazy(() => import("../LoginRegister/Register"));
 
 const Header = () => {
   const {data} = useData();
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 769);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 769);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const openModal = (type) => {
     setModalType(type);
@@ -34,9 +48,14 @@ const Header = () => {
 
   return (
     <header className="layout__header">
-        <TopDesktop openModal={openModal} data={data}/>
-        <HeaderDesktop/>
-        <HeaderMobile openModal={openModal} data={data}/>
+        {isMobile ? (
+        <HeaderMobile openModal={openModal} data={data} />
+      ) : (
+        <>
+          <TopDesktop openModal={openModal} data={data} />
+          <HeaderDesktop />
+        </>
+      )}
 
 
         {showModal && (

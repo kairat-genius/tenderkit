@@ -6,7 +6,8 @@ import OutsideClickHandler from "react-outside-click-handler";
 import { ReactComponent as Search } from "../../assets/svg/pointer/search.svg";
 
 // components Areas
-import {Breadcrumb, MetaTags } from "../../components";
+import Breadcrumb from "../../components/Breadcrumb";
+import MetaTags from "../../components/MetaTags";
 
 const Areas = () => {
   const [sources, setSource] = useState([]);

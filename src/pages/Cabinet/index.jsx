@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import CabinetNav from "../../components/CabinetNav";
-import { NoTariff } from "../../components";
+import NoTariff from "../../components/NoTariff";
 import { useData } from "../../hooks/DataContext";
 
 // Обёрточный компонент для всех маршрутов внутри "cabinet"
@@ -10,9 +10,7 @@ const CabinetLayout = () => {
 
   if (!data) {
     return (
-      <div className="loader-container">
-        <div className="loader"></div>
-      </div>
+     <div></div>
     ); 
   }
 

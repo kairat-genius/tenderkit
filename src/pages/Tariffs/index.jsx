@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { toast } from 'react-toastify';
-import {Breadcrumb, OrderTariff, MetaTags} from "../../components";
+
+const OrderTariff = React.lazy(() => import("../../components/OrderTariff"));
+import Breadcrumb from "../../components/Breadcrumb";
+import MetaTags from "../../components/MetaTags";
 import { TariffsModile, TariffsDesktop } from "./TariffsComponents";
 import { getTariff } from "../../api/Tariff/getTariff";
 import { useData } from "../../hooks/DataContext";

@@ -1,9 +1,15 @@
 import React, {useState, useEffect, useRef } from "react";
-import {Aside, Pagination, FilterBlog, BlogItem} from "../../../components"
 import { getBlogAuthor } from "../../../api/Blog/getBlogAuthor";
 import { useParams } from "react-router-dom";
 import { getBlogList } from "../../../api/Blog/getBlogList";
-import {Breadcrumb, MetaTags, NotFound404} from "../../../components"
+
+import NotFound404 from "../../../components/NotFound404";
+import Breadcrumb from "../../../components/Breadcrumb";
+import MetaTags from "../../../components/MetaTags";
+import Aside from "../../../components/blog/Aside";
+import Pagination from "../../../components/Pagination";
+import FilterBlog from "../../../components/blog/FilterBlog";
+import BlogItem from "../../../components/blog/BlogItem";
 
 const Author = () => {
   const { author_slug } = useParams();

@@ -8,7 +8,10 @@ import { ReactComponent as EditAltFilled } from "../../../../assets/svg/pointer/
 import { ReactComponent as Trash } from "../../../../assets/svg/pointer/trash.svg";
 
 // components FoldersList
-import {CreateEditFolder, RemoveFolder, Pagination} from "../../../../components";
+
+import Pagination from "../../../../components/Pagination";
+const CreateEditFolder = React.lazy(() => import("../../../../components/Folder/CreateEditFolder"));
+const RemoveFolder = React.lazy(() => import("../../../../components/Folder/RemoveFolder"));
 
 const FoldersList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -3,7 +3,7 @@ import { useParams, useLocation } from "react-router-dom";
 import queryString from "query-string";
 // components home
 import { ContentHome, SearchBox, AccountResetPassword } from "./HomeComponents";
-import { MetaTags } from "../../components";
+import  MetaTags  from "../../components/MetaTags";
 
 const Home = () => {
   const { uuid, token } = useParams();

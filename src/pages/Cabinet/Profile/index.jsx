@@ -11,7 +11,8 @@ import { ReactComponent as Cog } from "../../../assets/cabinet/cog.svg";
 import { ReactComponent as Medal } from "../../../assets/cabinet/medal.svg";
 
 // components
-import { UserEditModal, CardLayout } from "../../../components";
+import CardLayout from "../../../components/CardLayout";
+const UserEditModal = React.lazy(() => import("../../../components/UserEditModal"));
 
 const Profile = () => {
   const { data } = useData();

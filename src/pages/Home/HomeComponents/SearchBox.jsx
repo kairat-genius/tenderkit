@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // components SearchBox
-import { MultiSearch } from "../../../components/Filter";
+import MultiSearch  from "../../../components/Filter/MultiSearch";
 
 const SearchBox = () => {
   const [filters, setFilters] = useState({

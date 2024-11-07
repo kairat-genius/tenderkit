@@ -6,7 +6,9 @@ import {ReactComponent as Cog} from "../../../assets/svg/settings/cog.svg"
 import {ReactComponent as AddSquareOutline } from "../../../assets/svg/pointer/add-square-outline.svg"
 import {ReactComponent as TrashOutline  } from "../../../assets/svg/pointer/trash-outline.svg"
 
-import { CreateEditSubscribes, RemoveSubscribes } from "../../../components";
+const RemoveSubscribes = React.lazy(() => import("../../../components/Subscribes/RemoveSubscribes"));
+const CreateEditSubscribes = React.lazy(() => import("../../../components/Subscribes/CreateEditSubscribes"));
+
 
 const Subscribes = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

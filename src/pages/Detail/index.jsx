@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import {
-  LotInfo,
-  LotList,
-  LotActionsDetail,
-  Documents,
-  Breadcrumb,
-  MetaTags,
-  NotFound404
-} from "../../components";
+
+import Breadcrumb from "../../components/Breadcrumb";
+import MetaTags from "../../components/MetaTags";
+import NotFound404 from "../../components/NotFound404";
+import Documents from "../../components/Detail/Documents";
+import LotActionsDetail from "../../components/Detail/LotActionsDetail";
+import LotList from "../../components/LotList";
+import LotInfo from "../../components/Detail/LotInfo";
+
 import { useParams } from "react-router-dom";
 import { getDetailLot } from "../../api/Lots/getDetailLot";
 import { getDetailLotOther } from "../../api/Lots/getDetailLotOther";

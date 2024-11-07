@@ -9,7 +9,8 @@ import { ReactComponent as Letter } from "../../assets/cabinet/letter.svg";
 import { ReactComponent as PhoneAlt } from "../../assets/cabinet/phone-alt.svg";
 
 // components Contacts
-import { Breadcrumb, MetaTags } from "../../components";
+import Breadcrumb from "../../components/Breadcrumb";
+import MetaTags from "../../components/MetaTags";
 import ContactLink from "./ContactLink";
 import "leaflet/dist/leaflet.css";
 

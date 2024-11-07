@@ -37,7 +37,7 @@ const UserEditModal = ({ closeModal, data, onUpdateUserData }) => {
   };
 
   return (
-    <user-edit-modal className="modal modal--active">
+    <div className="modal modal--active">
       <div className="modal__container">
         <div className="modal__header">
           <div className="modal__title"> Настройки профиля </div>
@@ -102,7 +102,7 @@ const UserEditModal = ({ closeModal, data, onUpdateUserData }) => {
           </div>
         </div>
       </div>
-    </user-edit-modal>
+    </div>
   );
 };
 

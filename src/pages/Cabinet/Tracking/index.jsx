@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Pagination, TrackingItem } from "../../../components";
+import Pagination from "../../../components/Pagination";
+import TrackingItem from "../../../components/Tracking/TrackingItem";
 import { getListTracking } from "../../../api/User/Tracking/getListTracking";
 
 const Tracking = () => {

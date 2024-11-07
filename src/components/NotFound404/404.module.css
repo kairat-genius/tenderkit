@@ -46,7 +46,10 @@
   font-variation-settings: 1rem;
 }
 
-.footer button {
+.footer .goHomeButton {
+  display: flex;
+  align-items: center;   
+  justify-content: center;
   padding: 1rem;
   outline: none;
   border: none;
@@ -59,7 +62,7 @@
   transition: 0.3s;
 }
 
-.footer button:hover {
+.footer .goHomeButton:hover {
   background-color: var(--primary-color-dark);
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import agreementData from "../../json/privacyPolicy.json";
-import { Breadcrumb, MetaTags } from "../../components";
+import Breadcrumb from "../../components/Breadcrumb";
+import MetaTags from "../../components/MetaTags";
 
 const PrivacyPolicy = () => {
     return (

@@ -2,7 +2,9 @@ import React, {useState, useEffect} from "react";
 import { getListFavorite } from "../../../api/User/Favorite/getListFavorite";
 import { getListFolder } from "../../../api/User/Folder/getListFolder";
 
-import { LotList, Pagination } from "../../../components";
+import Pagination from "../../../components/Pagination";
+import LotList from "../../../components/LotList";
+
 const Favorites = () => {
   const [data, setData] = useState([])
   const [count, setCount] = useState(0)

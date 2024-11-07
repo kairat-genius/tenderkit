@@ -8,9 +8,14 @@ import { ReactComponent as Folder } from "../../assets/svg/document/folder.svg";
 
 // components 
 import { Filter } from "./ResultComponents/index";
-import { Pagination, LotList, SortLots, LotLoading, MetaTags } from "../../components";
 
 import { getListLots } from "../../api/Lots/getListLots";
+
+import SortLots from "../../components/SortLots";
+import LotLoading from "../../components/LotList/LotLoading";
+import MetaTags from "../../components/MetaTags";
+import LotList from "../../components/LotList";
+import Pagination from "../../components/Pagination";
 
 const Result = () => {
   const { data } = useData();
@@ -107,7 +112,11 @@ const Result = () => {
     }
 
     if (ListRef.current) {
-      ListRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      const elementPosition = ListRef.current.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -158,20 +167,19 @@ const Result = () => {
       <MetaTags page="result"/>
       <div className="content">
         <Filter setFilters={setFilters} filters={filters} handleButtonClick={handleButtonClick}/>
-        <div id="top_layout" className="content__block content__block--search content__block--theme-secondary" ref={ListRef}>
+        <div className="content__block content__block--search content__block--theme-secondary" ref={ListRef}>
           <div className="searchresults">
             <div className="searchresults__layout searchresults__layout--sm">
               <div className="container">
                 <h2 className="searchresults__title"> Найдено лотов: {count} </h2>
               </div>
             </div>
-            <div id="sticky_layout" className="searchresults__layout searchresults__layout--sm searchresults__sticky">
+            <div className="searchresults__layout searchresults__layout--sm searchresults__sticky">
               <div className="container">
                 <div className="panel panel--toolbar">
                   <div className="panel__layout shrink">
                     <div className="toolbar">
                       <div className="toolbar__item toolbar__item--checkbox">
-                        <checkbox-all>
                           <label className="checkbox checkbox--default">
                             <input
                               type="checkbox"
@@ -181,7 +189,6 @@ const Result = () => {
                             />
                             <span className="checkbox__check"></span>
                           </label>
-                        </checkbox-all>
                       </div>
                     </div>
                   </div>
