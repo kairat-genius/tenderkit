@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // svg
 import { ReactComponent as ChevrondownAlt } from "../../assets/svg/pointer/chevrondown-alt.svg";
@@ -56,7 +56,7 @@ const FilterFooter = ({ onClick, isFilterVisible, handleButtonClick, setFilters 
                 )}
               </button>
             </div>
-            <subscribe-btn class="button-group__layout">
+            <div ClassName="button-group__layout">
               <button
                 type="button"
                 className="button button--secondary-outline"
@@ -68,7 +68,7 @@ const FilterFooter = ({ onClick, isFilterVisible, handleButtonClick, setFilters 
                   Подписаться на результаты поиска
                 </span>
               </button>
-            </subscribe-btn>
+            </div>
             <div className="button-group__layout resultfooter">
               <button type="button" className="button button--primary-outline" onClick={handleResetFilters}>
                 Сбросить фильтр

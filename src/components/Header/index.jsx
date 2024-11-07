@@ -5,8 +5,8 @@ import { useData } from "../../hooks/DataContext";
 import {TopDesktop, HeaderMobile, HeaderDesktop} from "./HeaderComponents";
 
 // Login / Register
-const Login = React.lazy(() => import("../LoginRegister/Login"));
-const Register = React.lazy(() => import("../LoginRegister/Register"));
+import Register from "../LoginRegister/Register";
+import Login from "../LoginRegister/Login";
 
 const Header = () => {
   const {data} = useData();
@@ -28,7 +28,7 @@ const Header = () => {
 
   const openModal = (type) => {
     setModalType(type);
-    setShowModal(true);
+      setShowModal(true);
   };
 
   const closeModal = () => {

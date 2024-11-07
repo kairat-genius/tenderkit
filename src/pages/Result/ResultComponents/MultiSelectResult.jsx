@@ -16,9 +16,9 @@ const MultiSelectResult = ({filters, handleFilterChange}) => {
     getSource(setSource)
   }, []);
   return (
-              <div class="filter__layout">
-                <div class="field-group">
-                  <div class="field-group__section">
+              <div ClassName="filter__layout">
+                <div ClassName="field-group">
+                  <div ClassName="field-group__section">
                     <MultiSelect
                       filterName="tenderTypes"
                       label="Вид закупок"
@@ -34,7 +34,7 @@ const MultiSelectResult = ({filters, handleFilterChange}) => {
                      onChange={(value) => handleFilterChange("tenderSubjectType", value)}
                     />
                   </div>
-                  <div class="field-group__section">
+                  <div ClassName="field-group__section">
                     <MultiSelect
                       filterName="tenderTypes"
                       label="Статус"

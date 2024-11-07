@@ -45,22 +45,22 @@ const BlogList = () => {
   };
 
   return (
-    <div class="container">
+    <div className="container">
       <MetaTags page="blog"/>
     <Breadcrumb />
       <OnTrend />
       <section id="articles-layout" className="content__layout" ref={blogListRef}>
-        <h2 class="content__title"> Все статьи </h2>
-        <div class="columns">
+        <h2 className="content__title"> Все статьи </h2>
+        <div className="columns">
           <Aside tags={tags} setSelectedTag={setSelectedTag}/>
-          <div class="columns__content">
-            <div class="content__layout content__layout--md">
-              <div class="b-card b-card--shadow">
-                <div class="searchresults searchresults--articles" >
+          <div className="columns__content">
+            <div className="content__layout content__layout--md">
+              <div className="b-card b-card--shadow">
+                <div className="searchresults searchresults--articles" >
                   <FilterBlog setFilterType={setFilterType} setSearchText={setSearchText} handleSearch={handleSearch}/>
                   <BlogItem data={data} />
                   {totalPages > 1 && (
-                  <div class="searchresults__layout">   
+                  <div className="searchresults__layout">   
                     <Pagination
                       currentPage={currentPage}
                       totalPages={totalPages}

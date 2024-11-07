@@ -8,20 +8,20 @@ const Documents = ({allDocuments}) => {
       setDocsVisible(!isDocsVisible);
     };
   return (
-    <div class="lot__sidebar-section ng-star-inserted">
-    <div class="lot__sidebar-title title title--h3">
-      <div class={`toggle-button toggle-button--docs ng-star-inserted ${isDocsVisible ? "toggle-button--active" : ""}`} onClick={toggleDocsVisibility}>
+    <div ClassName="lot__sidebar-section ng-star-inserted">
+    <div ClassName="lot__sidebar-title title title--h3">
+      <div ClassName={`toggle-button toggle-button--docs ng-star-inserted ${isDocsVisible ? "toggle-button--active" : ""}`} onClick={toggleDocsVisibility}>
         Документы
-        <div class="toggle-button__icon icon">
-          <Angleup class="icon__svg" />
+        <div ClassName="toggle-button__icon icon">
+          <Angleup ClassName="icon__svg" />
         </div>
       </div>
     </div>
     {isDocsVisible && (
       <>
        {allDocuments.map((doc, index) => (
-      <div class="lot__sidebar-layout ng-star-inserted" key={index}>
-        <a target="_blank" class="lot__link link link--default ng-star-inserted" href={doc.url} type="pdf">
+      <div ClassName="lot__sidebar-layout ng-star-inserted" key={index}>
+        <a target="_blank" ClassName="lot__link link link--default ng-star-inserted" href={doc.url} type="pdf">
          {doc.fileName} </a>
         </div>
       ))}

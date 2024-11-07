@@ -72,30 +72,30 @@ const BlogComment = () => {
 
 
   return (
-    <div class="content__layout content__layout--md">
+    <div className="content__layout content__layout--md">
       {!data ? (
-        <div class="b-card b-card--default b-card--shadow">
-          <div class="b-card__content b-card__content--md ng-star-inserted">
-            <div class="b-card__layout b-card__layout--sm">
-              <h2 class="b-card__title b-card__title--md title_login_ad">
+        <div className="b-card b-card--default b-card--shadow">
+          <div className="b-card__content b-card__content--md ng-star-inserted">
+            <div className="b-card__layout b-card__layout--sm">
+              <h2 className="b-card__title b-card__title--md title_login_ad">
                 Авторизуйтесь,
                 <br /> чтобы присоединиться к обсуждению
               </h2>
             </div>
-            <div class="b-card__layout b-card__layout--ms">
-              <p class="b-card__desc">
+            <div className="b-card__layout b-card__layout--ms">
+              <p className="b-card__desc">
                 Что вы думаете о статье, которую только что прочитали?
               </p>
             </div>
-            <div class="b-card__layout">
-              <div class="button-group">
-                <div class="button-group__layout">
-                  <button type="button" class="button button--primary button_login" onClick={() => openModal('login')}>
+            <div className="b-card__layout">
+              <div className="button-group">
+                <div className="button-group__layout">
+                  <button type="button" className="button button--primary button_login" onClick={() => openModal('login')}>
                     Войти
                   </button>
                 </div>
-                <div class="button-group__layout">
-                  <button type="button" class="button button--primary-outline button_login" onClick={() => openModal('register')}>
+                <div className="button-group__layout">
+                  <button type="button" className="button button--primary-outline button_login" onClick={() => openModal('register')}>
                     Зарегистрироваться
                   </button>
                 </div>
@@ -118,15 +118,15 @@ const BlogComment = () => {
       )}
         </div>
       ) : (
-        <div class="b-card b-card--default b-card--shadow">
-          <div class="b-card__content b-card__content--md ng-star-inserted">
-            <div class="b-card__layout b-card__layout--sm">
-              <h2 class="b-card__title b-card__title--md">
+        <div className="b-card b-card--default b-card--shadow">
+          <div className="b-card__content b-card__content--md ng-star-inserted">
+            <div className="b-card__layout b-card__layout--sm">
+              <h2 className="b-card__title b-card__title--md">
                 Комментарии <span>{count}</span>
               </h2>
             </div>
-            <div class="b-card__layout b-card__layout--ms">
-              <div class="inputfield">
+            <div className="b-card__layout b-card__layout--ms">
+              <div className="inputfield">
                 <textarea
                   value={commentText}
                   onChange={handleCommentChange}
@@ -134,17 +134,17 @@ const BlogComment = () => {
                   maxLength="280"
                   rows="4"
                   placeholder="Поделитесь  мнением"
-                  class="input input--textarea input--default ng-untouched ng-pristine ng-valid"
+                  className="input input--textarea input--default ng-untouched ng-pristine ng-valid"
                 />
-                <p class="validation-message validation-message--secondary">
+                <p className="validation-message validation-message--secondary">
                   Максимум 280 символов
                 </p>
               </div>
             </div>
-            <div class="b-card__layout">
+            <div className="b-card__layout">
               <button
                 type="button"
-                class="button button--primary comment-button"
+                className="button button--primary comment-button"
                 onClick={handleCommentSubmit}
                 disabled={commentText.trim() === ""}
               >
@@ -152,20 +152,20 @@ const BlogComment = () => {
               </button>
             </div>
           </div>
-          <div class="b-card__content b-card__content--comments">
-            <div class="comments">
+          <div className="b-card__content b-card__content--comments">
+            <div className="comments">
               <div className="ng-star-inserted">
-                <ol class="comments__list comments__list--inner">
+                <ol className="comments__list comments__list--inner">
                   {comment.map((com, index) => (
-                    <li class="comments__item" key={index}>
-                      <article class="comment ng-star-inserted">
-                        <header class="comment__header">
-                          <cite class="comment__author"> {com.user} </cite>
-                          <time class="comment__date">
+                    <li className="comments__item" key={index}>
+                      <article className="comment ng-star-inserted">
+                        <header className="comment__header">
+                          <cite className="comment__author"> {com.user} </cite>
+                          <time className="comment__date">
                             {formatTimeAgo(com.created_at)}
                           </time>
                         </header>
-                        <div class="comment__body">
+                        <div className="comment__body">
                           <p> {com.text} </p>
                         </div>
                       </article>

@@ -68,31 +68,31 @@ const Author = () => {
 
 
   return (
-    <div class="container">
+    <div className="container">
       <MetaTags page="blogAuthor" title={author.fullname} slug={author_slug}/>
     <Breadcrumb urls={author.fullname}/>
-      <div class="content__layout content__layout--md" ref={blogListRef}>
-        <div class="b-card b-card--shadow">
-          <div class="profile profile--index">
-            <div class="profile__avatar avatar">
+      <div className="content__layout content__layout--md" ref={blogListRef}>
+        <div className="b-card b-card--shadow">
+          <div className="profile profile--index">
+            <div className="profile__avatar avatar">
               <img
                 width="60"
                 height="60"
-                class="avatar__image"
+                className="avatar__image"
                 src={author.img}
                 alt={author.fullname}
                 title={`${author.fullname}  - image`}
               />
             </div>
-            <div class="profile__details">
-              <h1 class="profile__name"> {author.fullname} </h1>
-              <p class="profile__desc">
+            <div className="profile__details">
+              <h1 className="profile__name"> {author.fullname} </h1>
+              <p className="profile__desc">
                 {author.description}
               </p>
-              <ul class="profile__list-row list-row list-row--categories">
-                <li class="list-row__layout ng-star-inserted">
-                  <div class="tag tag--md">
-                    <span class="tag__label"> {author.articles_count} статей </span>
+              <ul className="profile__list-row list-row list-row--categories">
+                <li className="list-row__layout ng-star-inserted">
+                  <div className="tag tag--md">
+                    <span className="tag__label"> {author.articles_count} статей </span>
                   </div>
                 </li>
               </ul>
@@ -100,17 +100,17 @@ const Author = () => {
           </div>
         </div>
       </div>
-      <section id="articles-layout" class="content__layout">
-        <div class="columns">
+      <section id="articles-layout" className="content__layout">
+        <div className="columns">
           <Aside tags={author.tags} setSelectedTag={setSelectedTag}/>
-          <div class="columns__content">
-            <div class="content__layout content__layout--md">
-              <div class="b-card b-card--shadow">
-                <div class="searchresults searchresults--articles">
+          <div className="columns__content">
+            <div className="content__layout content__layout--md">
+              <div className="b-card b-card--shadow">
+                <div className="searchresults searchresults--articles">
                   <FilterBlog setFilterType={setFilterType} setSearchText={setSearchText} handleSearch={handleSearch}/>
                   <BlogItem data={data}/>
                   {totalPages > 1 && (
-                  <div class="searchresults__layout">
+                  <div className="searchresults__layout">
                   <Pagination 
                     currentPage={currentPage}
                     totalPages={totalPages}
