@@ -6,10 +6,10 @@ import { getBlogList } from "../../../api/Blog/getBlogList";
 import NotFound404 from "../../../components/NotFound404";
 import Breadcrumb from "../../../components/Breadcrumb";
 import MetaTags from "../../../components/MetaTags";
-import Aside from "../../../components/blog/Aside";
+import Aside from "../../../components/Blog/Aside";
 import Pagination from "../../../components/Pagination";
-import FilterBlog from "../../../components/blog/FilterBlog";
-import BlogItem from "../../../components/blog/BlogItem";
+import FilterBlog from "../../../components/Blog/FilterBlog";
+import BlogItem from "../../../components/Blog/BlogItem";
 
 const Author = () => {
   const { author_slug } = useParams();
@@ -23,14 +23,16 @@ const Author = () => {
   const [selectedTag, setSelectedTag] = useState(null);
   const blogListRef = useRef(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     if (author_slug) {
-    getBlogList({ setData, author_slug, setCount, currentPage, filterType, searchText, tag: selectedTag  });
+    getBlogList({ setData, author_slug, setCount, currentPage, filterType, searchText, tag: selectedTag, setLoading  });
   }
   }, [currentPage, selectedTag, author_slug]);
 
   const handleSearch = () => {
-    getBlogList({ setData, author_slug, setCount, currentPage, filterType, searchText, tag: selectedTag });
+    getBlogList({ setData, author_slug, setCount, currentPage, filterType, searchText, tag: selectedTag, setLoading });
   };
 
   useEffect(() => {
@@ -108,7 +110,7 @@ const Author = () => {
               <div className="b-card b-card--shadow">
                 <div className="searchresults searchresults--articles">
                   <FilterBlog setFilterType={setFilterType} setSearchText={setSearchText} handleSearch={handleSearch}/>
-                  <BlogItem data={data}/>
+                  <BlogItem data={data} loading={loading} itemsPerPage={itemsPerPage}/>
                   {totalPages > 1 && (
                   <div className="searchresults__layout">
                   <Pagination 

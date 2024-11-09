@@ -5,7 +5,7 @@ const IndexLayout = () => {
   return (
 
     <div id="elToResetScroll" className="layout__body">
-      <Suspense fallback={<div></div>}>
+      <Suspense fallback={<div className="loader-container"><div className="loader1"></div></div>}>
       <Outlet />
       </Suspense>
     </div>

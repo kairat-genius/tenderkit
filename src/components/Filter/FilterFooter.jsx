@@ -56,15 +56,12 @@ const FilterFooter = ({ onClick, isFilterVisible, handleButtonClick, setFilters 
                 )}
               </button>
             </div>
-            <div ClassName="button-group__layout">
-              <button
-                type="button"
-                className="button button--secondary-outline"
-              >
+            <div className="button-group__layout">
+              <button type="button" className="button button--secondary-outline" aria-label="Подписаться на результаты поиска">
                 <span className="button__icon button__icon--before icon">
                   <Mail className="icon__svg" />
                 </span>
-                <span className="button__title">
+                <span className="button__title button-text-none">
                   Подписаться на результаты поиска
                 </span>
               </button>

@@ -10,7 +10,8 @@ export const useURL = () => {
       Areas: {name: 'Areas', path: '/areas'},
       Result: {name: 'Result', path: '/result'},
       Contacts: {name: 'Contacts', path: '/contacts'},
-
+      Analytics: {name: 'Analytics', path: '/analytics'},
+      AnalyticsSearch: {name: 'AnalyticsSearch', path: '/analytics-search'},
       // Блог 
       Author: {name: 'Author', path: ':author_slug'},
       Article: {name: 'Article', path: ':author_slug/:slug'},

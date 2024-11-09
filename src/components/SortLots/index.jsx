@@ -6,17 +6,12 @@ const SortLots = ({ sortOption, setSortOption }) => {
   };
 
   return (
-    <aside
-      default="published_newest"
-      filtername="sort"
-      className="filter__section"
-    >
+    <aside default="published_newest" filtername="sort" className="filter__section">
       <div className="toolbar__layout">
-        <select
-          className="toolbar__item toolbar__select select"
-          value={sortOption} 
-          onChange={handleChange} 
-        >
+      <label htmlFor="sortSelect" className="visually-hidden">
+          Сортировка
+        </label>
+        <select id="sortSelect" className="toolbar__item toolbar__select select" value={sortOption}  onChange={handleChange} >
           <option value="published_newest">
             По дате публикации: сначала новые
           </option>

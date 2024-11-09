@@ -3,12 +3,19 @@ import { ReactComponent as Eye } from "../../assets/svg/pointer/eye.svg";
 import { ReactComponent as Message } from "../../assets/svg/icon/message.svg";
 import { Link } from "react-router-dom";
 import { formatDateMonth } from "../../hooks/LotUtils";
+import LotLoading from "../../components/LotList/LotLoading";
 
-const BlogItem = ({ data }) => {
+const BlogItem = ({ data, loading, itemsPerPage }) => {
   return (
     <div className="searchresults__layout ng-star-inserted">
       <ul className="searchresults__list">
-        {data.length > 0 &&
+      {loading
+              ? Array.from({ length: itemsPerPage }, (_, index) => (
+                  <li className="searchresults__item ng-star-inserted" key={index}>
+                    <LotLoading />
+                  </li>
+                ))
+        :data.length > 0 &&
           data.map((blog, index) => (
             <li className="searchresults__item ng-star-inserted" key={index}>
               <article className="article-card article-card--row">
@@ -20,6 +27,8 @@ const BlogItem = ({ data }) => {
                   src={blog.img}
                   alt={blog.title}
                   title={`${blog.title} - image`}
+                  srcSet={`${blog.img}?w=350&h=198&fit=crop 350w, ${blog.img}?w=700&h=396&fit=crop 700w, ${blog.img}?w=1400&h=792&fit=crop 1400w`}
+                  sizes="(max-width: 350px) 100vw, 350px" 
                 />
                 <div className="article-card__content">
                   <Link
@@ -31,8 +40,8 @@ const BlogItem = ({ data }) => {
                         loading="lazy"
                         className="avatar__image"
                         src={blog.author.img}
-                        alt={blog.author.fullname}
-                        title={`${blog.author.fullname} - image`}
+                        alt={`${blog.author.fullname}-${index}`}
+                        title={`${blog.author.fullname}-${index} - image`}
                       />
                     </span>
                     <span className="tag__label">{blog.author.fullname}</span>

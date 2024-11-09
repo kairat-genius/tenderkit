@@ -3,11 +3,11 @@ import { getBlogListTag } from "../../../api/Blog/getBlogListTag";
 import { getBlogList } from "../../../api/Blog/getBlogList";
 import Breadcrumb from "../../../components/Breadcrumb";
 import MetaTags from "../../../components/MetaTags";
-import Aside from "../../../components/blog/Aside";
+import Aside from "../../../components/Blog/Aside";
 import OnTrend from "../../../components/blog/OnTrend";
 import Pagination from "../../../components/Pagination";
-import FilterBlog from "../../../components/blog/FilterBlog";
-import BlogItem from "../../../components/blog/BlogItem";
+import FilterBlog from "../../../components/Blog/FilterBlog";
+import BlogItem from "../../../components/Blog/BlogItem";
 
 
 const BlogList = () => {
@@ -19,17 +19,18 @@ const BlogList = () => {
   const [filterType, setFilterType] = useState("title");
   const [searchText, setSearchText] = useState("");
   const [selectedTag, setSelectedTag] = useState(null);
+  const [loading, setLoading] = useState(true);
   const blogListRef = useRef(null);
   useEffect(() => {
     getBlogListTag({ setTags });
   }, []);
 
   useEffect(() => {
-    getBlogList({ setData, setCount, currentPage, filterType, searchText, tag: selectedTag  });
+    getBlogList({ setData, setCount, currentPage, filterType, searchText, tag: selectedTag, setLoading  });
   }, [currentPage, selectedTag]);
 
   const handleSearch = () => {
-    getBlogList({ setData, setCount, currentPage, filterType, searchText, tag: selectedTag });
+    getBlogList({ setData, setCount, currentPage, filterType, searchText, tag: selectedTag, setLoading });
   };
 
   const totalPages = Math.ceil(count / itemsPerPage); 
@@ -58,7 +59,7 @@ const BlogList = () => {
               <div className="b-card b-card--shadow">
                 <div className="searchresults searchresults--articles" >
                   <FilterBlog setFilterType={setFilterType} setSearchText={setSearchText} handleSearch={handleSearch}/>
-                  <BlogItem data={data} />
+                  <BlogItem data={data} loading={loading} itemsPerPage={itemsPerPage}/>
                   {totalPages > 1 && (
                   <div className="searchresults__layout">   
                     <Pagination

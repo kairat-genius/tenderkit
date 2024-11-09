@@ -83,7 +83,7 @@ const HeaderDesktop = () => {
               <OptionLayout
                 classLayout="header__item header__item--square"
                 classButton="header__link"
-                href="/education"
+                href="/analytics"
                 label="Аналитика"
               />
               <OptionLayout

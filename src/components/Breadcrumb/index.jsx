@@ -18,6 +18,7 @@ const Breadcrumb = ({ urls, title, lot }) => {
     'privacy-policy': 'Политика конфиденциальности',
     'user-agreement': 'Пользовательское соглашение',
     'contacts': 'Контакты',
+    'analytics': 'Аналитика'
   };
 
   // Get path segments

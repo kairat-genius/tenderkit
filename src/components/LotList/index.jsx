@@ -6,12 +6,13 @@ import LotActions from "./LotActions";
 
 const LotList = ({ lot, checked, onChange, chekbox, folders, openDropdownId, setOpenDropdownId, FavoriteRemove }) => {
   return (
-    <div className={`sr-item ${checked ? "sr-item--selected" : ""}`}>
+    <div className={`sr-item sr-item__container ${checked ? "sr-item--selected" : ""}`}>
       <div className="sr-item__container">
         {chekbox && (
           <div className="sr-item__before ng-star-inserted">
-            <label className="checkbox checkbox--default">
+            <label htmlFor={lot.slug} className="checkbox checkbox--default">
               <input
+                id={lot.slug}
                 type="checkbox"
                 className="checkbox__control"
                 checked={checked}

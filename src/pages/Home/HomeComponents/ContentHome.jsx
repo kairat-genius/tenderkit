@@ -56,47 +56,47 @@ const ContentHome = () => {
             </div>
           </section>
           <div className="content__layout">
-            <dl className="statistics">
+            <div className="statistics">
               <div className="statistics__layout">
                 <div className="statistics__icon icon">
                   <IconFileArrow />
                 </div>
-                <div className="statistics__text">
+                <dl className="statistics__text">
                   <dt className="statistics__title"> 200 000+ </dt>
                   <dd className="statistics__desc">
                     тендеров
                     <br />
                     <span>проводится</span> сегодня
                   </dd>
-                </div>
+                </dl>
               </div>
               <div className="statistics__layout">
                 <div className="statistics__icon icon">
                   <IconCopy />
                 </div>
-                <div className="statistics__text">
+                <dl className="statistics__text">
                   <dt className="statistics__title"> 5+&nbsp;лет </dt>
                   <dd className="statistics__desc">
                     на рынке
                     <br />
                     Казахстана
                   </dd>
-                </div>
+                </dl>
               </div>
               <div className="statistics__layout">
                 <div className="statistics__icon icon">
                   <IconUsers />
                 </div>
-                <div className="statistics__text">
+                <dl className="statistics__text">
                   <dt className="statistics__title"> 100 000+ </dt>
                   <dd className="statistics__desc">
                     пользователей
                     <br />
                     сервиса
                   </dd>
-                </div>
+                </dl>
               </div>
-            </dl>
+            </div>
           </div>
           <section className="why">
             <h2 className="why__title content__title">

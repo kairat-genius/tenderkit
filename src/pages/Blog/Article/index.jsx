@@ -13,8 +13,8 @@ import NotFound404 from "../../../components/NotFound404";
 import Breadcrumb from "../../../components/Breadcrumb";
 import MetaTags from "../../../components/MetaTags";
 
-import BlogComment  from "../../../components/blog/BlogComment";
-import BlogItem from "../../../components/blog/BlogItem";
+import BlogComment  from "../../../components/Blog/BlogComment";
+import BlogItem from "../../../components/Blog/BlogItem";
 
 // svg
 import { ReactComponent as Twitter } from "../../../assets/svg/social/twitter.svg";
@@ -149,7 +149,11 @@ const Article = () => {
               </header>
               <div className="article__body">
                 <div className="ckeditor-container">
-                  {typeof content === "string" ? parse(content) : ""}
+                {!content ? (
+                    <div className="ckeditor-skeleton"></div>
+                  ) : (
+                    parse(content)
+                  )}
                 </div>
               </div>
             </div>

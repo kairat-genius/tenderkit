@@ -1,0 +1,61 @@
+<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 56 56"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M44.3333 49H11.6667C9.08833 49 7 46.9117 7 44.3333V11.6667C7 9.08833 9.08833 7 11.6667 7H44.3333C46.9117 7 49 9.08833 49 11.6667V44.3333C49 46.9117 46.9117 49 44.3333 49Z"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M21.0002 16.3335V21.0002"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M21.0002 28V39.6667"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M35.0002 16.3335V28.0002"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M35.0002 35V39.6667"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M23.3335 28H18.6668C17.3788 28 16.3335 26.9547 16.3335 25.6667V23.3333C16.3335 22.0453 17.3788 21 18.6668 21H23.3335C24.6215 21 25.6668 22.0453 25.6668 23.3333V25.6667C25.6668 26.9547 24.6215 28 23.3335 28Z"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M37.3335 35H32.6668C31.3788 35 30.3335 33.9547 30.3335 32.6667V30.3333C30.3335 29.0453 31.3788 28 32.6668 28H37.3335C38.6215 28 39.6668 29.0453 39.6668 30.3333V32.6667C39.6668 33.9547 38.6215 35 37.3335 35Z"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>

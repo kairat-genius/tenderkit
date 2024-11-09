@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactLink = ({ href, icon: Icon, title, text }) => (
   <div className="body__layout">
-    <a href={href} className="link link--call">
+    <a href={href} className="link link--call" aria-label={title}>
       <span className="link__icon link__icon--secondary icon">
         <Icon className="icon__svg" />
       </span>

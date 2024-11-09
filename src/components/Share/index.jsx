@@ -17,52 +17,52 @@ const Share = ({url}) => {
           navigator.clipboard.writeText(`https://tenderkit.kz/result/${url}`);
       };
   return (
-    <div ClassName="button-group__layout">
+    <div className="button-group__layout">
         <OutsideClickHandler onOutsideClick={() => setIsShareOpen(false)} >
-      <div clickoutside="" ClassName={`dropdown dropdown--folders ${isSharerOpen ? "dropdown--active" : "" }`}>
+      <div clickoutside="" className={`dropdown dropdown--folders ${isSharerOpen ? "dropdown--active" : "" }`}>
         <button
-          ClassName={`button button--action button--sm ${isSharerOpen ? "button--primary-transparent" : "" }`}
+          className={`button button--action button--sm ${isSharerOpen ? "button--primary-transparent" : "" }`}
           onClick={toggleShare}
         >
-          <span ClassName="ng-star-inserted"> Поделиться </span>
-          <span ClassName="button__icon button__icon--after icon">
-            <IconShare ClassName="icon__svg" />
+          <span className="ng-star-inserted"> Поделиться </span>
+          <span className="button__icon button__icon--after icon">
+            <IconShare className="icon__svg" />
           </span>
         </button>
         {isSharerOpen && (
-            <div ClassName="dropdown__body">
-              <ul ClassName="option option--folders">
-                <li ClassName="option__layout">
+            <div className="dropdown__body">
+              <ul className="option option--folders">
+                <li className="option__layout">
                   <a
                     target="_blank"
-                    ClassName="option__button"
+                    className="option__button"
                     href={`https://api.whatsapp.com/send?text=https://tenderkit.kz/result/${url}`}
                   >
-                    <span ClassName="button__icon button__icon--before icon">
-                      <WhatsappLogo ClassName="icon__svg" />
+                    <span className="button__icon button__icon--before icon">
+                      <WhatsappLogo className="icon__svg" />
                     </span>
                     WhatsApp
                   </a>
                 </li>
-                <li ClassName="option__layout">
+                <li className="option__layout">
                   <a
                     target="_blank"
-                    ClassName="option__button"
+                    className="option__button"
                     href={`https://t.me/share/url?url=https://tenderkit.kz/result/${url}`}
                   >
-                    <span ClassName="button__icon button__icon--before icon">
-                      <TelegramLogo ClassName="icon__svg" />
+                    <span className="button__icon button__icon--before icon">
+                      <TelegramLogo className="icon__svg" />
                     </span>
                     Telegram
                   </a>
                 </li>
-                <li ClassName="option__layout">
-                  <button ClassName="option__button" onClick={() => {
+                <li className="option__layout">
+                  <button className="option__button" onClick={() => {
                       copyLinkToClipboard();
                       toggleShare();
                     }}>
-                    <span ClassName="button__icon button__icon--before icon">
-                      <IconLink ClassName="icon__svg" />
+                    <span className="button__icon button__icon--before icon">
+                      <IconLink className="icon__svg" />
                     </span>
                     Ссылка
                   </button>

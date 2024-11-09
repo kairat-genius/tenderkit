@@ -2,11 +2,11 @@ import React from "react";
 
 const PriceFilter = ({ name, placeholder, label, value, onChange }) => {
   return (
-    <div ClassName="field-group__layout">
+    <div className="field-group__layout">
       <form
         noValidate=""
         autoComplete="off"
-        ClassName="inputfield ng-untouched ng-pristine ng-valid"
+        className="inputfield ng-untouched ng-pristine ng-valid"
       >
         <input
           type="number"
@@ -15,12 +15,12 @@ const PriceFilter = ({ name, placeholder, label, value, onChange }) => {
           autoCapitalize="none"
           spellCheck="false"
           name={name}
-          ClassName="inputfield__input input ng-untouched ng-pristine ng-valid"
+          className="inputfield__input input ng-untouched ng-pristine ng-valid"
           placeholder={placeholder}
           value={value}
       onChange={(e) => onChange(e.target.value)}
         />
-        <label ClassName="inputfield__label">{label}</label>
+        <label className="inputfield__label">{label}</label>
       </form>
     </div>
   );

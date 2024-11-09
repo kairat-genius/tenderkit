@@ -1,0 +1,66 @@
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 56 56"
+                    fill="none"
+                  >
+                    <path
+                      d="M28.0002 37.3374V46.6746"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M18.6626 49.0089L22.9977 37.3374"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M37.3371 49.0089L33.002 37.3374"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M17.4958 28.0002V23.3315"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M24.4987 28.0001V16.3286"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M31.5016 28V20.9971"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M38.5046 28V17.3906"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <rect
+                      x="6.99121"
+                      y="6.99121"
+                      width="42.0175"
+                      height="30.346"
+                      rx="2"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></rect>
+                  </svg>

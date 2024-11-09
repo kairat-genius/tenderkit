@@ -2,11 +2,11 @@ import Cookies from 'js-cookie';
 
 const API_DOMAIN = 'https://tenderkit.kz';
 const API_PREFIX = '/api/v1/';
-// const CONCATE = API_DOMAIN + API_PREFIX;
+const CONCATE = API_DOMAIN + API_PREFIX;
 
 export const accessToken = Cookies.get('access');
 export const refreshToken = Cookies.get('refresh');
-const CONCATE = API_PREFIX;
+// const CONCATE = API_PREFIX;
 // API METHODS URLS
 // пользователь
 export const USER_REGISTER = CONCATE + 'user/create/';

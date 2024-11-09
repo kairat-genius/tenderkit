@@ -60,6 +60,7 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                 type="button"
                 className="filter__toggle button"
                 onClick={toggleFilterVisibility}
+                aria-label="Переключить фильтры"
               >
                 <span className="icon">
                   <IconFilter className="icon__svg" />
@@ -207,7 +208,7 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                       </div>
                     </div>
                     <div className="field-group__section">
-                      <sidebar-filter-subscribe className="field-group__layout">
+                      <div className="field-group__layout">
                         <div
                           clickoutside=""
                           className="primary-select primary-select--disabled"
@@ -227,7 +228,7 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                           </div>
                           <div className="primary-select__body"></div>
                         </div>
-                      </sidebar-filter-subscribe>
+                      </div>
                     </div>
                   </div>
                 </div>

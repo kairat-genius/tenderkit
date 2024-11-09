@@ -40,7 +40,6 @@ const LotActions = ({ lot, folders, openDropdownId, setOpenDropdownId, FavoriteR
     <div className="sr-item__actions ng-star-inserted">
       {data.subscription &&
         data.subscription.tariff.tracking_tenders_access !== false && (
-          <div className="sr-item__action ng-star-inserted">
             <button
               className={`button button--action button--sm ${
                 isTracking
@@ -56,11 +55,9 @@ const LotActions = ({ lot, folders, openDropdownId, setOpenDropdownId, FavoriteR
                 <Tracking className="icon__svg" />
               </span>
             </button>
-          </div>
         )}
       {data.subscription &&
         data.subscription.tariff.favorite_access !== false && (
-          <div className="sr-item__action ng-star-inserted">
             <button
               className={`button button--action button--sm ${
                 isFavorite
@@ -76,7 +73,6 @@ const LotActions = ({ lot, folders, openDropdownId, setOpenDropdownId, FavoriteR
                 <Star className="icon__svg" />
               </span>
             </button>
-          </div>
         )}
               {data.subscription &&
         data.subscription.tariff.folder_access !== false && (

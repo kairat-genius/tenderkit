@@ -131,9 +131,9 @@ const Reviews = () => {
             {reviewsData.map((review, index) => (
               <div className="col-md-4" key={index}>
                 <div className="ant074_testimonials-testim-inner ant074_testimonials-first">
-                <h6>
+                <h3 style={{ fontSize: '16px'}}>
                     {review.name}
-                  </h6>
+                  </h3>
                   <span className="ant__comment" >
                       {review.date}
                     </span>

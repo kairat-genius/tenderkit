@@ -3,7 +3,7 @@ import {BLOG_LIST, accessToken} from "../../Fetch/settings"
 
 
 
-export const getBlogList = ({ setData, setCount, currentPage, author_slug, filterType, searchText, tag }) => {
+export const getBlogList = ({ setData, setCount, currentPage, author_slug, filterType, searchText, tag, setLoading }) => {
     const headers = accessToken ? { 'Authorization': `JWT ${accessToken}` } : {};
 
     const params = new URLSearchParams({ page: currentPage });
@@ -29,18 +29,18 @@ export const getBlogList = ({ setData, setCount, currentPage, author_slug, filte
     const parsedData = JSON.parse(cachedData);
     setData(parsedData.results);
     setCount(parsedData.count);
+    if (setLoading) setLoading(false);
     return;
   }
 
     axios.get(url, { headers })
         .then((response) => {
             const { results, count } = response.data;
-
-            // Сохраняем данные в кэш и устанавливаем время истечения
             sessionStorage.setItem(cacheKey, JSON.stringify({ results, count }));
             sessionStorage.setItem(`${cacheKey}_expiry`, Date.now() + 180000); 
             setData(response.data.results);
             setCount(response.data.count);
+            if (setLoading) setLoading(false);
         })
         .catch((error) => {
             console.error("Ошибка при получении списка блогов:", error);

@@ -1,12 +1,15 @@
-import axios from 'axios'
-import {BLOG_LIST_POPULAR, accessToken} from "../../Fetch/settings"
+import axios from 'axios';
+import { BLOG_LIST_POPULAR, accessToken } from "../../Fetch/settings";
 
-export const getBlogListPopular = ({setData}) => {
-    const headers = accessToken
+export const getBlogListPopular = async ({ setData, setLoading }) => {
+  const headers = accessToken
     ? { 'Authorization': `JWT ${accessToken}` }
     : {};
-    axios.get(BLOG_LIST_POPULAR,{ headers })
-    .then((response) => {
-        setData(response.data)
-    })
-}
+
+  try {
+    const response = await axios.get(BLOG_LIST_POPULAR, { headers });
+    setData(response.data);
+  } finally {
+    if (setLoading) setLoading(false); 
+  }
+};

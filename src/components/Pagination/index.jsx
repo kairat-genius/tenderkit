@@ -95,6 +95,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             className="pagination-control__button button"
             onClick={handlePrev}
             disabled={currentPage === 1}
+            aria-label="Перейти на предыдущую страницу"
           >
             <div className="pagination-control__icon icon">
               <Chevronleft className="icon__svg" />
@@ -108,6 +109,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             className="pagination-control__button button"
             onClick={handleNext}
             disabled={currentPage === totalPages}
+            aria-label="Перейти на следующую страницу"
           >
             <div className="pagination-control__icon icon">
               <ChevronRight className="icon__svg" />

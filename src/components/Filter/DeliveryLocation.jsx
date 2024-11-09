@@ -39,56 +39,56 @@ const DeliveryLocation = ({value, onChange}) => {
 
   return (
     <OutsideClickHandler onOutsideClick={() => setIsActive(false)}>
-    <div ClassName="hero__searchbar-layout">
+    <div className="hero__searchbar-layout">
     <div
       filtername="regionIds"
-      ClassName="field-group__layout"
+      className="field-group__layout"
     >
       <div clickoutside="" className={`primary-select ${isActive ? "primary-select--active" : ""}`}>
-        <div ClassName="primary-select__header" onClick={toggleActive}>
-          <div ClassName="primary-select__icon icon ng-star-inserted">
-            <Pin ClassName="icon__svg"/>
+        <div className="primary-select__header" onClick={toggleActive} style={{minWidth: "266px"}}>
+          <div className="primary-select__icon icon ng-star-inserted">
+            <Pin className="icon__svg"/>
           </div>
-          <div ClassName="primary-select__container">
-            <div ClassName="primary-select__label">
+          <div className="primary-select__container">
+            <div className="primary-select__label">
               Место поставки
             </div>
-            <div ClassName="primary-select__value"> {selectedCount > 0 ? `Выбрано: ${selectedCount}` : "Выбрать"} </div>
+            <div className="primary-select__value"> {selectedCount > 0 ? `Выбрано: ${selectedCount}` : "Выбрать"} </div>
           </div>
-          <div ClassName="primary-select__toggle icon">
-            <ChevrondownAlt ClassName="icon__svg"/>
+          <div className="primary-select__toggle icon">
+            <ChevrondownAlt className="icon__svg"/>
           </div>
         </div>
         {isActive && (
-        <div ClassName="primary-select__body">
-          <div ClassName="primary-select__block ng-star-inserted">
-            <div ClassName="button-group button-group--sm button-group--expand">
-              <div ClassName="button-group__layout">
-                <button ClassName="button-group__button button button--secondary button--sm"  onClick={handleSelectAll}>
+        <div className="primary-select__body">
+          <div className="primary-select__block ng-star-inserted">
+            <div className="button-group button-group--sm button-group--expand">
+              <div className="button-group__layout">
+                <button className="button-group__button button button--secondary button--sm"  onClick={handleSelectAll}>
                   Выбрать все
                 </button>
               </div>
-              <div ClassName="button-group__layout">
-                <button ClassName="button-group__button button button--secondary-outline button--sm" onClick={handleReset}>
+              <div className="button-group__layout">
+                <button className="button-group__button button button--secondary-outline button--sm" onClick={handleReset}>
                   Сбросить
                 </button>
               </div>
             </div>
           </div>
-          <ul ClassName="option">
+          <ul className="option">
           {regions.map((region) => (
-            <li ClassName="option__layout ng-star-inserted" key={region.id}>
-              <div ClassName="option__checkbox checkbox">
+            <li className="option__layout ng-star-inserted" key={region.id}>
+              <div className="option__checkbox checkbox">
                 <input
                   type="checkbox"
-                  ClassName="checkbox__control"
+                  className="checkbox__control"
                   id={region.id}
                   checked={value.includes(region.id)} // Проверяем, выбран ли этот элемент
                   onChange={() => handleOptionChange(region.id)}
                 />
-                <div ClassName="checkbox__check"></div>
-                <label ClassName="checkbox__label" htmlFor={region.id}>
-                  <span ClassName="ng-star-inserted">
+                <div className="checkbox__check"></div>
+                <label className="checkbox__label" htmlFor={region.id}>
+                  <span className="ng-star-inserted">
                     {region.title}
                   </span>
                 </label>

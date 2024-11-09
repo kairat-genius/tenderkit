@@ -20,6 +20,9 @@ const Result = lazy(() => import("../src/pages/Result"));
 const Tariffs = lazy(() => import("../src/pages/Tariffs"));
 const Detail = lazy(() => import("../src/pages/Detail"));
 const Contacts = lazy(() => import("../src/pages/Contacts"))
+const Analytics = lazy(() => import("../src/pages/Analytics"))
+const AnalyticsSearch = lazy(() => import("../src/pages/AnalyticsSearch"))
+
 
 const UserAgreement = lazy(() => import("../src/pages/LegalAspect/UserAgreement"));
 const PrivacyPolicy = lazy(() => import("../src/pages/LegalAspect/PrivacyPolicy"));
@@ -62,6 +65,8 @@ const Root = () => {
           <Route path={url.PrivacyPolicy.path} element={<PrivacyPolicy/>}/>
           <Route path={url.UserAgreement.path} element={<UserAgreement/>}/>
           <Route path={url.Contacts.path} element={<Contacts/>}/>
+          <Route path={url.Analytics.path} element={<Analytics/>} />
+          <Route path={url.AnalyticsSearch.path} element={<AnalyticsSearch/>} />
           <Route path="*" element={<NotFound404/>}/>
 
           <Route path="/blog" element={<BlogLayout/>}>

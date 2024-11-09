@@ -17,7 +17,7 @@ const Home = () => {
       <section className="hero">
         <div className="hero__container container">
           <h1 className="hero__title">
-            Поиск тендеров в&nbsp;Казахстане по&nbsp;всем площадкам
+            Поиск тендеров в Казахстане по всем площадкам
           </h1>
           <SearchBox />
           <dl className="hero__dl">

@@ -18,10 +18,26 @@ import { ReactComponent as IconLink } from "../../assets/svg/pointer/link/link.s
 
 import Countdown from "../../hooks/Countdown";
 
+const Skeleton = ({ width = "100%", height = "2em" }) => (
+  <div className="sr-item__details" style={{ width, height }}>
+  <div className="skeleton skeleton-text"></div>
+  <div className="skeleton skeleton-text"></div>
+</div>
+);
+
 const Detail = () => {
   const { data } = useData();
   const { slug } = useParams();
-  const [detail, setDetail] = useState({ advertisement: {} });
+  const [detail, setDetail] = useState({
+    title: <Skeleton />,
+    advertisement: {
+      advertisementNumber: <Skeleton/>,
+      title: <Skeleton  />,
+    },
+    shortDesc: <Skeleton  />,
+    additionalDesc: <Skeleton />,
+    url: <Skeleton  />,
+  });
   const [other, setOther] = useState([]);
   const [isInfoVisible, setInfoVisible] = useState(false);
   const [error, setError] = useState(null);
@@ -40,7 +56,6 @@ const Detail = () => {
     }
     return <div>Error: {error.message}</div>;
   }
-
 
   const now = new Date();
   const endingDate = new Date(detail.advertisement.endingDate);
@@ -69,22 +84,22 @@ const Detail = () => {
     data.subscription.tariff &&
     data.subscription.tariff.tender_access !== false;
   return (
-    <main ClassName="ng-star-inserted">
+    <main className="ng-star-inserted">
       <MetaTags page="detailLot" title={detail.title} slug={slug}/>
-      <div ClassName="layout__container">
-        <div ClassName="body">
-          <div ClassName="body__content">
+      <div className="layout__container">
+        <div className="body">
+          <div className="body__content">
             <Breadcrumb lot={detail.title} />
-            <div ClassName="ng-star-inserted">
-              <div ClassName="body__container">
-                <h1 ClassName="visually-hidden">
+            <div className="ng-star-inserted">
+              <div className="body__container">
+                <h1 className="visually-hidden">
                   Тендер {detail.truCode}: Товар {detail.advertisement.title},
                   {detail.count} {detail.unit}
                 </h1>
-                <div ClassName="page-lot ng-star-inserted">
-                  <div ClassName="page-lot__info">
-                    <div ClassName="lot">
-                      <div ClassName="lot__title title title--h3 ng-star-inserted">
+                <div className="page-lot ng-star-inserted">
+                  <div className="page-lot__info">
+                    <div className="lot">
+                      <div className="lot__title title title--h3 ng-star-inserted">
                         Объявление:
                         {hasTenderAccess ? (
                           <span>
@@ -96,26 +111,26 @@ const Detail = () => {
                           </a>
                         )}
                       </div>
-                      <div ClassName="lot__info">
-                        <div ClassName="lot__description">
+                      <div className="lot__info">
+                        <div className="lot__description">
                           {detail.advertisement.title}
                         </div>
-                        <div ClassName="lot__sum">
-                          <div ClassName="lot__price ng-star-inserted">
-                            {detail.totalPrice} <span ClassName="currency">₸</span>
+                        <div className="lot__sum">
+                          <div className="lot__price ng-star-inserted">
+                            {detail.totalPrice} <span className="currency">₸</span>
                           </div>
-                          <div ClassName="lot__status ng-star-inserted">
+                          <div className="lot__status ng-star-inserted">
                             Статус:
-                            <span ClassName="status-badge status-badge--winner">
+                            <span className="status-badge status-badge--winner">
                               {detail.advertisement.status}
                             </span>
                           </div>
                         </div>
-                        <div ClassName="lot__time ng-star-inserted">
+                        <div className="lot__time ng-star-inserted">
                           <div>До окончания тендера</div>
                           <Countdown targetDate={targetDate} />
                         </div>
-                        <div ClassName="lot__details">
+                        <div className="lot__details">
                           <LotInfo
                             LotLabel="Начало:"
                             LotData={`${formatDate(
@@ -164,17 +179,17 @@ const Detail = () => {
                           )}
                         </div>
                       </div>
-                      <div ClassName="lot__toggle">
+                      <div className="lot__toggle">
                         <div
-                          ClassName={`toggle-button ${
+                          className={`toggle-button ${
                             isInfoVisible ? "toggle-button--active" : ""
                           }`}
                           onClick={toggleInfoVisibility}
                         >
-                          <div ClassName="toggle-button__icon icon">
-                            <Angleup ClassName="icon__svg" />
+                          <div className="toggle-button__icon icon">
+                            <Angleup className="icon__svg" />
                           </div>
-                          <span ClassName="ng-star-inserted">
+                          <span className="ng-star-inserted">
                             {isInfoVisible
                               ? "скрыть"
                               : "Информация и документы"}
@@ -184,42 +199,42 @@ const Detail = () => {
                     </div>
                   </div>
                   <LotActionsDetail lot={detail} />
-                  <div ClassName="page-lot__details">
-                    <div ClassName="lot lot--details lot--with-actions">
-                      <div ClassName="lot__container">
-                        <h2 ClassName="lot__info-title title title--h3 ng-star-inserted">
+                  <div className="page-lot__details">
+                    <div className="lot lot--details lot--with-actions">
+                      <div className="lot__container">
+                        <h2 className="lot__info-title title title--h3 ng-star-inserted">
                           Лот
                           {hasTenderAccess ? (
                             <a
                               target="_blank"
-                              ClassName="lot__info-link link ng-star-inserted"
+                              className="lot__info-link link ng-star-inserted"
                               href={detail.url}
                             >
                               {detail.lotNumber}
-                              <div ClassName="link__icon link__icon--default link__icon--after icon">
-                                <IconLink ClassName="icon__svg" />
+                              <div className="link__icon link__icon--default link__icon--after icon">
+                                <IconLink className="icon__svg" />
                               </div>
                             </a>
                           ) : (
                             <a href="/tariffs" className="lot__link link">
                               {detail.advertisement.advertisementNumber}
-                              <div ClassName="link__icon link__icon--default link__icon--after icon">
-                                <IconLink ClassName="icon__svg" />
+                              <div className="link__icon link__icon--default link__icon--after icon">
+                                <IconLink className="icon__svg" />
                               </div>
                             </a>
                           )}
                         </h2>
-                        <div ClassName="lot__info">
-                          <div ClassName="sr-item sr-item--secondary">
-                            <div ClassName="sr-item__info">
-                              <h3 ClassName="sr-item__title title">
+                        <div className="lot__info">
+                          <div className="sr-item sr-item--secondary">
+                            <div className="sr-item__info">
+                              <h3 className="sr-item__title title">
                                 {detail.title}
                               </h3>
-                              <div ClassName="sr-item__field-label ng-star-inserted">
+                              <div className="sr-item__field-label ng-star-inserted">
                                 Краткая характеристика:
                               </div>
                               {hasTenderAccess ? (
-                                <div ClassName="sr-item__field-data ng-star-inserted">
+                                <div className="sr-item__field-data ng-star-inserted">
                                   {detail.shortDesc}
                                 </div>
                               ) : (
@@ -227,11 +242,11 @@ const Detail = () => {
                                   {detail.shortDesc}
                                 </a>
                               )}
-                              <div ClassName="sr-item__field-label ng-star-inserted">
+                              <div className="sr-item__field-label ng-star-inserted">
                                 Доп. характеристика:
                               </div>
                               {hasTenderAccess ? (
-                                <div ClassName="sr-item__field-data ng-star-inserted">
+                                <div className="sr-item__field-data ng-star-inserted">
                                   {detail.additionalDesc}
                                 </div>
                               ) : (
@@ -239,14 +254,14 @@ const Detail = () => {
                                   {detail.additionalDesc}
                                 </a>
                               )}
-                              <div ClassName="sr-item__layout">
-                                <div ClassName="sr-item__price ng-star-inserted">
+                              <div className="sr-item__layout">
+                                <div className="sr-item__price ng-star-inserted">
                                   {detail.totalPrice}
-                                  <span ClassName="currency">₸</span>
+                                  <span className="currency">₸</span>
                                 </div>
-                                <div ClassName="sr-item__status ng-star-inserted">
+                                <div className="sr-item__status ng-star-inserted">
                                   Статус:
-                                  <span ClassName="status-badge status-badge--winner">
+                                  <span className="status-badge status-badge--winner">
                                     {detail.status}
                                   </span>
                                 </div>
@@ -254,7 +269,7 @@ const Detail = () => {
                             </div>
                           </div>
                         </div>
-                        <div ClassName="lot__details">
+                        <div className="lot__details">
                           <LotInfo
                             LotLabel="Код ТРУ:"
                             LotData={detail.truCode}
@@ -301,15 +316,15 @@ const Detail = () => {
                           />
                         </div>
                       </div>
-                      <div ClassName="lot__sidebar">
+                      <div className="lot__sidebar">
                         {hasTenderAccess ? (
-                          <div ClassName="lot__sidebar-section ng-star-inserted">
-                            <div ClassName="lot__sidebar-title title title--h3">
+                          <div className="lot__sidebar-section ng-star-inserted">
+                            <div className="lot__sidebar-title title title--h3">
                               Источник
                             </div>
                             <a
                               type="url"
-                              ClassName="lot__link link link--default"
+                              className="lot__link link link--default"
                               target="_blank"
                               href={detail.url}
                             >
@@ -317,8 +332,8 @@ const Detail = () => {
                             </a>
                           </div>
                         ) : (
-                          <div ClassName="lot__sidebar-section ng-star-inserted">
-                            <div ClassName="lot__sidebar-title title title--h3">
+                          <div className="lot__sidebar-section ng-star-inserted">
+                            <div className="lot__sidebar-title title title--h3">
                               Источник
                             </div>
                             <a href="/tariffs" className="lot__link link">
@@ -331,8 +346,8 @@ const Detail = () => {
                         {hasTenderAccess ? (
                           <Documents allDocuments={allDocuments} />
                         ) : (
-                          <div ClassName="lot__sidebar-section ng-star-inserted">
-                            <div ClassName="lot__sidebar-title title title--h3">
+                          <div className="lot__sidebar-section ng-star-inserted">
+                            <div className="lot__sidebar-title title title--h3">
                               Документы
                             </div>
                             <a href="/tariffs" className="lot__link link">
@@ -346,12 +361,12 @@ const Detail = () => {
                   </div>
                   {other.length > 0 && (
                     <>
-                      <h3 ClassName="title title--h3 ng-star-inserted">
+                      <h3 className="title title--h3 ng-star-inserted">
                         Остальные лоты: {other.length}
                       </h3>
-                      <div ClassName="page-lot__list ng-star-inserted">
+                      <div className="page-lot__list ng-star-inserted">
                         {other.map((lot) => (
-                          <div ClassName="page-lot__list-item ng-star-inserted">
+                          <div className="page-lot__list-item ng-star-inserted">
                             <LotList lot={lot} />
                           </div>
                         ))}

@@ -180,11 +180,12 @@ const Result = () => {
                   <div className="panel__layout shrink">
                     <div className="toolbar">
                       <div className="toolbar__item toolbar__item--checkbox">
-                          <label className="checkbox checkbox--default">
+                          <label htmlFor="checkboxAll" className="checkbox checkbox--default">
                             <input
+                              id="checkboxAll"
                               type="checkbox"
                               className="checkbox__control"
-                              checked={selectAll} // Select all state
+                              checked={selectAll} 
                               onChange={handleSelectAll}
                             />
                             <span className="checkbox__check"></span>
@@ -194,7 +195,7 @@ const Result = () => {
                   </div>
                   <div className="panel__layout shrink">
                     <div className={`toolbar ${selectedLots.length > 0 ? 'toolbar--primary' : ''}`}>
-                      <button className="toolbar__item button" onClick={downloadSelectedLots}>
+                      <button className="toolbar__item button" onClick={downloadSelectedLots} aria-label="Скачать лоты в Excel файле">
                         <span className="toolbar__icon button__icon button__icon--before icon">
                           <Xls className="icon__svg" />
                         </span>
@@ -204,7 +205,7 @@ const Result = () => {
                   </div>
                   <div className="panel__layout shrink">
                     <div className={`toolbar ${selectedLots.length > 0 ? 'toolbar--primary-outline' : 'toolbar--disabled'}`}>
-                      <button className="toolbar__item button" disabled={selectedLots.length === 0}>
+                      <button className="toolbar__item button" disabled={selectedLots.length === 0} aria-label="Добавить в папку">
                         <span className="toolbar__icon button__icon icon button__icon--before">
                           <Folder className="icon__svg" />
                         </span>

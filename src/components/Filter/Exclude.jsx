@@ -149,18 +149,14 @@ const Exclude = ({ onClose, value, onChange, isExcludeOpen }) => {
                         <div className="hero-search__action">
                           <div className="hero-search__count">{tags.length} / 5</div>
                         </div>
-                        <div className="hero-search__action hero-search__action--remove">
                           <button
                             type="button"
-                            className="hero-search__remove button"
+                            className="hero-search__remove button button__icon icon hero-search__action hero-search__action--remove"
                             title="Очистить поле"
                             onClick={clearAllTags}
                           >
-                            <span className="button__icon icon">
                               <Trash />
-                            </span>
                           </button>
-                        </div>
                       </div>
                     </form>
                   </div>
