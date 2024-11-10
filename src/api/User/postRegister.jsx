@@ -1,9 +1,8 @@
 import axios from 'axios';
 import { USER_REGISTER } from '../../Fetch/settings.js';
 import Cookies from 'js-cookie';
-import { toast } from 'react-toastify';
 
-export const postRegister = async ({ email, password, fio, companyName, phone, onClose }) => {
+export const postRegister = async ({ email, password, fio, companyName, phone, onClose, showToast }) => {
     const formattedPhone = `+${phone}`;
 
     try {
@@ -27,7 +26,7 @@ export const postRegister = async ({ email, password, fio, companyName, phone, o
         Cookies.set('refresh', refresh, { expires: refreshExpiry });
         Cookies.set('access', access, { expires: accessExpiry });
         console.log('Пользователь успешно создан!');
-        toast.success('Пользователь успешно создан!');
+        showToast('Пользователь успешно создан!', 'success');
   
         setTimeout(() => {
             onClose();
@@ -50,12 +49,12 @@ export const postRegister = async ({ email, password, fio, companyName, phone, o
             }
 
             if (errorData.detail) {
-                toast.error(errorData.detail);
+                showToast(errorData.detail, 'error');
             }
         } else if (error.request) {
-            toast.error('Произошла ошибка. Пожалуйста, попробуйте еще раз.');
+            showToast('Произошла ошибка. Пожалуйста, попробуйте еще раз.', 'error');
         } else {
-            toast.error('Произошла неизвестная ошибка.');
+            showToast('Произошла неизвестная ошибка.', 'error');
         }
 
         return errors; 

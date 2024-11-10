@@ -3,6 +3,7 @@ import Phone from "../../Phone";
 import InputField from "../InputField";
 import { ReactComponent as Eye } from "../../../assets/svg/pointer/eye.svg";
 import { postRegister } from "../../../api/User/postRegister";
+import { useToast } from "../../ToastContext";
 
 const Register = ({ onClose}) => {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ const Register = ({ onClose}) => {
   const [fio, setFio] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [phone, setPhone] = useState("");
-
+  const { showToast } = useToast();
   const [showPassword, setShowPassword] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
   const [serverErrors, setServerErrors] = useState({}); 
@@ -39,7 +40,7 @@ const Register = ({ onClose}) => {
     setServerErrors({});
     
     try {
-        const serverErrors = await postRegister({ email, password, fio, companyName, phone, onClose });
+        const serverErrors = await postRegister({ email, password, fio, companyName, phone, onClose, showToast });
 
         if (serverErrors) {
             setValidationErrors(serverErrors); 

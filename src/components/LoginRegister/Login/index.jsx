@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import InputField from "../InputField";
 import { postLogin } from "../../../api/User/postLogin";
 import {postResetPassword} from "../../../api/User/RessetPassword/postResetPassword"
-
+import { useToast } from "../../ToastContext";
 // svg
 import { ReactComponent as Eye } from "../../../assets/svg/pointer/eye.svg";
 
@@ -11,12 +11,13 @@ const Login = ({ onClose, onSwitchToRegister }) => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isRecoveringPassword, setIsRecoveringPassword] = useState(false);
+  const { showToast } = useToast();
   const handleLogin = () => {
-    postLogin({ email, password, onClose });
+    postLogin({ email, password, onClose, showToast  });
   };
 
   const handleResetPassword = () => {
-    postResetPassword({email, onClose})
+    postResetPassword({email, onClose, showToast})
   };
 
   const togglePasswordVisibility = () => {

@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import { toast } from 'react-toastify';
 
 const OrderTariff = React.lazy(() => import("../../components/OrderTariff"));
 import Breadcrumb from "../../components/Breadcrumb";
@@ -8,16 +7,18 @@ import { TariffsModile, TariffsDesktop } from "./TariffsComponents";
 import { getTariff } from "../../api/Tariff/getTariff";
 import { useData } from "../../hooks/DataContext";
 import textData from "../../json/tariffs.json"; 
+import { useToast } from "../../components/ToastContext";
 
 const Tariffs = () => {
  const [datatariffs, setData] = useState([])
  const [showModal, setShowModal] = useState(false);
  const [selectedTariff, setSelectedTariff] = useState(null);
  const { data } = useData();
+ const { showToast } = useToast();
  const openModal = (tariffId, tariffName) => {
 
   if (!data || Object.keys(data).length === 0) {
-    toast.error("Пожалуйста, авторизуйтесь, чтобы заказать тариф.");
+    showToast("Пожалуйста, авторизуйтесь, чтобы заказать тариф.", 'invalid');
     return;
 }
 
@@ -64,7 +65,7 @@ const closeModal = () => {
               {isMobile &&<TariffsModile tariffs={datatariffs} openModal={openModal} textData={textData}/>}
             </div>
           </div>
-          {showModal && <OrderTariff closeModal={closeModal} tariffId={selectedTariff.id} tariffName={selectedTariff.name}/>}
+          {showModal && <OrderTariff closeModal={closeModal} tariffId={selectedTariff.id} tariffName={selectedTariff.name} showToast={showToast}/>}
         </main>
   );
 };

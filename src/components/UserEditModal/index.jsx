@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { putUserDataUpdate } from "../../api/User/putUserDataUpdate";
 import { postResetPassword } from "../../api/User/RessetPassword/postResetPassword";
 import InputField from "../LoginRegister/InputField";
-
+import { useToast } from "../ToastContext";
 const UserEditModal = ({ closeModal, data, onUpdateUserData }) => {
   const [fio, setFio] = useState(data.fio);
   const [companyName, setCompanyName] = useState(data.companyName);
   const [phone, setPhone] = useState(data.phone);
   const [isSaving, setIsSaving] = useState(false);
   const [isChanged, setIsChanged] = useState(false);
+  const { showToast } = useToast();
 
   useEffect(() => {
     // Проверяем, изменились ли данные
@@ -22,7 +23,7 @@ const UserEditModal = ({ closeModal, data, onUpdateUserData }) => {
   const handleSave = async () => {
     setIsSaving(true);
     try {
-      await putUserDataUpdate({ phone, fio, companyName });
+      await putUserDataUpdate({ phone, fio, companyName, showToast });
       onUpdateUserData({ email: data.email, fio, companyName, phone });
       closeModal();
     } catch (error) {
@@ -33,7 +34,7 @@ const UserEditModal = ({ closeModal, data, onUpdateUserData }) => {
   };
 
   const handleResetPassword = () => {
-    postResetPassword({email: data.email, onClose: closeModal})
+    postResetPassword({email: data.email, onClose: closeModal, showToast})
   };
 
   return (

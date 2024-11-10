@@ -1,11 +1,12 @@
 import React from "react";
 import { postDeleteFolder } from "../../../api/User/Folder/postDeleteFolder";
+import { useToast } from "../../ToastContext";
 
 const RemoveFolder = ({ closeModal, folder, onRemove}) => {
-
+  const { showToast } = useToast();
   const handleRemove = (e) => {
     e.preventDefault(); 
-    postDeleteFolder({ folder_id: folder.id, closeModal, onRemove})
+    postDeleteFolder({ folder_id: folder.id, closeModal, onRemove, showToast })
   };
   return (
     <div className="modal modal--guarantees modal--active ng-star-inserted">

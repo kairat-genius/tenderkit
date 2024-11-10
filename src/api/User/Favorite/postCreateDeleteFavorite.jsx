@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { CREATE_DELETE_FAVORITE, accessToken } from "../../../Fetch/settings";
-import { toast } from 'react-toastify';
 
-export const postCreateDeleteFavorite = async ({ lotSlug }) => {
+export const postCreateDeleteFavorite = async ({ lotSlug, showToast }) => {
   try {
     const response = await axios.post(CREATE_DELETE_FAVORITE, {
       lot_slug: lotSlug,
@@ -14,12 +13,11 @@ export const postCreateDeleteFavorite = async ({ lotSlug }) => {
     });
 
     if (response.status === 200) {
-      toast.success('Лот удален из избранного');
+      showToast('Лот удален из избранного', 'success');
     } else if (response.status === 201) {
-      toast.success('Лот добавлен в избранное');
+      showToast('Лот добавлен в избранное', 'success');
     }
   } catch (error) {
-    toast.error('Ошибка при обновлении избранного');
-    console.error('Error:', error);
+    showToast('Ошибка при обновлении избранного', 'error');
   }
 };

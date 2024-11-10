@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { USER_RESET_PASSWORD } from "../../../Fetch/settings";
-import { toast } from 'react-toastify';
 
-export const postResetPassword = async ({ email, onClose }) => {
+export const postResetPassword = async ({ email, onClose, showToast }) => {
   try {
     const response = await axios.post(USER_RESET_PASSWORD, {
       email: email,
@@ -13,13 +12,12 @@ export const postResetPassword = async ({ email, onClose }) => {
     });
 
     if (response.status === 200) {
-      toast.success("Ссылка для сброса пароля успешно отправлена на почту!");
+      showToast("Ссылка для сброса пароля успешно отправлена на почту!", 'success');
       onClose();
     } else {
-      toast.error("Произошла ошибка при отправке запроса.");
+      showToast("Произошла ошибка при отправке запроса.", 'error');
     }
   } catch (error) {
-    console.error("Ошибка при восстановлении пароля:", error);
-    toast.error("Ошибка при восстановлении пароля. Проверьте правильность введенного email.");
+    showToast("Ошибка при восстановлении пароля. Проверьте правильность введенного email.", 'error');
   }
 };

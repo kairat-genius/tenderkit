@@ -1,9 +1,8 @@
 import axios from 'axios';
 import { USER_RESET_PASSWORD_CONFIRM } from "../../../Fetch/settings";
-import { toast } from 'react-toastify';
 import { postLogin } from "../../../api/User/postLogin";
 
-export const postResetPasswordConfirm = async ({ token, new_password, uuid, email, handleCloseModal }) => {
+export const postResetPasswordConfirm = async ({ token, new_password, uuid, email, handleCloseModal, showToast }) => {
   try {
     const response = await axios.post(USER_RESET_PASSWORD_CONFIRM, {
       token: token,
@@ -16,14 +15,14 @@ export const postResetPasswordConfirm = async ({ token, new_password, uuid, emai
     });
 
     if (response.status === 200) {
-      toast.success("Пароль успешно сброшен!");
-      await postLogin({ email, password: new_password, onClose: handleCloseModal });
+      showToast("Пароль успешно сброшен!", 'success');
+      await postLogin({ email, password: new_password, onClose: handleCloseModal, showToast });
     }
   } catch (error) {
     if (error.response && error.response.data && error.response.data.message) {
-      toast.error(error.response.data.message);
+      showToast(error.response.data.message);
     } else {
-      toast.error("Произошла ошибка при отправке запроса.");
+      showToast("Произошла ошибка при отправке запроса.", 'error');
     }
   }
 };

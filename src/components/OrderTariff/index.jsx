@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { postTariff } from "../../api/Tariff/postTariff";
 import { useData } from "../../hooks/DataContext";
 
-const OrderTariff = ({ closeModal, tariffId, tariffName }) => {
+const OrderTariff = ({ closeModal, tariffId, tariffName, showToast }) => {
     const [phone, setPhone] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const { data } = useData();
@@ -15,7 +15,7 @@ const OrderTariff = ({ closeModal, tariffId, tariffName }) => {
 
         setIsSubmitting(true);
         try {
-            postTariff({ phone, tariff_id: tariffId });
+            postTariff({ phone, tariff_id: tariffId, showToast });
             closeModal();
         } catch (error) {
             console.error("Ошибка отправки запроса:", error);

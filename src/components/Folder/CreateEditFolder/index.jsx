@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { postCreateFolder } from "../../../api/User/Folder/postCreateFolder";
-
+import { useToast } from "../../ToastContext";
 const CreateEditFolder = ({ closeModal, isEditing, refreshFolders, existingFolders }) => {
   const [title, setTitle] = useState("");
   const [error, setError] = useState("");
+  const { showToast } = useToast();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!existingFolders(title)) {
@@ -11,7 +12,7 @@ const CreateEditFolder = ({ closeModal, isEditing, refreshFolders, existingFolde
       return;
     }
 
-    postCreateFolder({ title, closeModal, refreshFolders });
+    postCreateFolder({ title, closeModal, refreshFolders, showToast });
   };
 
   return (

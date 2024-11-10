@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { USER_DATA_UPDATE, accessToken } from "../../Fetch/settings";
-import { toast } from 'react-toastify';
 
-export const putUserDataUpdate = ({ phone, fio, companyName }) => {
+export const putUserDataUpdate = ({ phone, fio, companyName, showToast }) => {
     axios.put(USER_DATA_UPDATE, {
         phone: phone,
         fio: fio,
@@ -13,11 +12,10 @@ export const putUserDataUpdate = ({ phone, fio, companyName }) => {
         'Content-Type': 'application/json',
       }
     })
-    .then((response) => {
-        toast.success('Успешно изменен');
+    .then(() => {
+      showToast('Успешно изменен', 'success');
     })
-    .catch((error) => {
-        toast.error('Произошла ошибка при изменении данных');
-        console.error(error);
+    .catch(() => {
+      showToast('Произошла ошибка при изменении данных', 'error');
     });
 };

@@ -34,6 +34,6 @@ export const getListLots = async ({setData, setCount, offset, filters, sortOptio
         setData(response.data.results);
         setCount(response.data.count);
     } catch (error) {
-        console.error("Error fetching lots:", error);
+       
     }
 };

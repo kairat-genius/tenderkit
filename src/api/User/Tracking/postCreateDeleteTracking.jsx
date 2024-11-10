@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { CREATE_DELETE_TRACKING, accessToken } from "../../../Fetch/settings";
-import { toast } from 'react-toastify';
 
-export const postCreateDeleteTracking = async ({ lotSlug }) => {
+export const postCreateDeleteTracking = async ({ lotSlug, showToast }) => {
   try {
     const response = await axios.post(CREATE_DELETE_TRACKING, {
       lot_slug: lotSlug,
@@ -15,15 +14,14 @@ export const postCreateDeleteTracking = async ({ lotSlug }) => {
 
     if (response.status === 200) {
       const message = response.data.message || 'Успешно обновлено'; 
-      toast.success(message);
+      showToast(message, 'success');
     }
 
     if (response.status === 201) {
       const message = response.data.message || 'Успешно добавлен'; 
-      toast.success(message);
+      showToast(message, 'success');
     }
   } catch (error) {
-    toast.error('Ошибка при обновлении отслеживаний');
-    console.error('Error:', error);
+    showToast('Ошибка при обновлении отслеживаний', 'error');
   }
 };

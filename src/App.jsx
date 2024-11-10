@@ -6,8 +6,6 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import { useURL } from "../src/hooks/useURL";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 
 import { DataProvider } from "./hooks/DataContext";
 
@@ -99,18 +97,13 @@ const router = createBrowserRouter([
     element: <Root />,
   },
 ]);
+import { ToastProvider } from './components/ToastContext';
 
 const App = () => {
   return (
-    <div>
+    <ToastProvider>
       <RouterProvider router={router} />
-      <ToastContainer
-        position="top-center"
-        autoClose={2000} 
-        limit={1} 
-        draggable={false}
-      />
-    </div>
+      </ToastProvider>
   );
 };
 

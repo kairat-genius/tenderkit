@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { CREATE_FOLDER, accessToken } from "../../../Fetch/settings";
-import { toast } from 'react-toastify';
 
-export const postCreateFolder = async ({ title, closeModal, refreshFolders }) => {
+export const postCreateFolder = async ({ title, closeModal, refreshFolders, showToast }) => {
   try {
     const response = await axios.post(CREATE_FOLDER, {
         title: title,
@@ -14,12 +13,11 @@ export const postCreateFolder = async ({ title, closeModal, refreshFolders }) =>
     });
 
     if (response.status === 201) {
-      toast.success('Папка создана');
+      showToast('Папка создана', 'success');
       refreshFolders()
       closeModal()
     }
   } catch (error) {
-    toast.error('Ошибка при созданий папки');
-    console.error('Error:', error);
+    showToast('Ошибка при созданий папки', 'error');
   }
 };

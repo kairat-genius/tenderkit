@@ -5,7 +5,7 @@ import { getBlogComment } from "../../api/Blog/comment/getBlogComment";
 import { formatTimeAgo } from "../../hooks/LotUtils";
 import Pagination from "../Pagination";
 import { useData } from "../../hooks/DataContext";
-
+import { useToast } from "../ToastContext";
 import Login from "../../components/LoginRegister/Login"
 import Register from "../../components/LoginRegister/Register"
 
@@ -20,6 +20,8 @@ const BlogComment = () => {
 
   const { data } = useData();
 
+  const { showToast } = useToast();
+
   useEffect(() => {
     getBlogComment({ currentPage, setComment, slug, setCount });
   }, [currentPage, slug, refreshComments]);
@@ -32,7 +34,7 @@ const BlogComment = () => {
     if (commentText.trim() === "") return;
 
     try {
-      await postBlogCommentAdd({ slug, text: commentText });
+      await postBlogCommentAdd({ slug, text: commentText, showToast });
       setCommentText("");
       setRefreshComments((prev) => !prev);
     } catch (error) {

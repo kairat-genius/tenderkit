@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import {ReactComponent as Eye} from "../../../assets/svg/pointer/eye.svg"
 import { postResetPasswordConfirm } from "../../../api/User/RessetPassword/postResetPasswordConfirm";
-
-import { toast } from "react-toastify";
+import { useToast } from "../../../components/ToastContext";
 const AccountResetPassword = ({uuid, token, email}) => {
+  
+  const { showToast } = useToast();
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showNewPassword, setShowNewPassword] = useState(false);
@@ -15,9 +16,9 @@ const AccountResetPassword = ({uuid, token, email}) => {
 
  const handleResetPassword = () => {
     if (newPassword === confirmPassword) {
-      postResetPasswordConfirm({ uuid, token, new_password: newPassword, email, handleCloseModal })
+      postResetPasswordConfirm({ uuid, token, new_password: newPassword, email, handleCloseModal, showToast })
     } else {
-        toast.error("Пароли не совпадают");
+      showToast.error("Пароли не совпадают", 'error');
     }
   };
 

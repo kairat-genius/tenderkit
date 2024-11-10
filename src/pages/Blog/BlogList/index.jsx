@@ -4,7 +4,7 @@ import { getBlogList } from "../../../api/Blog/getBlogList";
 import Breadcrumb from "../../../components/Breadcrumb";
 import MetaTags from "../../../components/MetaTags";
 import Aside from "../../../components/Blog/Aside";
-import OnTrend from "../../../components/blog/OnTrend";
+import OnTrend from "../../../components/Blog/OnTrend";
 import Pagination from "../../../components/Pagination";
 import FilterBlog from "../../../components/Blog/FilterBlog";
 import BlogItem from "../../../components/Blog/BlogItem";

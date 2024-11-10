@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { TARIFFS_POST, accessToken } from "../../Fetch/settings";
-import { toast } from 'react-toastify';
 
-export const postTariff = ({ phone, tariff_id}) => {
+export const postTariff = ({ phone, tariff_id, showToast}) => {
     axios.post(TARIFFS_POST, {
         phone: phone,
         tariff_id: tariff_id
@@ -13,10 +12,9 @@ export const postTariff = ({ phone, tariff_id}) => {
       }
     }) 
     .then(() => {
-        toast.success("Спасибо за заявку! Мы свяжемся с вами в ближайшее время.");
+      showToast("Спасибо за заявку! Мы свяжемся с вами в ближайшее время.", 'success');
       })
       .catch((error) => {
-        console.error("Ошибка отправки запроса:", error);
-        toast.error("Произошла ошибка при отправке. Пожалуйста, попробуйте снова.");
+        showToast("Произошла ошибка при отправке. Пожалуйста, попробуйте снова.", 'error');
       });
     };

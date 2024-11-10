@@ -1,9 +1,8 @@
 import axios from 'axios';
 import { USER_LOGIN } from '../../Fetch/settings.js';
 import Cookies from 'js-cookie';
-import { toast } from 'react-toastify';
 
-export const postLogin = ({ email, password, onClose }) => {
+export const postLogin = ({ email, password, onClose, showToast }) => {
     axios.post(USER_LOGIN, {
         email: email,
         password: password,
@@ -21,7 +20,7 @@ export const postLogin = ({ email, password, onClose }) => {
         Cookies.set('refresh', refresh, { expires: refreshExpiry });
         Cookies.set('access', access, { expires: accessExpiry });
 
-        toast.success('Вы успешно авторизовались!'); 
+        showToast('Вы успешно авторизовались!', 'success');
 
         setTimeout(() => {
             onClose();
@@ -33,14 +32,14 @@ export const postLogin = ({ email, password, onClose }) => {
         if (error.response && error.response.data) {
             const errorMessage = error.response.data.detail;
             if (errorMessage === "No active account found with the given credentials") {
-                toast.error("Аккаунт с указанными данными не найден.");
+                showToast("Аккаунт с указанными данными не найден.", 'error');
             } else {
-                toast.error(errorMessage);  
+                showToast(errorMessage, 'error');  
             }
         } else if (error.request) {
-            toast.error('Произошла ошибка. Пожалуйста, попробуйте еще раз.');
+            showToast('Произошла ошибка. Пожалуйста, попробуйте еще раз.', 'error');
         } else {
-            toast.error('Произошла неизвестная ошибка.');
+            showToast('Произошла неизвестная ошибка.', 'error');
         }
     });
 }

@@ -5,12 +5,13 @@ import { postCreateDeleteTracking } from "../../../api/User/Tracking/postCreateD
 import { ReactComponent as Tracking } from "../../../assets/svg/icon/tracking.svg";
 import { ReactComponent as Star } from "../../../assets/svg/icon/star.svg";
 import { useData } from "../../../hooks/DataContext";
-
+import { useToast } from "../../ToastContext";
 const LotActionsDetail = ({lot}) => {
     const { data } = useData();
     const [isFavorite, setIsFavorite] = useState(lot.is_favorite);
     const [isTracking, setIsTracking] = useState(lot.is_tracking);
     const lotSlug = lot.slug;
+    const { showToast } = useToast();
 
     useEffect(() => {
         setIsFavorite(lot.is_favorite);
@@ -18,12 +19,12 @@ const LotActionsDetail = ({lot}) => {
       }, [lot.is_favorite, lot.is_tracking]);
 
     const handleFavoriteToggle = async () => {
-        await postCreateDeleteFavorite({ lotSlug });
+        await postCreateDeleteFavorite({ lotSlug, showToast });
         setIsFavorite((prevState) => !prevState);
       };
     
       const handleTrackingToggle = async () => {
-        await postCreateDeleteTracking({ lotSlug });
+        await postCreateDeleteTracking({ lotSlug, showToast });
         setIsTracking((prevState) => !prevState);
       };
     
