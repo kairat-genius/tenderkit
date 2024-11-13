@@ -42,6 +42,7 @@ const SearchBox = () => {
           />
         </div>
         <button
+          type="button"
           className="hero__searchbar-button button button--primary"
           id="poisk"
           style={{ width: "200px" }}

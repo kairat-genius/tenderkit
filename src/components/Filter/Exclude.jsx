@@ -136,7 +136,7 @@ const Exclude = ({ onClose, value, onChange, isExcludeOpen }) => {
                         name="without_word"
                         autoComplete="off"
                         autoCorrect="off"
-                        autoCapitalize="none"
+                        autoCapitalize="off"
                         spellCheck="false"
                         className="hero-search__input"
                         placeholder="Введите слово"
@@ -169,6 +169,7 @@ const Exclude = ({ onClose, value, onChange, isExcludeOpen }) => {
           <div className="button-group button-group--sm">
             <div className="button-group__layout">
               <button
+              type="button"
                 className="button button--primary-transparent button--expand"
                 onClick={onClose}
               >
@@ -176,7 +177,7 @@ const Exclude = ({ onClose, value, onChange, isExcludeOpen }) => {
               </button>
             </div>
             <div className="button-group__layout">
-              <button className="button button--primary button--expand"  onClick={onClose}>
+              <button type="button" className="button button--primary button--expand" onClick={onClose}>
                 Сохранить
               </button>
             </div>

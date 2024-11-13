@@ -64,6 +64,7 @@ const CreateEditFolder = ({ closeModal, isEditing, refreshFolders, existingFolde
             </div>
             <div className="modal__layout modal__layout--sm">
               <button
+                type="button"
                 className="button button--primary-transparent button--expand"
                 onClick={closeModal}
               >

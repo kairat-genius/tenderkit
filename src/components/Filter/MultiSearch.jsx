@@ -142,7 +142,7 @@ const MultiSearch = ({ value = [], onChange }) => {
                 id="hero-search"
                 autoComplete="off"
                 autoCorrect="off"
-                autoCapitalize="none"
+                autoCapitalize="off" 
                 spellCheck="false"
                 name="search_query_result"
                 className="hero-search__input"

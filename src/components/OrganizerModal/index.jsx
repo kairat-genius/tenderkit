@@ -233,6 +233,7 @@ const OrganizerModal = ({
           <div className="button-group button-group--sm">
             <div className="button-group__layout">
               <button
+                type="button"
                 className="button button--primary-transparent button--expand"
                 onClick={onClose}
               >

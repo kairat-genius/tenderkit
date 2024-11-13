@@ -190,7 +190,7 @@ const Filter = ({ filters, setFilters, handleButtonClick }) => {
                             type="text"
                             autoComplete="off"
                             autoCorrect="off"
-                            autoCapitalize="none"
+                            autoCapitalize="off"
                             spellCheck="false"
                             name="lotNumber"
                             className="inputfield__input input ng-untouched ng-pristine ng-valid"

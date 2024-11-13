@@ -40,7 +40,7 @@ const CreateEditSubscribes = ({closeModal, isEditing }) => {
               </div>
             </div>
             <div class="modal__section">
-              <subscribes-filter>
+              <div className="subscribes-filter">
                 <div class="filter__section">
                   <div class="filter__layout">
                     <SearchBox />
@@ -166,7 +166,7 @@ const CreateEditSubscribes = ({closeModal, isEditing }) => {
                     </div>
                   </div>
                 </div>
-              </subscribes-filter>
+              </div>
             </div>
           </div>
           <div class="modal__footer">

@@ -64,9 +64,9 @@ const AnalyticsSearch = () => {
                         <input
                           type="text"
                           id="hero-search"
-                          autocomplete="off"
-                          autocorrect="off"
-                          autocapitalize="none"
+                          autoComplete="off"
+                          autoCorrect="off"
+                          autoCapitalize="off"
                           spellcheck="false"
                           name="search_query_result"
                           class="hero-search__input"
@@ -887,8 +887,7 @@ const AnalyticsSearch = () => {
                             />
                             <div class="checkbox__check"></div>
                             <label class="checkbox__label" for="2022">
-                              {" "}
-                              2022{" "}
+                              2022
                             </label>
                           </div>
                         </li>

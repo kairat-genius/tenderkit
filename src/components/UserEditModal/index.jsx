@@ -87,12 +87,13 @@ const UserEditModal = ({ closeModal, data, onUpdateUserData }) => {
           </div>
           <div className="modal__section">
             <div className="modal__layout modal__layout--sm">
-              <button className="button button--primary-transparent button--expand" onClick={handleResetPassword}>
+              <button type="button" className="button button--primary-transparent button--expand" onClick={handleResetPassword}>
                 <span className="ng-star-inserted"> Изменить пароль </span>
               </button>
             </div>
             <div className="modal__layout modal__layout--sm">
               <button
+              type="button"
                 className="button button--primary button--expand"
                 disabled={isSaving || !isChanged}
                 onClick={handleSave}
