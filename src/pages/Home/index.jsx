@@ -10,38 +10,16 @@ const Home = () => {
   const location = useLocation();
   const queryParams = queryString.parse(location.search);
   const email = queryParams.email;
-
   return (
     <main className="ng-star-inserted">
       <MetaTags page="home"/>
       <section className="hero">
         <div className="hero__container container">
           <h1 className="hero__title">
-            Поиск тендеров в Казахстане по всем площадкам
+          Поиск, обучение и сопровождение тендеров в Казахстане на всех площадках.
           </h1>
+
           <SearchBox />
-          <dl className="hero__dl">
-            <dt className="hero__dt"> Поиск по: </dt>
-            <dd className="hero__dd">
-              <a routerlink="plans" className="hero__link" href="/plans">
-                планам,
-              </a>
-            </dd>
-            <dd className="hero__dd">
-              <a routerlink="result" className="hero__link" href="/result">
-                закупкам,
-              </a>
-            </dd>
-            <dd className="hero__dd">
-              <a
-                routerlink="contracts"
-                className="hero__link"
-                href="/contracts"
-              >
-                договорам
-              </a>
-            </dd>
-          </dl>
         </div>
       </section>
       <ContentHome />

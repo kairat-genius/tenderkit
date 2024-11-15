@@ -8,10 +8,7 @@ import { ReactComponent as Manager } from "../../../assets/svg/document/manager.
 import { ReactComponent as First } from "../../../assets/svg/document/first.svg";
 import { ReactComponent as FileSearch } from "../../../assets/svg/document/file-search.svg";
 import { ReactComponent as Folders } from "../../../assets/svg/document/folders.svg";
-import { ReactComponent as IconCopy } from "../../../assets/svg/icon/icon-copy.svg";
-import { ReactComponent as IconFileArrow } from "../../../assets/svg/icon/icon-file-arrow.svg";
 import { ReactComponent as Wpatsup } from "../../../assets/svg/social/whatsup.svg";
-import { ReactComponent as IconUsers } from "../../../assets/svg/icon/icon-users.svg";
 
 import { Reviews, WhyCard, Opportunities } from "./index";
 
@@ -55,49 +52,6 @@ const ContentHome = () => {
               </article>
             </div>
           </section>
-          <div className="content__layout">
-            <div className="statistics">
-              <div className="statistics__layout">
-                <div className="statistics__icon icon">
-                  <IconFileArrow />
-                </div>
-                <dl className="statistics__text">
-                  <dt className="statistics__title"> 200 000+ </dt>
-                  <dd className="statistics__desc">
-                    тендеров
-                    <br />
-                    <span>проводится</span> сегодня
-                  </dd>
-                </dl>
-              </div>
-              <div className="statistics__layout">
-                <div className="statistics__icon icon">
-                  <IconCopy />
-                </div>
-                <dl className="statistics__text">
-                  <dt className="statistics__title"> 5+&nbsp;лет </dt>
-                  <dd className="statistics__desc">
-                    на рынке
-                    <br />
-                    Казахстана
-                  </dd>
-                </dl>
-              </div>
-              <div className="statistics__layout">
-                <div className="statistics__icon icon">
-                  <IconUsers />
-                </div>
-                <dl className="statistics__text">
-                  <dt className="statistics__title"> 100 000+ </dt>
-                  <dd className="statistics__desc">
-                    пользователей
-                    <br />
-                    сервиса
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </div>
           <section className="why">
             <h2 className="why__title content__title">
               Почему <span>мы</span>?

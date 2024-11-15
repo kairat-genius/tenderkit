@@ -84,6 +84,7 @@ const Login = ({ onClose, onSwitchToRegister }) => {
             </div>
             <div className="modal__layout modal__layout--sm">
               <button
+                type="button"
                 className="button button--primary-transparent button--expand"
                 onClick={(e) => {
                   e.preventDefault();

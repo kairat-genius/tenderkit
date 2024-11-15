@@ -12,7 +12,7 @@ const PriceFilter = ({ name, placeholder, label, value, onChange }) => {
           type="number"
           autoComplete="off"
           autoCorrect="off"
-          autoCapitalize="none"
+          autoCapitalize="off"
           spellCheck="false"
           name={name}
           className="inputfield__input input ng-untouched ng-pristine ng-valid"

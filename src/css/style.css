@@ -3891,16 +3891,6 @@ header .logo span {
     padding-bottom: 52px
 }
 
-.hero__title {
-    margin-top: 0;
-    margin-bottom: 80px;
-    font-weight: var(--font-weight-bold);
-    font-size: 36px;
-    line-height: 49px;
-    color: #212529;
-    max-width: 539px;
-}
-
 .hero__button {
     margin-bottom: 14px;
     color: var(--color-gray-0);
@@ -11208,13 +11198,6 @@ header .logo span {
     padding-top: 0
 }
 
-.content__block--tariffs {
-    text-align: left;
-    background-image: url(/assets/bg/bg-tariff.png);
-    background-repeat: no-repeat;
-    background-position: calc(100% - 92px) 50%
-}
-
 .content__block--tariffs .content__paragraph {
     font-size: 14px
 }
@@ -11879,27 +11862,8 @@ header .logo span {
         flex-grow: 1
     }
 
-
-    .possibility--newsletter {
-        --possibility-gradient: linear-gradient( 157deg, #4184b5, #569bc2 38%, #a5d8f4 );
-        overflow: initial
-    }
-
     .possibility--newsletter .possibility__image--new-message {
         display: none
-    }
-
-    .possibility--AI {
-        --possibility-gradient: linear-gradient( 157deg, #4184b5, #569bc2 38%, #a5d8f4 )
-    }
-
-
-    .possibility--search {
-        --possibility-gradient: linear-gradient( 180deg, #458ac5, #567bc2 52%, #a5caf4 )
-    }
-
-    .possibility--tracking {
-        --possibility-gradient: linear-gradient( 180deg, #7370b5, #7f56c2 42%, #cda5f4 )
     }
 
 }
@@ -11910,11 +11874,7 @@ header .logo span {
         background-color:#f1f3f5
     }
 
-    .possibility:hover {
-        color: var(--color-gray-0);
-        background-image: var(--possibility-gradient);
-        box-shadow: 16px 16px 32px -4px #10182826
-    }
+
 
     .possibility:hover .possibility__button {
         color: var(--color-gray-0)

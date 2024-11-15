@@ -1,8 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import styles from './404.module.css';
-import img_404 from "../../assets/404.jpg";
-
 
 const NotFound404 = () => {
 
@@ -17,7 +15,7 @@ const NotFound404 = () => {
           <h1>404</h1>
           <h3>Страница не найдена!</h3>
         </div>
-        <img src={img_404} alt="страница не найдена" />
+        <img src="/assets/404.jpg" alt="страница не найдена" />
         <div className={styles.footer}>
           <p>
             Извините, запрашиваемая вами страница не найдена. Пожалуйста, вернитесь

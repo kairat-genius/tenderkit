@@ -13,7 +13,7 @@ const User = ({ onClick, data, openModal, closeMenu }) => {
             <div className="button-group__layout" id="registracia">
               <button
                 type="button"
-                className="button button--primary button--md button--expand"
+                className="button login-background button--md button--expand"
                 onClick={() => {
                   openModal("register");
                   closeMenu();

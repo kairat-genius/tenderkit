@@ -2,15 +2,7 @@ import React from "react";
 import Cookies from 'js-cookie';
 import {Link} from "react-router-dom"
 // svg
-import { ReactComponent as TelegramTop } from "../../../assets/svg/social/telegram-top.svg";
-import { ReactComponent as Whatsapp } from "../../../assets/svg/social/whatsapp.svg";
-import { ReactComponent as CallAlt } from "../../../assets/svg/icon/call-alt.svg";
-import { ReactComponent as WhatsupAlt } from "../../../assets/svg/social/whatsup-alt.svg";
-import { ReactComponent as TelegramAlt } from "../../../assets/svg/social/telegram-alt.svg";
 import { ReactComponent as ChevrondownAlt } from "../../../assets/svg/pointer/chevrondown-alt.svg";
-
-// components header
-import SocialButton from "./SocialButton";
 
 const TopDesktop = ({openModal, data}) => {
   const handleLogout = () => {
@@ -62,12 +54,12 @@ const TopDesktop = ({openModal, data}) => {
           ) : (
             <>
             <div className="button-group__layout ng-star-inserted" id="voiti">
-              <button type="button" className="button button--primary button--sm" onClick={() => openModal('login')}>
+              <button type="button" className="button button--sm login-background" onClick={() => openModal('login')}>
                 Войти
               </button>
             </div>
             <div className="button-group__layout ng-star-inserted" id="registracia">
-              <button type="button" className="button button--primary-outline button--sm" onClick={() => openModal('register')}>
+              <button type="button" className="button button--primary-outline button--sm register-background" onClick={() => openModal('register')}>
                 Регистрация
               </button>
             </div>
@@ -77,72 +69,6 @@ const TopDesktop = ({openModal, data}) => {
         </div>
         <div className="top__section top__section--rtl">
           <ul className="button-group button-group--sm">
-            <SocialButton
-              href="https://wa.me/+77057638953"
-              title="Написать в WhatsApp"
-              IconComponent={Whatsapp}
-            />
-            <SocialButton
-              href="tel:+77057638953"
-              title="Написать в Telegram"
-              IconComponent={TelegramTop}
-            />
-
-            <li className="button-group__layout">
-              <div className="top__dropdown dropdown dropdown--hover">
-                <button
-                  type="button"
-                  className="top__button top__button--menu button"
-                  title="Позвонить"
-                >
-                  <span className="top__icon icon">
-                    <CallAlt className="icon__svg" />
-                  </span>
-                </button>
-                <div className="dropdown__body m-menu m-menu--top m-menu--active">
-                  <div className="m-menu__container">
-                    <dl className="m-menu__dl">
-                      <dt className="m-menu__dt"> Написать в мессенджеры </dt>
-                      <dd className="m-menu__dd">
-                        <a
-                          href="https://wa.me/+77057638953"
-                          target="_blank"
-                          className="m-menu__link link"
-                        >
-                          <span className="m-menu__icon icon">
-                            <WhatsupAlt className="icon__svg" />
-                          </span>
-                          +7 (705)-763-89-53 - WhatsApp
-                        </a>
-                      </dd>
-                      <dd className="m-menu__dd">
-                        <a
-                          href="tel:+77057638953"
-                          target="_blank"
-                          className="m-menu__link link"
-                        >
-                          <span className="m-menu__icon icon">
-                            <TelegramAlt className="icon__svg" />
-                          </span>
-                          +7 (705)-763-89-53 - Telegram
-                        </a>
-                      </dd>
-                      <dt className="m-menu__dt">
-                        Звонки
-                      </dt>
-                      <dd className="m-menu__dd">
-                        <a href="tel:+77057638953" className="m-menu__link link">
-                          <span className="m-menu__icon icon">
-                            <CallAlt className="icon__svg" />
-                          </span>
-                          +7 (705)-763-89-53
-                        </a>
-                      </dd>
-                    </dl>
-                  </div>
-                </div>
-              </div>
-            </li>
             <li className="button-group__layout">
               <a href="tel:+77057638953" className="top__link__phone">
               +7 (705)-763-89-53

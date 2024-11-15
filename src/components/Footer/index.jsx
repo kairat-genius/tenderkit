@@ -69,11 +69,6 @@ const Footer = () => {
                     Блог
                   </a>
                 </li>
-                <li className="footer__item">
-                  <a routerlink="/sitemap" className="footer__link" href="/sitemap" aria-label="Просмотр карты сайта">
-                    Карта сайта
-                  </a>
-                </li>
               </ul>
               <ul className="footer__list">
                 <li className="footer__item">
@@ -104,11 +99,6 @@ const Footer = () => {
                 <li className="footer__item">
                   <a href="https://wa.me/+77057638953" className="footer__link"  aria-label="Свяжитесь с нами через WhatsApp по номеру +7 (705)-763-89-53">
                     +7 (705)-763-89-53 - WhatsApp
-                  </a>
-                </li>
-                <li className="footer__item">
-                  <a href="tel:+77057638953" className="footer__link" aria-label="Свяжитесь с нами через Telegram по номеру +7 (705)-763-89-53">
-                    +7 (705)-763-89-53 - Telegram
                   </a>
                 </li>
               </ul>

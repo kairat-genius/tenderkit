@@ -1,5 +1,6 @@
 import React from "react";
 import Breadcrumb from "../../../components/Breadcrumb"
+import { Link } from "react-router-dom";
 
 const Head = () => {
   return (
@@ -19,12 +20,12 @@ const Head = () => {
                 тендеров по&nbsp;отраслям и&nbsp;регионам
               </p>
               <div className="head__actions">
-                <button type="button" className="head__button button button--primary">
+                <Link to="/analytics-search" className="head__button button button--primary">
                   Перейти к аналитике
-                </button>
-                <button type="button" className="head__button button button--primary-outline">
+                </Link>
+                <Link to="/tariffs" className="head__button button button--primary-outline">
                   Посмотреть тарифы
-                </button>
+                </Link>
               </div>
             </div>
           </div>

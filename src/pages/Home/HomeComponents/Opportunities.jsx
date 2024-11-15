@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Opportunities = () => {
   return (
@@ -44,19 +43,6 @@ const Opportunities = () => {
                 &nbsp;о ценах, заказчиках и конкурентах.
                 </span>
               </p>
-              <div className="possibility__actions">
-                <div className="possibility__button-group">
-                  <Link className="possibility__button button" to="/plans">
-                    Планы
-                  </Link>
-                  <Link className="possibility__button button" to="/result">
-                    Закупки
-                  </Link>
-                  <Link className="possibility__button button" to="/contracts">
-                    Договоры
-                  </Link>
-                </div>
-              </div>
             </div>
           </section>
           <section className="possibility possibility--tracking">

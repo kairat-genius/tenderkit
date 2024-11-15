@@ -184,7 +184,7 @@ const Subscribes = () => {
           </div>
         </subscribe-selector>
       </div>
-      <pagination class="pagination"></pagination>
+      
       {isModalOpen && <CreateEditSubscribes closeModal={closeModal} isEditing={isEditing} /> }
       {isRemoveModalOpen && <RemoveSubscribes closeModal={closeModal} />}
     </my-subscribes>

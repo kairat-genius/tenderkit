@@ -2,9 +2,6 @@
 import React, {useState} from "react";
 
 // svg
-import { ReactComponent as CallAlt } from "../../../../assets/svg/icon/call-alt.svg";
-import { ReactComponent as WhatsupAlt } from "../../../../assets/svg/social/whatsup-alt.svg";
-import { ReactComponent as TelegramAlt } from "../../../../assets/svg/social/telegram-alt.svg";
 import { ReactComponent as ChevrondownAlt } from "../../../../assets/svg/pointer/chevrondown-alt.svg";
 import { ReactComponent as Arrowright } from "../../../../assets/svg/mobile/arrowright.svg";
 
@@ -56,49 +53,12 @@ const Navbar = ({data, openModal, closeMenu}) => {
             <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/blog" label="Блог" closeMenu={closeMenu}/>
             <OptionLayout classLayout="m-nav__item" classButton="m-nav__link" href="/contacts" label="Контакты" closeMenu={closeMenu}/>
           </ul>
-          <div className="m-nav__layout">
-            <dl className="m-menu__dl">
-              <dt className="m-menu__dt"> Написать в мессенджеры </dt>
-              <dd className="m-menu__dd">
-                <a
-                  href="https://wa.me/+77057638953"
-                  target="_blank"
-                  className="m-menu__link link"
-                >
-                  <span className="m-menu__icon icon">
-                    <WhatsupAlt className="icon__svg" />
-                  </span>
-                  +7 (705)-763-89-53 - WhatsApp
-                </a>
-              </dd>
-              <dd className="m-menu__dd">
-                <a
-                  href="tel:+77057638953"
-                  target="_blank"
-                  className="m-menu__link link"
-                >
-                  <span className="m-menu__icon icon">
-                    <TelegramAlt className="icon__svg" />
-                  </span>
-                  +7 (705)-763-89-53 - Telegram
-                </a>
-              </dd>
-              <dt className="m-menu__dt"> Звонки </dt>
-              <dd className="m-menu__dd">
-                <a href="tel:+77057638953" className="m-menu__link link">
-                  <span className="m-menu__icon icon">
-                    <CallAlt className="icon__svg" />
-                  </span>
-                  +7 (705)-763-89-53
-                </a>
-              </dd>
-            </dl>
-          </div>
+        
           {!data && (
           <div className="m-nav__layout ng-star-inserted">
             <div className="button-group button-group--vertical">
               <div className="button-group__layout" id="registracia">
-                <button type="button" className="button button--primary button--md button--expand" onClick={() => { openModal("register"); closeMenu();}}>
+                <button type="button" className="button login-background button--md button--expand" onClick={() => { openModal("register"); closeMenu();}}>
                   Регистрация
                 </button>
               </div>

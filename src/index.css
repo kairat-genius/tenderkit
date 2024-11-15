@@ -311,3 +311,54 @@
   height: 1000px; 
 }
 
+.hero {
+  background-color: #f1f3f5;
+  background-image: url(assets/bg/flag.png);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 200px) 0%;
+  background-size: 40vw;
+}
+
+.hero__title {
+  margin-top: 0;
+  margin-bottom: 160px;
+  font-weight: var(--font-weight-bold);
+  font-size: 36px;
+  line-height: 49px;
+  color: #212529;
+  max-width: 539px;
+}
+
+
+
+@media (max-width: 1600px) {
+  .hero {
+    background-size: 50vw; 
+    background-position: calc(100% - 100px) 0%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    background-size: 60vw; 
+    background-position: calc(100% - 0px) 0%;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .hero__title {
+    margin-bottom: 80px;
+  }
+}
+
+
+.login-background {
+  background-color: #04A5DC!important;
+  color: var(--color-gray-0)!important;
+}
+
+.register-background {
+  color: #04A5DC!important;
+  border-color: currentColor;
+}
